@@ -5,7 +5,7 @@ services:
     volumes:
       - "./config/nginx/site.conf:/etc/nginx/conf.d/default.conf"
       - "./etc/ssl:/etc/ssl"
-      - "./:/var/www/emperor"
+      - "./:/var/www/phpspecop"
       - "./config/nginx/default.template.conf:/etc/nginx/conf.d/default.template"
     ports:
       - "8000:80"
@@ -22,7 +22,7 @@ services:
     restart: always
     volumes:
       - "./config/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
-      - "./:/var/www/emperor"
+      - "./:/var/www/phpsepcop"
   mysqldb:
     image: mysql:${MYSQL_VERSION}
     container_name: ${MYSQL_HOST}
