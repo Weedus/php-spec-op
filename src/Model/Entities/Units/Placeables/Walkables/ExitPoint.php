@@ -10,8 +10,7 @@ namespace PhpSpecOps\Model\Entities\Units\Placeables\Walkables;
 
 
 use PascalDeVink\ShortUuid\ShortUuid;
-use PhpSpecOps\Operator\Effects\EffectInterface;
-use PhpSpecOps\Operator\Effects\LevelExit;
+use PhpSpecOps\Operator\Effects\Ends\LevelExit;
 
 class ExitPoint extends Ground
 {
@@ -25,8 +24,4 @@ class ExitPoint extends Ground
         return true;
     }
 
-    public function getWalkOverEffect(): ?EffectInterface
-    {
-        return LevelExit::create();
-    }
 }

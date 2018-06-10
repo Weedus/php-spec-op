@@ -9,8 +9,8 @@
 namespace PhpSpecOps\Model\Entities\Units\Characters;
 
 use PhpSpecOps\Model\Entities\Units\UnitInterface;
-use PhpSpecOps\ValueObjects\Body\BodyInterface;
-use PhpSpecOps\ValueObjects\Range;
+use PhpSpecOps\Model\ValueObjects\Body\BodyInterface;
+use PhpSpecOps\Model\ValueObjects\Range;
 
 interface CharacterInterface extends UnitInterface
 {

@@ -13,9 +13,9 @@ use PascalDeVink\ShortUuid\ShortUuid;
 
 class Human extends AbstractHuman
 {
-    public function __construct(string $name, ?ShortUuid $id = null)
+    public function __construct(?string $name = null, ?ShortUuid $id = null)
     {
-        parent::__construct($name, $id);
+        parent::__construct($name??'Human', $id);
     }
 
 }

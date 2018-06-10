@@ -10,9 +10,9 @@ namespace PhpSpecOps\Operator\Effects\Health;
 
 
 use Assert\Assertion;
-use PhpSpecOps\Model\Entities\Units\CharacterEffectInterface;
+use PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
+use PhpSpecOps\Model\ValueObjects\Range;
 use PhpSpecOps\Operator\Effects\AbstractEffect;
-use PhpSpecOps\ValueObjects\Range;
 
 class Damage extends AbstractEffect
 {

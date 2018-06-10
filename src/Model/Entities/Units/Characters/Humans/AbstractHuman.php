@@ -8,17 +8,19 @@
 
 namespace PhpSpecOps\Model\Entities\Units\Characters\Humans;
 
-
 use Assert\Assertion;
-use PhpSpecOps\Container\CollectionInterface;
 use PhpSpecOps\Model\Entities\Units\Characters\AbstractCharacter;
-use PhpSpecOps\ValueObjects\Body\BodyInterface;
-use PhpSpecOps\ValueObjects\Body\Human\HumanBodyInterface;
+use PhpSpecOps\Model\Entities\Units\Characters\BrainInterface;
+use PhpSpecOps\Model\Storage\CollectionInterface;
+use PhpSpecOps\Model\ValueObjects\Body\BodyInterface;
+use PhpSpecOps\Model\ValueObjects\Body\Human\HumanBodyInterface;
 
 abstract class AbstractHuman extends AbstractCharacter implements HumanInterface
 {
     /** @var CollectionInterface */
     protected $inventory;
+
+    protected $brain;
 
     /**
      * @param BodyInterface $body
@@ -49,6 +51,11 @@ abstract class AbstractHuman extends AbstractCharacter implements HumanInterface
         return [
                 'inventory' => $this->inventory
             ] + parent::toArray();
+    }
+
+    public function getBrain(): BrainInterface
+    {
+        return $this->brain;
     }
 
 }

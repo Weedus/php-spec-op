@@ -8,10 +8,9 @@
 
 namespace PhpSpecOps\Model\Area;
 
-
 use Assert\Assertion;
-use PhpSpecOps\ValueObjects\Arraylizeable;
-use PhpSpecOps\ValueObjects\Equalizeable;
+use PhpSpecOps\Model\ValueObjects\Arraylizeable;
+use PhpSpecOps\Model\ValueObjects\Equalizeable;
 
 class Location implements Equalizeable, Arraylizeable
 {

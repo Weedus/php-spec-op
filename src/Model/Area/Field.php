@@ -8,11 +8,10 @@
 
 namespace PhpSpecOps\Model\Area;
 
-
 use Assert\Assertion;
 use PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
 use PhpSpecOps\Model\Entities\Units\Placeables\PlaceableInterface;
-use PhpSpecOps\ValueObjects\Arraylizeable;
+use PhpSpecOps\Model\ValueObjects\Arraylizeable;
 
 class Field implements Arraylizeable
 {

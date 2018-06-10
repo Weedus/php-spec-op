@@ -12,11 +12,11 @@ namespace PhpSpecOps\Operator\Effects\Actions\FinalAction\Moves;
 use Assert\Assertion;
 use PhpSpecOps\Model\Area\Field;
 use PhpSpecOps\Model\Area\Location;
-use PhpSpecOps\Model\Entities\Units\CharacterEffectInterface;
+use PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
 use PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
 use PhpSpecOps\Model\Entities\Units\Placeables\Walkables\WalkableInterface;
+use PhpSpecOps\Model\ValueObjects\Range;
 use PhpSpecOps\Operator\Effects\AbstractEffect;
-use PhpSpecOps\ValueObjects\Range;
 
 abstract class AbstractMove extends AbstractEffect
 {

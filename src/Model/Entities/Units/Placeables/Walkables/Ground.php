@@ -8,7 +8,6 @@
 
 namespace PhpSpecOps\Model\Entities\Units\Placeables\Walkables;
 
-
 use PascalDeVink\ShortUuid\ShortUuid;
 use PhpSpecOps\Model\Entities\Units\Placeables\AbstractPlaceable;
 use PhpSpecOps\Operator\Effects\EffectInterface;
