@@ -8,8 +8,9 @@
 
 namespace PhpSpecOps\Operator\Effects;
 
-use PhpSpecOps\Model\Entities\Units\CharacterEffectInterface;
-use PhpSpecOps\ValueObjects\Range;
+
+use PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
+use PhpSpecOps\Model\ValueObjects\Range;
 
 interface EffectInterface
 {

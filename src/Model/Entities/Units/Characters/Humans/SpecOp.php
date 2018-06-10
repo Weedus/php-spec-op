@@ -10,7 +10,7 @@ namespace PhpSpecOps\Model\Entities\Units\Characters\Humans;
 
 
 use PascalDeVink\ShortUuid\ShortUuid;
-use PhpSpecOps\ValueObjects\Range;
+use PhpSpecOps\Model\ValueObjects\Range;
 
 class SpecOp extends AbstractHuman
 {

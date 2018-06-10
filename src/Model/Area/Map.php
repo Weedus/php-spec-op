@@ -8,13 +8,12 @@
 
 namespace PhpSpecOps\Model\Area;
 
-
 use Assert\Assert;
 use Assert\Assertion;
-use PhpSpecOps\Container\MultiDimensionCollection;
 use PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
 use PhpSpecOps\Model\Entities\Units\Placeables\Walkables\Ground;
-use PhpSpecOps\ValueObjects\Arraylizeable;
+use PhpSpecOps\Model\Storage\MultiDimensionCollection;
+use PhpSpecOps\Model\ValueObjects\Arraylizeable;
 
 class Map implements Arraylizeable
 {

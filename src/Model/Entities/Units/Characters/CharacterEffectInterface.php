@@ -6,10 +6,9 @@
  * Time: 17:44
  */
 
-namespace PhpSpecOps\Model\Entities\Units;
+namespace PhpSpecOps\Model\Entities\Units\Characters;
 
-
-use PhpSpecOps\Model\Area\Field;
+use PhpSpecOps\Model\Entities\Units\UnitInterface;
 
 interface CharacterEffectInterface extends UnitInterface
 {

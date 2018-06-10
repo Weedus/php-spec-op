@@ -12,9 +12,8 @@ namespace PhpSpecOps\Model\Entities\Units\Characters;
 use Assert\Assertion;
 use PascalDeVink\ShortUuid\ShortUuid;
 use PhpSpecOps\Model\Entities\Units\AbstractUnit;
-use PhpSpecOps\Model\Entities\Units\CharacterEffectInterface;
-use PhpSpecOps\ValueObjects\Body\BodyInterface;
-use PhpSpecOps\ValueObjects\Range;
+use PhpSpecOps\Model\ValueObjects\Body\BodyInterface;
+use PhpSpecOps\Model\ValueObjects\Range;
 
 abstract class AbstractCharacter extends AbstractUnit implements CharacterInterface, CharacterEffectInterface
 {

@@ -8,9 +8,8 @@
 
 namespace PhpSpecOps\Model\Entities;
 
-
 use PascalDeVink\ShortUuid\ShortUuid;
-use PhpSpecOps\ValueObjects\Arraylizeable;
+use PhpSpecOps\Model\ValueObjects\Arraylizeable;
 
 interface EntityInterface extends Arraylizeable
 {

@@ -9,9 +9,9 @@
 namespace PhpSpecOps\Operator\Effects\Ends;
 
 
-use PhpSpecOps\Model\Entities\Units\CharacterEffectInterface;
+use PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
+use PhpSpecOps\Model\ValueObjects\Range;
 use PhpSpecOps\Operator\Effects\AbstractEffect;
-use PhpSpecOps\ValueObjects\Range;
 
 class LevelExit extends AbstractEffect
 {
