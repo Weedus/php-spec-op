@@ -1,6 +1,15 @@
 {
   "name": "weedus/php-spec-op",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Benno Czopp",
+      "email": "b.czopp@gmx.net",
+      "role": "Developer"
+    }
+  ],
   "require": {
+    "weedus/collection": ">=1",
     "beberlei/assert": ">=2.9",
     "pascaldevink/shortuuid": ">=2.0.1",
     "codeception/codeception": ">=2.4.1"
