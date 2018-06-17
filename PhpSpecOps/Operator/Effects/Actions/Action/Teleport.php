@@ -52,11 +52,11 @@ class Teleport extends AbstractEffect
     {
         Assertion::notNull($target);
         Assertion::null($target->getCharacter());
-        Assertion::notNull($target->getPlaceable());
-        Assertion::true($target->getPlaceable()->isWalkable());
+        Assertion::notNull($target->getPlace());
+        Assertion::true($target->getPlace()->isWalkable());
         $character = $caster->getCharacter();
 
-        $castPlace = $caster->getPlaceable();
+        $castPlace = $caster->getPlace();
         /** @var WalkableInterface $castPlace */
         if($castPlace->hasLeaveEffect()){
             $castPlace->getLeaveEffect()->perform($caster);
@@ -64,7 +64,7 @@ class Teleport extends AbstractEffect
         $caster->unsetCharacter();
 
         $target->setCharacter($character);
-        $targetPlace = $target->getPlaceable();
+        $targetPlace = $target->getPlace();
         /** @var WalkableInterface $targetPlace */
         if($targetPlace->hasArriveEffect()){
             $targetPlace->getArriveEffect()->perform($target);

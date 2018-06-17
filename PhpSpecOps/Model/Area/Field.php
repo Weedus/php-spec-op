@@ -11,7 +11,7 @@ namespace Weedus\PhpSpecOps\Model\Area;
 use Assert\Assertion;
 use Weedus\Model\ValueObjects\Distance;
 use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
-use Weedus\PhpSpecOps\Model\Entities\Units\Placeables\PlaceableInterface;
+use Weedus\PhpSpecOps\Model\Entities\Units\Places\PlaceInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Arraylizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
 
@@ -24,32 +24,32 @@ class Field implements Arraylizeable
     /** @var CharacterInterface|null */
     private $character;
 
-    /** @var PlaceableInterface */
-    private $placeable;
+    /** @var PlaceInterface */
+    private $place;
 
     /**
      * @param Location $location
-     * @param PlaceableInterface $placeable
+     * @param PlaceInterface $place
      * @param null|CharacterInterface $character
      * @return Field
      * @throws \Assert\AssertionFailedException
      */
-    public static function create(Location $location, PlaceableInterface $placeable, ?CharacterInterface $character = null)
+    public static function create(Location $location, PlaceInterface $place, ?CharacterInterface $character = null)
     {
-        return new static($location, $placeable, $character);
+        return new static($location, $place, $character);
     }
 
     /**
      * Field constructor.
      * @param Location $location
-     * @param PlaceableInterface $placeable
+     * @param PlaceInterface $place
      * @param null|CharacterInterface $character
      * @throws \Assert\AssertionFailedException
      */
-    public function __construct(Location $location, PlaceableInterface $placeable, ?CharacterInterface $character = null)
+    public function __construct(Location $location, PlaceInterface $place, ?CharacterInterface $character = null)
     {
         $this->location = $location;
-        $this->placeable = $placeable;
+        $this->place = $place;
         $this->setCharacter($character);
     }
 
@@ -86,7 +86,7 @@ class Field implements Arraylizeable
      */
     public function setCharacter(?CharacterInterface $character): void
     {
-        Assertion::true($this->placeable->isWalkable());
+        Assertion::true($this->place->isWalkable());
         if($character !== null){
             $character->setField($this);
         }
@@ -112,11 +112,11 @@ class Field implements Arraylizeable
     }
 
     /**
-     * @return PlaceableInterface
+     * @return PlaceInterface
      */
-    public function getPlaceable(): PlaceableInterface
+    public function getPlace(): PlaceInterface
     {
-        return $this->placeable;
+        return $this->place;
     }
 
     public function toArray(): array
@@ -124,7 +124,7 @@ class Field implements Arraylizeable
         return [
             'location' => $this->location->toArray(),
             'unit' => ($this->character ? $this->character->toArray() : null),
-            'placeable' => ($this->placeable ? $this->placeable->toArray() : null),
+            'placeable' => ($this->place ? $this->place->toArray() : null),
         ];
     }
 

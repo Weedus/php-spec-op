@@ -10,11 +10,12 @@ namespace Weedus\PhpSpecOps\Operator\Effects\Actions\FinalAction\Standing;
 
 
 use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Model\Entities\Units\Places\Walks\WalksInterface;
 use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
 
-class AbstractStanding extends AbstractEffect
+abstract class AbstractStanding extends AbstractEffect
 {
+    abstract protected function performEffect(Field $caster, ?Field $target = null);
 
     /**
      * @param Field $caster
@@ -22,12 +23,16 @@ class AbstractStanding extends AbstractEffect
      */
     public function perform(Field $caster, ?Field $target = null): void
     {
-        $casterPlac
-        if($caster->getPlaceable())
+        $this->performStandOnEffect($caster);
+        $this->performEffect($caster, $target);
     }
 
-    protected function performStondOnEffect(Field $field)
+    protected function performStandOnEffect(Field $field)
     {
-        $place = $field->
+        $place = $field->getPlace();
+        /** @var WalksInterface $place */
+        if($place->hasStandOnEffect()){
+            $place->getStandOnEffect()->perform($field);
+        }
     }
 }

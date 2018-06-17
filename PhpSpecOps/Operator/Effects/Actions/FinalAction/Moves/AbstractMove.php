@@ -86,7 +86,7 @@ abstract class AbstractMove extends AbstractEffect
     {
         Assertion::notEmpty($field);
         Assertion::false($field->hasCharacter());
-        $placeable = $field->getPlaceable();
+        $placeable = $field->getPlace();
         Assertion::true($placeable->isWalkable());
     }
 
@@ -97,7 +97,7 @@ abstract class AbstractMove extends AbstractEffect
     private function checkFieldForStairs(?Field $field = null): void
     {
         $this->checkFieldToWalk($field);
-        $placeable = $field->getPlaceable();
+        $placeable = $field->getPlace();
         Assertion::true($placeable->isStairs());
         Assertion::true($placeable->goesUp());
     }
@@ -105,7 +105,7 @@ abstract class AbstractMove extends AbstractEffect
     private function performLeaveEffect(CharacterEffectInterface $target)
     {
         /** @var WalkableInterface $placeable */
-        $placeable = $target->getField()->getPlaceable();
+        $placeable = $target->getField()->getPlace();
         if(!$placeable->hasLeaveEffect()){
             return null;
         }
@@ -115,7 +115,7 @@ abstract class AbstractMove extends AbstractEffect
     private function performArriveEffect(CharacterEffectInterface $target)
     {
         /** @var WalkableInterface $placeable */
-        $placeable = $target->getField()->getPlaceable();
+        $placeable = $target->getField()->getPlace();
         if(!$placeable->hasArriveEffect()){
             return null;
         }
