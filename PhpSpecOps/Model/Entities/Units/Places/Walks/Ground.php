@@ -6,13 +6,13 @@
  * Time: 23:44
  */
 
-namespace Weedus\PhpSpecOps\Model\Entities\Units\Placeables\Walkables;
+namespace Weedus\PhpSpecOps\Model\Entities\Units\Places\Walks;
 
 use PascalDeVink\ShortUuid\ShortUuid;
-use Weedus\PhpSpecOps\Model\Entities\Units\Placeables\AbstractPlaceable;
+use Weedus\PhpSpecOps\Model\Entities\Units\Places\AbstractPlace;
 use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
 
-class Ground extends AbstractPlaceable implements WalkableInterface
+class Ground extends AbstractPlace implements WalksInterface
 {
     public function __construct(?string $name,?ShortUuid $id)
     {

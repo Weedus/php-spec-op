@@ -9,6 +9,7 @@
 namespace Weedus\PhpSpecOps\Model\ValueObjects;
 
 use Assert\Assertion;
+use Weedus\Model\ValueObjects\Distance;
 use Weedus\PhpSpecOps\Model\Area\Location;
 
 /**
@@ -18,10 +19,8 @@ use Weedus\PhpSpecOps\Model\Area\Location;
  * @method static Direction SOUTH()
  * @method static Direction WEST()
  * @method static Direction EAST()
- * @method static Direction UP()
- * @method static Direction DOWN()
  */
-class Direction extends AbstractValueObject
+final class Direction extends AbstractValueObject
 {
     use OptionsObjectTrait;
 
@@ -29,53 +28,62 @@ class Direction extends AbstractValueObject
     const SOUTH = 'south';
     const EAST = 'east';
     const WEST = 'west';
-    const UP = 'up';
-    const DOWN = 'down';
 
-    private $normalizedDirections = [
-        self::NORTH => [1,0,0],
-        self::SOUTH => [-1,0,0],
-        self::WEST => [0,-1,0],
-        self::EAST => [0,1,0],
-        self::UP => [0,0,-1],
-        self::DOWN => [0,0,1],
+    private static $normalizedDirections = [
+        self::NORTH => [1,0],
+        self::SOUTH => [-1,0],
+        self::WEST => [0,-1],
+        self::EAST => [0,1]
     ];
 
     /**
      * @param Location $start
      * @param Location $goal
-     * @throws \Exception
+     * @return Direction|OptionsObjectTrait
      */
     public static function createByLocations(Location $start, Location $goal)
     {
         $normalized = self::getNormalizedDirection($start,$goal);
-
-
+        $readable = self::normalizedToHuman($normalized);
+        return self::create($readable);
     }
+
+    public static function createByDistance(Distance $distance)
+    {
+        $normalized = self::normalize($distance->getX(),$distance->getY());
+        $readable = self::normalizedToHuman($normalized);
+        return self::create($readable);
+    }
+
+    /**
+     * @param array $normalized
+     * @return int|null|string
+     */
     public static function normalizedToHuman(array $normalized)
     {
-
+        foreach(self::$normalizedDirections as $direction => $norm){
+            if($normalized[0] === $norm[0] && $normalized[1] === $norm[1]){
+                return $direction;
+            }
+        }
+        return null;
     }
 
     /**
      * @param Location $start
      * @param Location $goal
      * @return array
-     * @throws \Exception
      */
     public static function getNormalizedDirection(Location $start, Location $goal)
     {
         $diffX = $goal->getX() - $start->getX();
         $diffY = $goal->getY() - $start->getY();
-        $diffZ = $goal->getZ() - $start->getZ();
 
-        if($diffZ !== 0){
-            if($diffX !== 0 || $diffY !== 0){
-                throw new \Exception('target height differs or stairs not on same length/width');
-            }
-            return [0,0,($diffZ > 0 ? 1 : -1)];
-        }
+        return self::normalize($diffX,$diffY);
+    }
 
+    private static function normalize(int $diffX, int $diffY)
+    {
         $closerToZero = function(int $value){
             if($value > 0) return $value - 1;
             if($value < 0) return $value +1 ;
@@ -89,8 +97,7 @@ class Direction extends AbstractValueObject
 
         return [
             ($diffX > 0 ? 1 : ($diffX < 0 ? -1 : 0)),
-            ($diffY > 0 ? 1 : ($diffY < 0 ? -1 : 0)),
-            0
+            ($diffY > 0 ? 1 : ($diffY < 0 ? -1 : 0))
         ];
     }
 }

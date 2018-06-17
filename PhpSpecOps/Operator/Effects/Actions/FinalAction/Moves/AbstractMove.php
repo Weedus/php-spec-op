@@ -66,14 +66,14 @@ abstract class AbstractMove extends AbstractEffect
     }
 
     /**
-     * @param CharacterEffectInterface $caster
-     * @param null|CharacterEffectInterface $target
+     * @param Field $caster
+     * @param null|Field $target
      * @throws \Assert\AssertionFailedException
      */
-    public function perform(CharacterEffectInterface $caster, ?CharacterEffectInterface $target = null): void
+    public function perform(Field $caster, ?Field $target = null): void
     {
-        $location = $this->newLocation($caster->getField()->getLocation());
-        $field = $caster->getField()->getMap()->getField($location);
+        $location = $this->newLocation($caster->getLocation());
+        $field = $caster->getMap()->getField($location);
         $this->checkFieldForStairs($field);
         $this->move($caster, $field);
     }

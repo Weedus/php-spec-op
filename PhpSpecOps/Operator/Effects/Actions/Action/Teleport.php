@@ -9,11 +9,14 @@
 namespace Weedus\PhpSpecOps\Operator\Effects\Actions\Action;
 
 
+use Assert\Assertion;
+use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
-use Weedus\PhpSpecOps\Operator\Effects\Actions\FinalAction\Moves\AbstractMove;
+use Weedus\PhpSpecOps\Model\Entities\Units\Placeables\Walkables\WalkableInterface;
+use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
 
-class Teleport extends AbstractMove
+class Teleport extends AbstractEffect
 {
     /** @var Location */
     private $targetLocation;
@@ -33,14 +36,38 @@ class Teleport extends AbstractMove
     }
 
     /**
-     * @param CharacterEffectInterface $caster
-     * @param null|CharacterEffectInterface $target
+     * @return Range
+     */
+    public function getRange(): Range
+    {
+        return Range::ZERO();
+    }
+
+    /**
+     * @param Field $caster
+     * @param null|Field $target
      * @throws \Assert\AssertionFailedException
      */
-    public function perform(CharacterEffectInterface $caster, ?CharacterEffectInterface $target = null): void
+    public function perform(Field $caster, ?Field $target = null): void
     {
-        $field = $caster->getField()->getMap()->getField($location);
-        $this->checkFieldForStairs($field);
-        $this->move($caster, $field);
+        Assertion::notNull($target);
+        Assertion::null($target->getCharacter());
+        Assertion::notNull($target->getPlaceable());
+        Assertion::true($target->getPlaceable()->isWalkable());
+        $character = $caster->getCharacter();
+
+        $castPlace = $caster->getPlaceable();
+        /** @var WalkableInterface $castPlace */
+        if($castPlace->hasLeaveEffect()){
+            $castPlace->getLeaveEffect()->perform($caster);
+        }
+        $caster->unsetCharacter();
+
+        $target->setCharacter($character);
+        $targetPlace = $target->getPlaceable();
+        /** @var WalkableInterface $targetPlace */
+        if($targetPlace->hasArriveEffect()){
+            $targetPlace->getArriveEffect()->perform($target);
+        }
     }
 }

@@ -9,9 +9,11 @@
 namespace Weedus\PhpSpecOps\Model\Area;
 
 use Assert\Assertion;
+use Weedus\Model\ValueObjects\Distance;
 use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
 use Weedus\PhpSpecOps\Model\Entities\Units\Placeables\PlaceableInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Arraylizeable;
+use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
 
 class Field implements Arraylizeable
 {
@@ -126,5 +128,32 @@ class Field implements Arraylizeable
         ];
     }
 
+    /**
+     * @param Field $field
+     * @return Direction
+     */
+    public function getDirectionTo(Field $field): Direction
+    {
+        if(!$this->hasSameHeight($field)){
+            return null;
+        }
+        return Direction::createByLocations($this->location, $field->location);
+    }
 
+    /**
+     * @param Field $field
+     * @return null|Distance
+     */
+    public function getDistanceTo(Field $field)
+    {
+        if(!$this->hasSameHeight($field)){
+            return null;
+        }
+        return Distance::createByLocations($this->location, $field->location);
+    }
+
+    private function hasSameHeight(Field $field)
+    {
+        return $this->location->getZ() === $field->location->getZ();
+    }
 }

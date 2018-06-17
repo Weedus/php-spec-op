@@ -6,12 +6,12 @@
  * Time: 23:08
  */
 
-namespace Weedus\PhpSpecOps\Model\Entities\Units\Placeables\Walkables;
+namespace Weedus\PhpSpecOps\Model\Entities\Units\Places\Walks;
 
-use Weedus\PhpSpecOps\Model\Entities\Units\Placeables\PlaceableInterface;
+use Weedus\PhpSpecOps\Model\Entities\Units\Places\PlaceInterface;
 use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
 
-interface WalkableInterface extends PlaceableInterface
+interface WalksInterface extends PlaceInterface
 {
     /**
      * @return null|EffectInterface
