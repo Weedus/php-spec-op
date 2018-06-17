@@ -6,12 +6,12 @@
  * Time: 22:30
  */
 
-namespace Weedus\PhpSpecOps\Model\Entities\Units\Placeables;
+namespace Weedus\PhpSpecOps\Model\Entities\Units\Places;
 
 
 use Weedus\PhpSpecOps\Model\Entities\Units\AbstractUnit;
 
-abstract class AbstractPlaceable extends AbstractUnit implements PlaceableInterface
+abstract class AbstractPlace extends AbstractUnit implements PlaceInterface
 {
 
     public function isExit(): bool
@@ -75,8 +75,8 @@ abstract class AbstractPlaceable extends AbstractUnit implements PlaceableInterf
     public static function create($value = null)
     {
         if ($value === null) {
-            return new static();
+            return new static(null);
         }
-        return new static();
+        return new static($value);
     }
 }

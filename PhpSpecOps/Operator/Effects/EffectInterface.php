@@ -9,7 +9,7 @@
 namespace Weedus\PhpSpecOps\Operator\Effects;
 
 
-use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
+use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 
 interface EffectInterface
@@ -21,8 +21,8 @@ interface EffectInterface
     public function getRange(): Range;
 
     /**
-     * @param CharacterEffectInterface $caster
-     * @param CharacterEffectInterface $target
+     * @param Field $caster
+     * @param null|Field $target
      */
-    public function perform(CharacterEffectInterface $caster, ?CharacterEffectInterface $target = null): void;
+    public function perform(Field $caster, ?Field $target = null): void;
 }

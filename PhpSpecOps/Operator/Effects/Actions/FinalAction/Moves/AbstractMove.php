@@ -66,14 +66,14 @@ abstract class AbstractMove extends AbstractEffect
     }
 
     /**
-     * @param CharacterEffectInterface $caster
-     * @param null|CharacterEffectInterface $target
+     * @param Field $caster
+     * @param null|Field $target
      * @throws \Assert\AssertionFailedException
      */
-    public function perform(CharacterEffectInterface $caster, ?CharacterEffectInterface $target = null): void
+    public function perform(Field $caster, ?Field $target = null): void
     {
-        $location = $this->newLocation($caster->getField()->getLocation());
-        $field = $caster->getField()->getMap()->getField($location);
+        $location = $this->newLocation($caster->getLocation());
+        $field = $caster->getMap()->getField($location);
         $this->checkFieldForStairs($field);
         $this->move($caster, $field);
     }
@@ -86,7 +86,7 @@ abstract class AbstractMove extends AbstractEffect
     {
         Assertion::notEmpty($field);
         Assertion::false($field->hasCharacter());
-        $placeable = $field->getPlaceable();
+        $placeable = $field->getPlace();
         Assertion::true($placeable->isWalkable());
     }
 
@@ -97,7 +97,7 @@ abstract class AbstractMove extends AbstractEffect
     private function checkFieldForStairs(?Field $field = null): void
     {
         $this->checkFieldToWalk($field);
-        $placeable = $field->getPlaceable();
+        $placeable = $field->getPlace();
         Assertion::true($placeable->isStairs());
         Assertion::true($placeable->goesUp());
     }
@@ -105,7 +105,7 @@ abstract class AbstractMove extends AbstractEffect
     private function performLeaveEffect(CharacterEffectInterface $target)
     {
         /** @var WalkableInterface $placeable */
-        $placeable = $target->getField()->getPlaceable();
+        $placeable = $target->getField()->getPlace();
         if(!$placeable->hasLeaveEffect()){
             return null;
         }
@@ -115,7 +115,7 @@ abstract class AbstractMove extends AbstractEffect
     private function performArriveEffect(CharacterEffectInterface $target)
     {
         /** @var WalkableInterface $placeable */
-        $placeable = $target->getField()->getPlaceable();
+        $placeable = $target->getField()->getPlace();
         if(!$placeable->hasArriveEffect()){
             return null;
         }

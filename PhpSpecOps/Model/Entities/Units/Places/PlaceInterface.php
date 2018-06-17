@@ -6,12 +6,12 @@
  * Time: 22:31
  */
 
-namespace Weedus\PhpSpecOps\Model\Entities\Units\Placeables;
+namespace Weedus\PhpSpecOps\Model\Entities\Units\Places;
 
 
 use Weedus\PhpSpecOps\Model\Entities\Units\UnitInterface;
 
-interface PlaceableInterface extends UnitInterface
+interface PlaceInterface extends UnitInterface
 {
     public function isExit(): bool;
 

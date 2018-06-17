@@ -11,6 +11,7 @@ namespace Weedus\PhpSpecOps\Model\Area;
 use Weedus\PhpSpecOps\Model\ValueObjects\Arraylizeable;
 use Weedus\Collection\SpecificationCollectionInterface;
 use Weedus\Specification\SpecificationInterface;
+use Weedus\Specifications\Map\AlwaysTrue;
 
 class Map implements Arraylizeable
 {
@@ -83,6 +84,9 @@ class Map implements Arraylizeable
      */
     public function getFields(?SpecificationInterface $specification = null)
     {
+        if($specification === null){
+            $specification = new AlwaysTrue();
+        }
         return $this->map->findBySpecification($specification);
     }
 

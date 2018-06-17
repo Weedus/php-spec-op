@@ -9,7 +9,8 @@
 namespace Weedus\PhpSpecOps\Operator\Effects\Ends;
 
 
-use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
+use Weedus\Exceptions\NotYetImplementedException;
+use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
 
@@ -24,12 +25,10 @@ class LevelExit extends AbstractEffect
         return Range::ZERO();
     }
 
-    /**
-     * @param CharacterEffectInterface $caster
-     * @throws \Exception
-     */
-    public function perform(CharacterEffectInterface $caster): void
+    public function perform(Field $caster, ?Field $target = null): void
     {
-        throw new \Exception('not yet implemented');
+        throw new NotYetImplementedException(__CLASS__.'->'.__METHOD__);
     }
+
+
 }
