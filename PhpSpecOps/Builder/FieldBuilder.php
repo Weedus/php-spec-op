@@ -32,7 +32,7 @@ abstract class FieldBuilder implements BuilderInterface
             $configuration->getZ()
         );
 
-        $placeable = new ($configuration->getPlaceable());
+        $placeable = new ($configuration->getPlace());
 
         $character = new ($configuration->getCharacter());
 

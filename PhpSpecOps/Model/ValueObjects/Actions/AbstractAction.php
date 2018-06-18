@@ -12,7 +12,7 @@ use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
 use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
 use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
 
-class AbstractAction extends AbstractValueObject implements ActionInterface
+abstract class AbstractAction extends AbstractValueObject implements ActionInterface
 {
 
     /** @var string */

@@ -16,7 +16,7 @@ namespace Weedus\PhpSpecOps\Model\ValueObjects;
  * @method static Range MEDIUM()
  * @method static Range HIGH()
  */
-class Range extends AbstractValueObject
+final class Range extends AbstractValueObject
 {
     use OptionsObjectTrait;
 
@@ -24,4 +24,21 @@ class Range extends AbstractValueObject
     const LOW = 'low';
     const MEDIUM = 'medium';
     const HIGH = 'high';
+
+    public function isReachable(Distance $distance)
+    {
+        $amount = $distance->get();
+        switch($this->value){
+            case self::ZERO:
+                return $amount === 0;
+            case self::LOW:
+                return $amount <= 1;
+            case self::MEDIUM:
+                return $amount <= 3;
+            case self::HIGH:
+                return $amount <= 5;
+            default:
+                return false;
+        }
+    }
 }

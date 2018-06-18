@@ -10,8 +10,8 @@ namespace Weedus\PhpSpecOps\Model\ValueObjects\CharacterWrapper;
 
 
 use Assert\Assertion;
+use Weedus\Collection\CollectionInterface;
 use Weedus\PhpSpecOps\Model\Entities\Units\Characters\Humans\SpecOp;
-use Weedus\PhpSpecOps\Model\Storage\CollectionInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Body\BodyInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 
@@ -34,17 +34,17 @@ class SpecOpWrapper extends AbstractWrapper implements AbstractHumanWrapperInter
 
     public function getHealth(): int
     {
-        $this->item->getHealth();
+        return $this->item->getHealth();
     }
 
     public function getPower(): int
     {
-        $this->item->getPower();
+        return $this->item->getPower();
     }
 
     public function getSight(): Range
     {
-        $this->item->getSight();
+        return $this->item->getSight();
     }
 
     public function getBody(): BodyInterface

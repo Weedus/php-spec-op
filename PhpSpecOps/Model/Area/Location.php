@@ -90,26 +90,32 @@ class Location implements Equalizeable, Arraylizeable
 
     /**
      * @param int $x
+     * @return Location
      */
-    public function setX(int $x): void
+    public function setX(int $x): self
     {
         $this->x = $x;
+        return $this;
     }
 
     /**
      * @param int $y
+     * @return Location
      */
-    public function setY(int $y): void
+    public function setY(int $y): self
     {
         $this->y = $y;
+        return $this;
     }
 
     /**
      * @param int $z
+     * @return Location
      */
-    public function setZ(int $z): void
+    public function setZ(int $z): self
     {
         $this->z = $z;
+        return $this;
     }
 
 
