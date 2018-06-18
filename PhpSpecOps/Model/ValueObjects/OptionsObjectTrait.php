@@ -36,7 +36,7 @@ trait OptionsObjectTrait
      */
     public static function create($name): self
     {
-        return new self(constant('self::' . $name));
+        return new self(constant('self::' . strtoupper($name)));
     }
 
     /**

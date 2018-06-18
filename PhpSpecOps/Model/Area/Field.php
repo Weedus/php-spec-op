@@ -9,11 +9,11 @@
 namespace Weedus\PhpSpecOps\Model\Area;
 
 use Assert\Assertion;
-use Weedus\Model\ValueObjects\Distance;
 use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
 use Weedus\PhpSpecOps\Model\Entities\Units\Places\PlaceInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Arraylizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
+use Weedus\PhpSpecOps\Model\ValueObjects\Distance;
 
 class Field implements Arraylizeable
 {
@@ -143,6 +143,7 @@ class Field implements Arraylizeable
     /**
      * @param Field $field
      * @return null|Distance
+     * @throws \Weedus\PhpSpecOps\Exceptions\DistanceCalculationFailedException
      */
     public function getDistanceTo(Field $field)
     {
