@@ -12,6 +12,7 @@ use Weedus\PhpSpecOps\Model\ValueObjects\Arraylizeable;
 use Weedus\Collection\SpecificationCollectionInterface;
 use Weedus\Specification\SpecificationInterface;
 use Weedus\Specifications\Map\AlwaysTrue;
+use Weedus\Specifications\Map\HasCharacter;
 
 class Map implements Arraylizeable
 {
@@ -93,10 +94,20 @@ class Map implements Arraylizeable
     /** @return array */
     public function toArray(): array
     {
+        $ret = [];
+        /**
+         * @var string|int $key
+         * @var Field $item
+         */
+        foreach($this->map as $key => $item){
+            $ret[$key] = $item->toArray();
+        }
+        return $ret;
     }
 
     public function getCharacters()
     {
+        return $this->getFields(new HasCharacter());
     }
 
 }

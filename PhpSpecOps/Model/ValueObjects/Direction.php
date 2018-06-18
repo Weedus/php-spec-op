@@ -16,24 +16,37 @@ use Weedus\PhpSpecOps\Model\Area\Location;
  * Class Direction
  * @package PhpSpecOps\ValueObjects
  * @method static Direction NORTH()
- * @method static Direction SOUTH()
- * @method static Direction WEST()
+ * @method static Direction NORTH_EAST()
  * @method static Direction EAST()
+ * @method static Direction SOUTH_EAST()
+ * @method static Direction SOUTH()
+ * @method static Direction SOUTH_WEST()
+ * @method static Direction WEST()
+ * @method static Direction NORTH_WEST()
  */
 final class Direction extends AbstractValueObject
 {
     use OptionsObjectTrait;
 
     const NORTH = 'north';
-    const SOUTH = 'south';
+    const NORTH_EAST = 'north_east';
     const EAST = 'east';
+    const SOUTH_EAST = 'south_east';
+    const SOUTH = 'south';
+    const SOUTH_WEST = 'south_west';
     const WEST = 'west';
+    const NORTH_WEST = 'north_west';
+
 
     private static $normalizedDirections = [
         self::NORTH => [1,0],
+        self::NORTH_EAST => [1,1],
+        self::EAST => [0,1],
+        self::SOUTH_EAST => [-1,1],
         self::SOUTH => [-1,0],
+        self::SOUTH_WEST => [-1,-1],
         self::WEST => [0,-1],
-        self::EAST => [0,1]
+        self::NORTH_WEST => [1,-1],
     ];
 
     /**
@@ -84,6 +97,18 @@ final class Direction extends AbstractValueObject
 
     private static function normalize(int $diffX, int $diffY)
     {
+
+        $toOne = function($value){
+            return ($value > 0 ? 1 : ($value < 0 ? -1 : 0));
+        };
+
+        if($diffX^2 === $diffY^2){
+            return [
+                $toOne($diffX),
+                $toOne($diffY)
+            ];
+        }
+
         $closerToZero = function(int $value){
             if($value > 0) return $value - 1;
             if($value < 0) return $value +1 ;
@@ -96,8 +121,8 @@ final class Direction extends AbstractValueObject
         }
 
         return [
-            ($diffX > 0 ? 1 : ($diffX < 0 ? -1 : 0)),
-            ($diffY > 0 ? 1 : ($diffY < 0 ? -1 : 0))
+            $toOne($diffX),
+            $toOne($diffY)
         ];
     }
 }

@@ -11,8 +11,9 @@ namespace Weedus\PhpSpecOps\Model\ValueObjects\Configuration;
 
 use Assert\Assertion;
 use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
-use Weedus\PhpSpecOps\Model\Entities\Units\Placeables\PlaceableInterface;
-use Weedus\PhpSpecOps\Model\Entities\Units\Placeables\Walkables\Ground;
+use Weedus\PhpSpecOps\Model\Entities\Units\Places\PlaceInterface;
+use Weedus\PhpSpecOps\Model\Entities\Units\Places\Walks\Ground;
+use Weedus\PhpSpecOps\Model\Entities\Units\Places\Walks\WalksInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
 
 class FieldConfiguration implements ConfigurationInterface
@@ -27,24 +28,25 @@ class FieldConfiguration implements ConfigurationInterface
     private $character;
 
     /** @var string */
-    private $placeable;
+    private $place;
 
-    private $defaultPlaceable = Ground::class;
+    private $defaultPlace = Ground::class;
     /**
      * FieldConfiguration constructor.
      * @param int $x
      * @param int $y
      * @param int $z
-     * @param string $placeable
+     * @param string $placeClass
      * @param null|string $character
      * @throws \Assert\AssertionFailedException
      */
-    public function __construct(int $x, int $y, int $z, ?string $placeable = null, ?string $character = null)
+    public function __construct(int $x, int $y, int $z, ?string $placeClass = null, ?string $character = null)
     {
-        $placeable = $placeable ?? $this->defaultPlaceable;
-        Assertion::classExists($placeable);
-        Assertion::implementsInterface($placeable, PlaceableInterface::class);
+        $placeClass = $placeClass ?? $this->defaultPlace;
+        Assertion::classExists($placeClass);
+        Assertion::implementsInterface($placeClass, PlaceInterface::class);
         if($character !== null){
+            Assertion::implementsInterface($placeClass, WalksInterface::class);
             Assertion::classExists($character);
             Assertion::implementsInterface($character, CharacterInterface::class);
         }
@@ -52,7 +54,7 @@ class FieldConfiguration implements ConfigurationInterface
         $this->y = $y;
         $this->z = $z;
         $this->character = $character;
-        $this->placeable = $placeable;
+        $this->place = $placeClass;
     }
 
     /**
@@ -91,9 +93,9 @@ class FieldConfiguration implements ConfigurationInterface
     /**
      * @return string
      */
-    public function getPlaceable(): string
+    public function getPlace(): string
     {
-        return $this->placeable;
+        return $this->place;
     }
 
     /** @return array */
@@ -104,7 +106,7 @@ class FieldConfiguration implements ConfigurationInterface
             'width'=>$this->y,
             'height'=>$this->z,
             'character' => $this->character,
-            'placeable' => $this->placeable
+            'placeable' => $this->place
         ];
     }
 
@@ -117,7 +119,7 @@ class FieldConfiguration implements ConfigurationInterface
         return $this->x === $item->x
             && $this->y === $item->y
             && $this->z === $item->z
-            && $this->placeable === $item->placeable
+            && $this->place === $item->place
             && $this->character === $item->character;
     }
 }

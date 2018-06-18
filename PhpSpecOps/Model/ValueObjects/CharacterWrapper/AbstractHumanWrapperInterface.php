@@ -9,7 +9,7 @@
 namespace Weedus\PhpSpecOps\Model\ValueObjects\CharacterWrapper;
 
 
-use Weedus\PhpSpecOps\Model\Storage\CollectionInterface;
+use Weedus\Collection\CollectionInterface;
 
 interface AbstractHumanWrapperInterface extends AbstractCharacterWrapperInterface
 {
