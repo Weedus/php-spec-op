@@ -21,6 +21,7 @@ use Weedus\PhpSpecOps\Model\Area\Location;
  * @method static Direction SOUTH_WEST()
  * @method static Direction WEST()
  * @method static Direction NORTH_WEST()
+ * @method static Direction NONE()
  */
 final class Direction extends AbstractValueObject
 {
@@ -34,17 +35,19 @@ final class Direction extends AbstractValueObject
     const SOUTH_WEST = 'south_west';
     const WEST = 'west';
     const NORTH_WEST = 'north_west';
+    const NONE = 'none';
 
 
     private static $normalizedDirections = [
-        self::NORTH => [1,0],
-        self::NORTH_EAST => [1,1],
-        self::EAST => [0,1],
-        self::SOUTH_EAST => [-1,1],
-        self::SOUTH => [-1,0],
-        self::SOUTH_WEST => [-1,-1],
-        self::WEST => [0,-1],
-        self::NORTH_WEST => [1,-1],
+        self::NORTH => ['x'=>1,'y'=>0],
+        self::NORTH_EAST => ['x'=>1,'y'=>1],
+        self::EAST => ['x'=>0,'y'=>1],
+        self::SOUTH_EAST => ['x'=>-1,'y'=>1],
+        self::SOUTH => ['x'=>-1,'y'=>0],
+        self::SOUTH_WEST => ['x'=>-1,'y'=>-1],
+        self::WEST => ['x'=>0,'y'=>-1],
+        self::NORTH_WEST => ['x'=>1,'y'=>-1],
+        self::NONE => ['x'=>0,'y'=>0]
     ];
 
     /**
@@ -73,7 +76,7 @@ final class Direction extends AbstractValueObject
     public static function normalizedToHuman(array $normalized)
     {
         foreach(self::$normalizedDirections as $direction => $norm){
-            if($normalized[0] === $norm[0] && $normalized[1] === $norm[1]){
+            if($normalized['x'] === $norm['x'] && $normalized['y'] === $norm['y']){
                 return $direction;
             }
         }
@@ -99,28 +102,23 @@ final class Direction extends AbstractValueObject
         $toOne = function($value){
             return ($value > 0 ? 1 : ($value < 0 ? -1 : 0));
         };
+        $x = 0;
+        $y = 0;
+        $x2 = pow($diffX, 2);
+        $y2 = pow($diffY, 2);
 
-        if($diffX^2 === $diffY^2){
-            return [
-                $toOne($diffX),
-                $toOne($diffY)
-            ];
+        switch(true){
+            case $x2 > $y2:
+                $x = $toOne($diffX);
+                break;
+            case $x2 < $y2:
+                $y = $toOne($diffY);
+                break;
+            default:
+                $x = $toOne($diffX);
+                $y = $toOne($diffY);
         }
 
-        $closerToZero = function(int $value){
-            if($value > 0) return $value - 1;
-            if($value < 0) return $value +1 ;
-            return $value;
-        };
-
-        while($diffX !== 0 && $diffY !== 0){
-            $diffX = $closerToZero($diffX);
-            $diffY = $closerToZero($diffY);
-        }
-
-        return [
-            $toOne($diffX),
-            $toOne($diffY)
-        ];
+        return ['x'=>$x,'y'=>$y];
     }
 }

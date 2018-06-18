@@ -33,8 +33,8 @@ final class Distance
     {
         $this->x = $x;
         $this->y = $y;
-        $xx = $x*$x;
-        $yy = $y*$y;
+        $xx = pow($x, 2);
+        $yy = pow($y, 2);
         $normedX = (int)sqrt($xx);
         $normedY = (int)sqrt($yy);
         $this->distance = (int)sqrt($xx + $yy);
