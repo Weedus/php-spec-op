@@ -1,4 +1,8 @@
-<?php namespace Weedus\Tests\PhpSpecOps\unit;
+<?php
+
+namespace Weedus\Tests\PhpSpecOps\unit;
+
+use Weedus\Exceptions\NotYetImplementedException;
 
 class WeaponTest extends \Codeception\Test\Unit
 {
@@ -18,6 +22,6 @@ class WeaponTest extends \Codeception\Test\Unit
     // tests
     public function testSomeFeature()
     {
-        $this->assertTrue(false);
+        throw new NotYetImplementedException();
     }
 }

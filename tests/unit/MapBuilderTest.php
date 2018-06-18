@@ -1,4 +1,7 @@
-<?php namespace Weedus\Tests\PhpSpecOps\unit;
+<?php
+namespace Weedus\Tests\PhpSpecOps\unit;
+
+use Weedus\Exceptions\NotYetImplementedException;
 
 class MapBuilderTest extends \Codeception\Test\Unit
 {
@@ -18,6 +21,6 @@ class MapBuilderTest extends \Codeception\Test\Unit
     // tests
     public function testSomeFeature()
     {
-        $this->assertTrue(false);
+        throw new NotYetImplementedException();
     }
 }
