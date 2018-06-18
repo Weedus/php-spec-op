@@ -8,8 +8,6 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects;
 
-use Assert\Assertion;
-use Weedus\Model\ValueObjects\Distance;
 use Weedus\PhpSpecOps\Model\Area\Location;
 
 /**
