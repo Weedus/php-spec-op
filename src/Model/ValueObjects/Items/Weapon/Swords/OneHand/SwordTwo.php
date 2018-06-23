@@ -6,10 +6,10 @@
  * Time: 13:27
  */
 
-namespace Weedus\PhpSpecOps\ValueObjects\Items\Weapon\Swords\OneHand;
+namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\Swords\OneHand;
 
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
-use Weedus\PhpSpecOps\ValueObjects\Items\Weapon\AbstractWeapon;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\AbstractWeapon;
 
 class SwordTwo extends AbstractWeapon
 {

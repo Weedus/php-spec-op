@@ -28,13 +28,6 @@ abstract class AbstractUnit extends AbstractEntity implements UnitInterface
         return $this->field;
     }
 
-    public function toArray(): array
-    {
-        return [
-                'field' => $this->field->toArray()
-            ] + parent::toArray();
-    }
-
     public function unsetField()
     {
         $this->field = null;

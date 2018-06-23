@@ -31,15 +31,6 @@ abstract class AbstractEntity implements EntityInterface
     }
 
 
-    /** @return array */
-    public function toArray(): array
-    {
-        return [
-            'id' => $this->id,
-            'name' => $this->name
-        ];
-    }
-
     /**
      * @return ShortUuid
      */

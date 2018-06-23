@@ -12,7 +12,7 @@ namespace Weedus\PhpSpecOps\Model\ValueObjects\Body\Human;
 use Weedus\PhpSpecOps\Model\ValueObjects\Body\BodyInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Head\ArmorLegsInterface;
-use Weedus\PhpSpecOps\ValueObjects\Items\Weapon\WeaponInterface;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\WeaponInterface;
 
 interface HumanBodyInterface extends BodyInterface
 {

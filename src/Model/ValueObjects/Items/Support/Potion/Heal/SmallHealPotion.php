@@ -6,7 +6,7 @@
  * Time: 17:38
  */
 
-namespace Weedus\PhpSpecOps\ValueObjects\Items\Support\Potion\Heal;
+namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\Potion\Heal;
 
 class SmallHealPotion extends AbstractHealPotion
 {

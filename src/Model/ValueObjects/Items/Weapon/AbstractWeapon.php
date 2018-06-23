@@ -6,13 +6,13 @@
  * Time: 13:08
  */
 
-namespace Weedus\PhpSpecOps\ValueObjects\Items\Weapon;
+namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon;
 
 use Assert\Assertion;
 use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
-use Weedus\PhpSpecOps\ValueObjects\Items\AbstractItem;
-use Weedus\PhpSpecOps\ValueObjects\Items\ItemType;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
 
 abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
 {
@@ -32,17 +32,6 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
         $this->defense = $defense;
         $this->minRange = $minRange;
         $this->maxRange = $maxRange;
-    }
-
-
-    public function toArray(): array
-    {
-        return [
-                'power' => $this->power,
-                'defense' => $this->defense,
-                'min_range' => $this->minRange->toArray(),
-                'max_range' => $this->maxRange->toArray()
-            ] + parent::toArray();
     }
 
     public function equals(Equalizeable $item): bool

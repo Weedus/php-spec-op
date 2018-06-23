@@ -6,7 +6,7 @@
  * Time: 16:05
  */
 
-namespace Weedus\PhpSpecOps\ValueObjects\Items;
+namespace Weedus\PhpSpecOps\Model\ValueObjects\Items;
 
 use Weedus\PhpSpecOps\Model\ValueObjects\ValueObjectInterface;
 
@@ -21,4 +21,6 @@ interface ItemInterface extends ValueObjectInterface
      * @return string
      */
     public function getName(): string;
+
+    public function equalsType(ItemInterface $item): bool;
 }

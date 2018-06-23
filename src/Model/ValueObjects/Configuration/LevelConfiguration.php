@@ -83,18 +83,6 @@ class LevelConfiguration implements ConfigurationInterface
         return $this->id;
     }
 
-    /** @return array */
-    public function toArray(): array
-    {
-        return [
-            'id' => $this->id,
-            'length' => $this->length,
-            'width' => $this->width,
-            'height' => $this->height,
-            'fields' => $this->fields
-        ];
-    }
-
     public function equals(Equalizeable $item): bool
     {
         if(!($item instanceof LevelConfiguration)){

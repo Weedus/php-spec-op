@@ -8,7 +8,7 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor;
 
-use Weedus\PhpSpecOps\ValueObjects\Items\ItemInterface;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 
 interface ArmorInterface extends ItemInterface
 {

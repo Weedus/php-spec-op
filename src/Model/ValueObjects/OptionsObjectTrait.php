@@ -47,12 +47,6 @@ trait OptionsObjectTrait
         return $this->value;
     }
 
-    /** @return array */
-    public function toArray(): array
-    {
-        return $this->value;
-    }
-
     /**
      * @param Equalizeable $item
      * @return bool

@@ -11,11 +11,10 @@ namespace Weedus\PhpSpecOps\Model\Area;
 use Assert\Assertion;
 use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
 use Weedus\PhpSpecOps\Model\Entities\Units\Places\PlaceInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Arraylizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
 use Weedus\PhpSpecOps\Model\ValueObjects\Distance;
 
-class Field implements Arraylizeable
+class Field
 {
     /** @var Map */
     private $map;
@@ -117,15 +116,6 @@ class Field implements Arraylizeable
     public function getPlace(): PlaceInterface
     {
         return $this->place;
-    }
-
-    public function toArray(): array
-    {
-        return [
-            'location' => $this->location->toArray(),
-            'unit' => ($this->character ? $this->character->toArray() : null),
-            'placeable' => ($this->place ? $this->place->toArray() : null),
-        ];
     }
 
     /**

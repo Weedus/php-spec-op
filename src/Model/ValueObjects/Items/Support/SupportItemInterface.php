@@ -6,11 +6,11 @@
  * Time: 16:11
  */
 
-namespace Weedus\PhpSpecOps\ValueObjects\Items\Support;
+namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
 
 use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
-use Weedus\PhpSpecOps\ValueObjects\Items\ItemInterface;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 
 interface SupportItemInterface extends ItemInterface
 {

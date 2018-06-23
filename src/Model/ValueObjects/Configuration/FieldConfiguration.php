@@ -98,18 +98,6 @@ class FieldConfiguration implements ConfigurationInterface
         return $this->place;
     }
 
-    /** @return array */
-    public function toArray(): array
-    {
-        return [
-            'length'=>$this->x,
-            'width'=>$this->y,
-            'height'=>$this->z,
-            'character' => $this->character,
-            'placeable' => $this->place
-        ];
-    }
-
 
     public function equals(Equalizeable $item): bool
     {

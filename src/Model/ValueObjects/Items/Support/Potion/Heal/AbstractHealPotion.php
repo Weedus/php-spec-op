@@ -6,11 +6,11 @@
  * Time: 17:52
  */
 
-namespace Weedus\PhpSpecOps\ValueObjects\Items\Support\Potion\Heal;
+namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\Potion\Heal;
 
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Operator\Effects\Health\Heal;
-use Weedus\PhpSpecOps\ValueObjects\Items\Support\AbstractSupportItem;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\AbstractSupportItem;
 
 abstract class AbstractHealPotion extends AbstractSupportItem
 {

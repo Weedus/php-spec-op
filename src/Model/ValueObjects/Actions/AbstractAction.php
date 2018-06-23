@@ -30,14 +30,6 @@ abstract class AbstractAction extends AbstractValueObject implements ActionInter
         $this->action = $action;
         $this->direction = $direction;
     }
-    /** @return array */
-    public function toArray(): array
-    {
-        return [
-            'action' => $this->action,
-            'direction' => $this->direction->toArray()
-        ];
-    }
 
     /**
      * @param Equalizeable $item

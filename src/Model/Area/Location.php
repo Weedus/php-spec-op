@@ -9,10 +9,9 @@
 namespace Weedus\PhpSpecOps\Model\Area;
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\ValueObjects\Arraylizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
 
-class Location implements Equalizeable, Arraylizeable
+class Location implements Equalizeable
 {
     /** @var int */
     private $x;
@@ -63,16 +62,6 @@ class Location implements Equalizeable, Arraylizeable
         return $this->z;
     }
 
-
-    /** @return array */
-    public function toArray(): array
-    {
-        return [
-            'x' => $this->x,
-            'y' => $this->y,
-            'z' => $this->z,
-        ];
-    }
 
     /**
      * @param Equalizeable $item

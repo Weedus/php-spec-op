@@ -19,11 +19,6 @@ class Body extends AbstractValueObject implements BodyInterface
     /** @var ArmorChestInterface */
     protected $chest;
 
-    /** @return array */
-    public function toArray(): array
-    {
-        return ['chest' => $this->chest->toArray()];
-    }
 
     public function getChest(): ArmorChestInterface
     {

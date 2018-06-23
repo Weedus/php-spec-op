@@ -6,15 +6,15 @@
  * Time: 15:25
  */
 
-namespace Weedus\PhpSpecOps\ValueObjects\Items\Support;
+namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
 
 use Assert\Assertion;
 use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
-use Weedus\PhpSpecOps\ValueObjects\Items\AbstractItem;
-use Weedus\PhpSpecOps\ValueObjects\Items\ItemType;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
 
 class AbstractSupportItem extends AbstractItem implements SupportItemInterface
 {
@@ -55,13 +55,6 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
     public function getRange(): Range
     {
         return $this->range;
-    }
-
-    public function toArray(): array
-    {
-        return [
-                'text' => $this->text,
-            ] + parent::toArray();
     }
 
     public function equals(Equalizeable $item): bool

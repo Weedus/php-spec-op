@@ -46,13 +46,6 @@ abstract class AbstractHuman extends AbstractCharacter implements HumanInterface
     }
 
 
-    public function toArray(): array
-    {
-        return [
-                'inventory' => $this->inventory
-            ] + parent::toArray();
-    }
-
     public function getBrain(): BrainInterface
     {
         return $this->brain;

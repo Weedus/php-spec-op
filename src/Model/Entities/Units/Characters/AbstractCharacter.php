@@ -91,17 +91,6 @@ abstract class AbstractCharacter extends AbstractUnit implements CharacterInterf
         $this->body = $body;
     }
 
-    public function toArray(): array
-    {
-        return [
-                'max_health' => $this->maxHealth,
-                'health' => $this->health,
-                'power' => $this->power,
-                'sight' => $this->sight->toArray(),
-                'body' => $this->body->toArray()
-            ] + parent::toArray();
-    }
-
     public function isDead(): bool
     {
         return $this->health <= 0;

@@ -13,7 +13,7 @@ use Weedus\PhpSpecOps\Model\ValueObjects\Body\Body;
 use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Head\ArmorLegsInterface;
-use Weedus\PhpSpecOps\ValueObjects\Items\Weapon\WeaponInterface;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\WeaponInterface;
 
 class HumanBody extends Body implements HumanBodyInterface
 {
@@ -90,17 +90,6 @@ class HumanBody extends Body implements HumanBodyInterface
     public function setLegs(ArmorLegsInterface $legs): void
     {
         $this->legs = $legs;
-    }
-
-
-    public function toArray(): array
-    {
-        return [
-                'left_hand' => $this->leftHand->toArray(),
-                'right_hand' => $this->rightHand->toArray(),
-                'head' => $this->head->toArray(),
-                'legs' => $this->legs->toArray(),
-            ] + parent::toArray();
     }
 
     public function equals(Equalizeable $item): bool

@@ -9,9 +9,8 @@
 namespace Weedus\PhpSpecOps\Model\Entities;
 
 use PascalDeVink\ShortUuid\ShortUuid;
-use Weedus\PhpSpecOps\Model\ValueObjects\Arraylizeable;
 
-interface EntityInterface extends Arraylizeable
+interface EntityInterface
 {
     /**
      * @return ShortUuid

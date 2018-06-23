@@ -6,7 +6,7 @@
  * Time: 12:45
  */
 
-namespace Weedus\PhpSpecOps\ValueObjects\Items;
+namespace Weedus\PhpSpecOps\Model\ValueObjects\Items;
 
 
 use Assert\Assertion;
@@ -47,25 +47,30 @@ abstract class AbstractItem extends AbstractValueObject implements ItemInterface
         return $this->type;
     }
 
-    /** @return array */
-    public function toArray(): array
-    {
-        return [
-            'name' => $this->name,
-            'type' => $this->type->toArray()
-        ];
-    }
-
     /**
      * @param Equalizeable $item
      * @return bool
-     * @throws \Assert\AssertionFailedException
      */
     public function equals(Equalizeable $item): bool
     {
-        Assertion::isInstanceOf($item, self::class);
-        /** @var AbstractItem $item */
+        if(!($item instanceof AbstractItem)){
+            return false;
+        }
         return $this->name === $item->name
-            && $this->type->equals($item->type);
+            && $this->equalsType($item);
     }
+
+    /**
+     * @param ItemInterface $item
+     * @return bool
+     */
+    public function equalsType(ItemInterface $item): bool
+    {
+        if(!($item instanceof AbstractItem)){
+            return false;
+        }
+        return $this->type->equals($item->type);
+    }
+
+
 }
