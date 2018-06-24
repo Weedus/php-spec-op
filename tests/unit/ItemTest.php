@@ -2,7 +2,6 @@
 
 namespace Weedus\Tests\PhpSpecOps\unit;
 
-use Weedus\Exceptions\NotYetImplementedException;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
 use Weedus\PhpSpecOps\Tests\Helper\TestItem;
