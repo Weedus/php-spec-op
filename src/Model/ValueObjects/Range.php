@@ -22,31 +22,16 @@ final class Range extends AbstractValueObject
 {
     use OptionsObjectTrait;
 
-    const ZERO = 'zero';
-    const LOW = 'low';
-    const MEDIUM_LOW = 'medium_low';
-    const MEDIUM = 'medium';
-    const MEDIUM_HIGH = 'medium_high';
-    const HIGH = 'high';
+    const ZERO = 0;
+    const LOW = 1;
+    const MEDIUM_LOW = 2;
+    const MEDIUM = 4;
+    const MEDIUM_HIGH = 5;
+    const HIGH = 6;
 
     public function isReachable(Distance $distance)
     {
         $amount = $distance->getSteps();
-        switch($this->value){
-            case self::ZERO:
-                return $amount === 0;
-            case self::LOW:
-                return $amount <= 1;
-            case self::MEDIUM_LOW:
-                return $amount <= 2;
-            case self::MEDIUM:
-                return $amount <= 4;
-            case self::MEDIUM_HIGH:
-                return $amount <= 5;
-            case self::HIGH:
-                return $amount <= 6;
-            default:
-                return false;
-        }
+        return $amount <= $this->value;
     }
 }

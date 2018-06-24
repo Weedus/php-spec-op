@@ -59,13 +59,4 @@ class LocationTest extends \Codeception\Test\Unit
         $this->assertFalse($this->location->equals($fail3));
         $this->assertTrue($this->location->equals($success));
     }
-
-    /**
-     * @depends testCreation
-     */
-    public function testToArray()
-    {
-        $array = $this->location->toArray();
-        $this->assertEquals(['x' => 1, 'y' => 1, 'z' => 0], $array);
-    }
 }

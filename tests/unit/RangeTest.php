@@ -28,12 +28,12 @@ class RangeTest extends \Codeception\Test\Unit
         $r4 = Range::MEDIUM_HIGH();
         $r5 = Range::HIGH();
 
-        $this->assertEquals('zero',$r0->getValue());
-        $this->assertEquals('low',$r1->getValue());
-        $this->assertEquals('medium_low',$r2->getValue());
-        $this->assertEquals('medium',$r3->getValue());
-        $this->assertEquals('medium_high',$r4->getValue());
-        $this->assertEquals('high',$r5->getValue());
+        $this->assertEquals(0,$r0->getValue());
+        $this->assertEquals(1,$r1->getValue());
+        $this->assertEquals(2,$r2->getValue());
+        $this->assertEquals(4,$r3->getValue());
+        $this->assertEquals(5,$r4->getValue());
+        $this->assertEquals(6,$r5->getValue());
 
         $d0 = Distance::create(0,0);
         $d1 = Distance::create(1,0);
