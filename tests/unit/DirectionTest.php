@@ -1,4 +1,6 @@
-<?php namespace Weedus\Tests\PhpSpecOps\unit;
+<?php
+
+namespace Weedus\Tests\PhpSpecOps\unit;
 
 use Weedus\PhpSpecOps\Model\Area\Location;
 use Weedus\PhpSpecOps\Model\ValueObjects\Direction;

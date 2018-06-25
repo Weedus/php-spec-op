@@ -1,6 +1,6 @@
-<?php namespace Weedus\Tests\PhpSpecOps\unit;
+<?php
 
-use Weedus\Exceptions\NotYetImplementedException;
+namespace Weedus\Tests\PhpSpecOps\unit;
 
 class BodyTest extends \Codeception\Test\Unit
 {
@@ -8,7 +8,7 @@ class BodyTest extends \Codeception\Test\Unit
      * @var \UnitTester
      */
     protected $tester;
-
+    
     protected function _before()
     {
     }
@@ -20,6 +20,6 @@ class BodyTest extends \Codeception\Test\Unit
     // tests
     public function testSomeFeature()
     {
-        throw new NotYetImplementedException();
+
     }
 }

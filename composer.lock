@@ -287,16 +287,16 @@
         },
         {
             "name": "weedus/collection",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/weedus/collection.git",
-                "reference": "8bbf1a7914d36a559ed8c975ff36fb10b845dd38"
+                "reference": "4f7285cbfe37fbff241df96a40425bace9e021be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/weedus/collection/zipball/8bbf1a7914d36a559ed8c975ff36fb10b845dd38",
-                "reference": "8bbf1a7914d36a559ed8c975ff36fb10b845dd38",
+                "url": "https://api.github.com/repos/weedus/collection/zipball/4f7285cbfe37fbff241df96a40425bace9e021be",
+                "reference": "4f7285cbfe37fbff241df96a40425bace9e021be",
                 "shasum": ""
             },
             "require": {
@@ -310,7 +310,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Weedus\\": "src/"
+                    "Weedus\\Collection\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -324,20 +324,20 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2018-06-17T12:37:08+00:00"
+            "time": "2018-06-19T23:30:02+00:00"
         },
         {
             "name": "weedus/exceptions",
-            "version": "0.0.2",
+            "version": "0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/weedus/exceptions.git",
-                "reference": "7e81f4f8517d1f8c300e1df385e33b7c955b1c75"
+                "reference": "3db801810293e28f3806a5698074666e2efda098"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/weedus/exceptions/zipball/7e81f4f8517d1f8c300e1df385e33b7c955b1c75",
-                "reference": "7e81f4f8517d1f8c300e1df385e33b7c955b1c75",
+                "url": "https://api.github.com/repos/weedus/exceptions/zipball/3db801810293e28f3806a5698074666e2efda098",
+                "reference": "3db801810293e28f3806a5698074666e2efda098",
                 "shasum": ""
             },
             "require": {
@@ -346,7 +346,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Weedus\\": "src/"
+                    "Weedus\\Exceptions\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -360,20 +360,20 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2018-06-17T15:10:59+00:00"
+            "time": "2018-06-19T22:47:45+00:00"
         },
         {
             "name": "weedus/specification",
-            "version": "1.0.6",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/weedus/specification.git",
-                "reference": "38c55871d4bb25fab00d04a6755acd44d6219f2a"
+                "reference": "26ed436617861513be0e08a31dcee39c7ef1eec0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/weedus/specification/zipball/38c55871d4bb25fab00d04a6755acd44d6219f2a",
-                "reference": "38c55871d4bb25fab00d04a6755acd44d6219f2a",
+                "url": "https://api.github.com/repos/weedus/specification/zipball/26ed436617861513be0e08a31dcee39c7ef1eec0",
+                "reference": "26ed436617861513be0e08a31dcee39c7ef1eec0",
                 "shasum": ""
             },
             "require": {
@@ -386,7 +386,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Weedus\\": "src/"
+                    "Weedus\\Specification\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -400,7 +400,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2018-06-17T08:15:03+00:00"
+            "time": "2018-06-19T23:14:31+00:00"
         }
     ],
     "packages-dev": [
