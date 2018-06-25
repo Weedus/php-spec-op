@@ -9,9 +9,9 @@
 namespace Weedus\PhpSpecOps\Model\Area;
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
+use Weedus\PhpSpecOps\Model\Equalizeable;
 
-class Location implements Equalizeable
+final class Location implements Equalizeable
 {
     /** @var int */
     private $x;

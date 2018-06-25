@@ -2,9 +2,10 @@
 
 namespace Weedus\Tests\PhpSpecOps\unit;
 
+
 use Weedus\PhpSpecOps\Exceptions\DistanceCalculationFailedException;
+use Weedus\PhpSpecOps\Model\Area\Distance;
 use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\ValueObjects\Distance;
 
 class DistanceTest extends \Codeception\Test\Unit
 {

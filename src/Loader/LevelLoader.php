@@ -10,7 +10,7 @@ namespace Weedus\PhpSpecOps\Loader;
 
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\LevelConfiguration;
+use Weedus\PhpSpecOps\Model\Configuration\LevelConfiguration;
 
 class LevelLoader
 {

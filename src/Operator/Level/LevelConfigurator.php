@@ -10,7 +10,7 @@ namespace Weedus\PhpSpecOps\Operator\Level;
 
 
 use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\LevelConfiguration;
+use Weedus\PhpSpecOps\Model\Configuration\LevelConfiguration;
 
 class LevelConfigurator
 {

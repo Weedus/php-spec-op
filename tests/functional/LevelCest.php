@@ -26,7 +26,7 @@ class LevelCest
     // tests
     public function tryToTest(\FunctionalTester $I)
     {
-        throw new NotYetImplementedException();
+        throw new NotYetImplementedException(__METHOD__);
 
     }
 }

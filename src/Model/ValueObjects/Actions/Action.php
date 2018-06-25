@@ -7,8 +7,8 @@
  */
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Actions;
-use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
+
+use Weedus\PhpSpecOps\Model\Area\Direction;
 
 
 /**
@@ -41,7 +41,6 @@ class Action extends AbstractAction
      * @param $name
      * @param $arguments
      * @return Action
-     * @throws \Assert\AssertionFailedException
      */
     public static function __callStatic($name, $arguments)
     {
@@ -50,7 +49,6 @@ class Action extends AbstractAction
             $direction = $arguments[0];
         }
         /** @var Direction $direction */
-        Assertion::notInArray($direction->getValue(),[Direction::DOWN,Direction::UP]);
         return new static(constant('self::'.$name), $direction);
     }
 

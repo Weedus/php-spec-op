@@ -6,7 +6,7 @@
  * Time: 00:26
  */
 
-namespace Weedus\Specifications\Map;
+namespace Weedus\PhpSpecOps\Specifications\Map;
 
 
 use Weedus\PhpSpecOps\Model\Area\Field;

@@ -9,8 +9,8 @@
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon;
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Model\Area\Range;
+use Weedus\PhpSpecOps\Model\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
 
@@ -34,6 +34,11 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
         $this->maxRange = $maxRange;
     }
 
+    /**
+     * @param Equalizeable $item
+     * @return bool
+     * @throws \Assert\AssertionFailedException
+     */
     public function equals(Equalizeable $item): bool
     {
         Assertion::isInstanceOf($item, self::class);

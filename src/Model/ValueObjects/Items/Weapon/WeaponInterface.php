@@ -9,7 +9,7 @@
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon;
 
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Model\Area\Range;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 
 interface WeaponInterface extends ItemInterface

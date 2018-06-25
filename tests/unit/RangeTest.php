@@ -1,7 +1,8 @@
 <?php namespace Weedus\Tests\PhpSpecOps\unit;
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Distance;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+
+use Weedus\PhpSpecOps\Model\Area\Distance;
+use Weedus\PhpSpecOps\Model\Area\Range;
 
 class RangeTest extends \Codeception\Test\Unit
 {

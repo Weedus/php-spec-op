@@ -9,8 +9,8 @@
 namespace Weedus\PhpSpecOps\Builder;
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\ConfigurationInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\LevelConfiguration;
+use Weedus\PhpSpecOps\Model\Configuration\ConfigurationInterface;
+use Weedus\PhpSpecOps\Model\Configuration\LevelConfiguration;
 use Weedus\PhpSpecOps\Operator\Level\Level;
 
 abstract class LevelBuilder implements BuilderInterface
