@@ -9,8 +9,7 @@
 namespace Weedus\PhpSpecOps\Tests\Helper;
 
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\AbstractSupportItem;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\SupportItemInterface;
 
-class TestSupportItem extends AbstractSupportItem implements SupportItemInterface
+class TestSupportItem extends AbstractSupportItem
 {
 }

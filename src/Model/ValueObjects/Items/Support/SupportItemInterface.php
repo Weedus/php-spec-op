@@ -8,17 +8,17 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
 
-use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
+use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 
 interface SupportItemInterface extends ItemInterface
 {
     /**
-     * @param CharacterEffectInterface $caster
-     * @param CharacterEffectInterface $target
+     * @param Field $caster
+     * @param Field $target
      */
-    public function perform(CharacterEffectInterface $caster, CharacterEffectInterface $target): void;
+    public function perform(Field $caster, Field $target): void;
 
     /**
      * @return string

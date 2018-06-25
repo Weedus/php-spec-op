@@ -9,7 +9,9 @@
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
 
 use Assert\Assertion;
+use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
+use Weedus\PhpSpecOps\Model\ValueObjects\Distance;
 use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
@@ -59,19 +61,22 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
 
     public function equals(Equalizeable $item): bool
     {
-        Assertion::isInstanceOf($item, self::class);
-        /** @var AbstractSupportItem $item */
+        if(!($item instanceof AbstractSupportItem)){
+            return false;
+        }
         return $this->text === $item->text
             && parent::equals($item);
     }
 
     /**
-     * @param CharacterEffectInterface $caster
-     * @param CharacterEffectInterface $target
+     * @param Field $caster
+     * @param Field $target
+     * @throws \Weedus\PhpSpecOps\Exceptions\DistanceCalculationFailedException
      */
-    public function perform(CharacterEffectInterface $caster, CharacterEffectInterface $target): void
+    public function perform(Field $caster, Field $target): void
     {
-        if ($target->isInRange($caster, $this->range)) {
+        $distance = $caster->getDistanceTo($target);
+        if ($this->range->isReachable($distance)) {
             $this->effect->perform($target);
         }
     }
