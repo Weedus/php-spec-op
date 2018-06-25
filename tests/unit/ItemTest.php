@@ -3,10 +3,10 @@
 namespace Weedus\Tests\PhpSpecOps\unit;
 
 use Weedus\Exceptions\NotYetImplementedException;
+use Weedus\PhpSpecOps\Model\Area\Range;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\WeaponInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Tests\Helper\TestItem;
 use Weedus\PhpSpecOps\Tests\Helper\TestWeapon;
 

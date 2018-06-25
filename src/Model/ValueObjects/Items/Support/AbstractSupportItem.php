@@ -8,12 +8,9 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
 
-use Assert\Assertion;
 use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Distance;
-use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Model\Area\Range;
+use Weedus\PhpSpecOps\Model\Equalizeable;
 use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;

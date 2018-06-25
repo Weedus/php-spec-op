@@ -8,9 +8,10 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Actions;
 
+
+use Weedus\PhpSpecOps\Model\Area\Direction;
+use Weedus\PhpSpecOps\Model\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
-use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
-use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
 
 abstract class AbstractAction extends AbstractValueObject implements ActionInterface
 {

@@ -11,7 +11,7 @@ namespace Weedus\PhpSpecOps\Operator\Effects\Health;
 
 use Assert\Assertion;
 use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterEffectInterface;
+use Weedus\PhpSpecOps\Model\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
 

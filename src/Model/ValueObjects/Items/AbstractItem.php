@@ -8,10 +8,8 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items;
 
-
-use Assert\Assertion;
+use Weedus\PhpSpecOps\Model\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
-use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
 
 abstract class AbstractItem extends AbstractValueObject implements ItemInterface
 {

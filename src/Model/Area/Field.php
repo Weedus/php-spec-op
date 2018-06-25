@@ -9,10 +9,8 @@
 namespace Weedus\PhpSpecOps\Model\Area;
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
-use Weedus\PhpSpecOps\Model\Entities\Units\Places\PlaceInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
-use Weedus\PhpSpecOps\Model\ValueObjects\Distance;
+use Weedus\PhpSpecOps\Model\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Model\Units\Places\PlaceInterface;
 
 class Field
 {

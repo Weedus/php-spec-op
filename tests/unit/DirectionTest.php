@@ -2,9 +2,10 @@
 
 namespace Weedus\Tests\PhpSpecOps\unit;
 
+
+use Weedus\PhpSpecOps\Model\Area\Direction;
+use Weedus\PhpSpecOps\Model\Area\Distance;
 use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
-use Weedus\PhpSpecOps\Model\ValueObjects\Distance;
 
 class DirectionTest extends \Codeception\Test\Unit
 {
@@ -80,6 +81,10 @@ class DirectionTest extends \Codeception\Test\Unit
         $this->assertEquals(Direction::NORTH_EAST, Direction::createByLocations($start, $end3)->getValue());
         $this->assertEquals(Direction::NONE, Direction::createByLocations($start, $end4)->getValue());
     }
+
+    /**
+     * @throws \Weedus\PhpSpecOps\Exceptions\DistanceCalculationFailedException
+     */
     public function testCreationByDistance()
     {
         $start = Location::create(0,0,0);

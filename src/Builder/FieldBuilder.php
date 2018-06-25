@@ -12,8 +12,8 @@ namespace Weedus\PhpSpecOps\Builder;
 use Assert\Assertion;
 use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\ConfigurationInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\FieldConfiguration;
+use Weedus\PhpSpecOps\Model\Configuration\ConfigurationInterface;
+use Weedus\PhpSpecOps\Model\Configuration\FieldConfiguration;
 
 abstract class FieldBuilder implements BuilderInterface
 {

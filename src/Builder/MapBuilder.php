@@ -12,9 +12,9 @@ namespace Weedus\PhpSpecOps\Builder;
 use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\Area\Location;
 use Weedus\PhpSpecOps\Model\Area\Map;
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\ConfigurationInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\FieldConfiguration;
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\LevelConfiguration;
+use Weedus\PhpSpecOps\Model\Configuration\ConfigurationInterface;
+use Weedus\PhpSpecOps\Model\Configuration\FieldConfiguration;
+use Weedus\PhpSpecOps\Model\Configuration\LevelConfiguration;
 
 abstract class MapBuilder implements BuilderInterface
 {

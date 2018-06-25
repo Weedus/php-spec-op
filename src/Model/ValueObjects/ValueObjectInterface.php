@@ -9,6 +9,8 @@
 namespace Weedus\PhpSpecOps\Model\ValueObjects;
 
 
+use Weedus\PhpSpecOps\Model\Equalizeable;
+
 interface ValueObjectInterface extends Equalizeable
 {
 

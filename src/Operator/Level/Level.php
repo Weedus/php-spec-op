@@ -11,7 +11,7 @@ namespace Weedus\PhpSpecOps\Operator\Level;
 
 
 use Weedus\PhpSpecOps\Model\Area\Map;
-use Weedus\PhpSpecOps\Model\Entities\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Model\Units\Characters\CharacterInterface;
 
 final class Level
 {

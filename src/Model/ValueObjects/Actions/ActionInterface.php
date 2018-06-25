@@ -8,7 +8,8 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Actions;
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Direction;
+
+use Weedus\PhpSpecOps\Model\Area\Direction;
 
 interface ActionInterface
 {

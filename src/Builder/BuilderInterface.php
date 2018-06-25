@@ -8,7 +8,7 @@
 
 namespace Weedus\PhpSpecOps\Builder;
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Configuration\ConfigurationInterface;
+use Weedus\PhpSpecOps\Model\Configuration\ConfigurationInterface;
 
 interface BuilderInterface
 {

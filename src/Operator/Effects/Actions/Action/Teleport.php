@@ -12,7 +12,7 @@ namespace Weedus\PhpSpecOps\Operator\Effects\Actions\Action;
 use Assert\Assertion;
 use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\Entities\Units\Placeables\Walkables\WalkableInterface;
+use Weedus\PhpSpecOps\Model\Units\Placeables\Walkables\WalkableInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
 

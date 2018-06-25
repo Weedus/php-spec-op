@@ -10,8 +10,8 @@ namespace Weedus\PhpSpecOps\Model\Area;
 
 use Weedus\Collection\SpecificationCollectionInterface;
 use Weedus\Specification\SpecificationInterface;
-use Weedus\Specifications\Map\AlwaysTrue;
-use Weedus\Specifications\Map\HasCharacter;
+use Weedus\PhpSpecOps\Specifications\AlwaysTrue;
+use Weedus\PhpSpecOps\Specifications\Map\HasCharacter;
 
 class Map
 {
