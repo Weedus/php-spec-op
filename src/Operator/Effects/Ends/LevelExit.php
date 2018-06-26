@@ -27,7 +27,7 @@ class LevelExit extends AbstractEffect
 
     public function perform(Field $caster, ?Field $target = null): void
     {
-        throw new NotYetImplementedException(__CLASS__.'->'.__METHOD__);
+        throw new NotYetImplementedException(__CLASS__ . '->' . __METHOD__);
     }
 
 

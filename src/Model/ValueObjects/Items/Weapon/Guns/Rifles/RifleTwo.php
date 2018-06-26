@@ -8,8 +8,8 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\Guns\Rifles;
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\AbstractWeapon;
+use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 
 class RifleTwo extends AbstractWeapon
 {

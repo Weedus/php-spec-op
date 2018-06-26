@@ -10,7 +10,6 @@ namespace Weedus\PhpSpecOps\Model\Units\Places\Walks;
 
 
 use PascalDeVink\ShortUuid\ShortUuid;
-use Weedus\PhpSpecOps\Operator\Effects\Ends\LevelExit;
 
 class ExitPoint extends Ground
 {

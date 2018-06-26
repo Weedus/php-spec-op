@@ -11,7 +11,6 @@ namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
 
 use Weedus\PhpSpecOps\Model\OptionsObjectTrait;
 use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\ArmorType;
 
 /**
  * Class SupportItemType

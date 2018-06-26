@@ -11,9 +11,9 @@ namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
 use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\Area\Range;
 use Weedus\PhpSpecOps\Model\Equalizeable;
-use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
+use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
 
 class AbstractSupportItem extends AbstractItem implements SupportItemInterface
 {
@@ -27,7 +27,7 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
     protected $preparationTime;
     /** @var int */
     protected $duration;
-    /** @var SupportItemType  */
+    /** @var SupportItemType */
     protected $supportItemType;
 
     public function __construct(
@@ -62,7 +62,7 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
 
     public function equals(Equalizeable $item): bool
     {
-        if(!($item instanceof AbstractSupportItem)){
+        if (!($item instanceof AbstractSupportItem)) {
             return false;
         }
         return $this->text === $item->text

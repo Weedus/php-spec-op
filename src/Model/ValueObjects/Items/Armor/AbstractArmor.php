@@ -19,7 +19,7 @@ abstract class AbstractArmor extends AbstractItem implements ArmorInterface
     /** @var ArmorType */
     protected $armorType;
 
-    /** @var int  */
+    /** @var int */
     protected $defense;
 
     public function __construct(string $name, int $defense, ArmorType $armorType)
@@ -42,7 +42,7 @@ abstract class AbstractArmor extends AbstractItem implements ArmorInterface
 
     public function equals(Equalizeable $item): bool
     {
-        if(!($item instanceof ArmorInterface)){
+        if (!($item instanceof ArmorInterface)) {
             return false;
         }
         return $this->equalsArmorType($item) && parent::equals($item);

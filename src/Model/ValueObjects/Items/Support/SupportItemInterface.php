@@ -10,7 +10,6 @@ namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
 
 use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\Area\Range;
-use Weedus\PhpSpecOps\Model\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 
 interface SupportItemInterface extends ItemInterface

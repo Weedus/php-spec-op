@@ -45,11 +45,11 @@ class Action extends AbstractAction
     public static function __callStatic($name, $arguments)
     {
         $direction = $arguments;
-        if(is_array($arguments)){
+        if (is_array($arguments)) {
             $direction = $arguments[0];
         }
         /** @var Direction $direction */
-        return new static(constant('self::'.$name), $direction);
+        return new static(constant('self::' . $name), $direction);
     }
 
 

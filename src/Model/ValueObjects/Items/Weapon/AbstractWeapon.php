@@ -8,7 +8,6 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon;
 
-use Assert\Assertion;
 use Weedus\PhpSpecOps\Model\Area\Range;
 use Weedus\PhpSpecOps\Model\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
@@ -24,7 +23,7 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
     protected $minRange;
     /** @var Range */
     protected $maxRange;
-    /** @var WeaponType  */
+    /** @var WeaponType */
     protected $weaponType;
 
     public function __construct(string $name, int $power, int $defense, Range $minRange, Range $maxRange, WeaponType $weaponType)
@@ -43,7 +42,7 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
      */
     public function equals(Equalizeable $item): bool
     {
-        if(!($item instanceof AbstractWeapon)){
+        if (!($item instanceof AbstractWeapon)) {
             return false;
         }
         return $this->minRange->equals($item->minRange)

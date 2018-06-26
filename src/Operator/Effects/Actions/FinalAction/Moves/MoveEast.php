@@ -15,6 +15,6 @@ class MoveEast extends AbstractMove
 {
     protected function newLocation(Location $location): Location
     {
-        return Location::create($location->getX(),$location->getY() + 1,$location->getZ());
+        return Location::create($location->getX(), $location->getY() + 1, $location->getZ());
     }
 }
