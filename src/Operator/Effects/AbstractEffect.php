@@ -14,8 +14,8 @@ abstract class AbstractEffect implements EffectInterface
     public static function create($value = null)
     {
         if ($value === null) {
-            return static();
+            return new static();
         }
-        return static($value);
+        return new static($value);
     }
 }

@@ -12,5 +12,9 @@ use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 
 interface ArmorInterface extends ItemInterface
 {
+    public function getArmorType(): ArmorType;
 
+    public function equalsArmorType(ArmorInterface $item): bool;
+
+    public function getDefense(): int;
 }

@@ -9,7 +9,16 @@
 namespace Weedus\PhpSpecOps\Tests\Helper;
 
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\AbstractSupportItem;
+use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
 
 class TestSupportItem extends AbstractSupportItem
 {
+    /**
+     * @return EffectInterface
+     */
+    public function getEffect(): EffectInterface
+    {
+        return $this->effect;
+    }
+
 }

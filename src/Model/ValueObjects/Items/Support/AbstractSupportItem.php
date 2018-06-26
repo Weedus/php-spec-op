@@ -27,6 +27,8 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
     protected $preparationTime;
     /** @var int */
     protected $duration;
+    /** @var SupportItemType  */
+    protected $supportItemType;
 
     public function __construct(
         string $name,
@@ -34,7 +36,8 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
         EffectInterface $effect,
         Range $range,
         int $preparationTime,
-        int $duration
+        int $duration,
+        SupportItemType $supportItemType
     )
     {
         parent::__construct($name, ItemType::SUPPORT());
@@ -43,6 +46,7 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
         $this->range = $range;
         $this->preparationTime = $preparationTime;
         $this->duration = $duration;
+        $this->supportItemType = $supportItemType;
     }
 
 
@@ -62,6 +66,7 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
             return false;
         }
         return $this->text === $item->text
+            && $this->equalsSupportItemType($item)
             && parent::equals($item);
     }
 
@@ -92,5 +97,22 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
     public function getDuration(): int
     {
         return $this->duration;
+    }
+
+    /**
+     * @return SupportItemType
+     */
+    public function getSupportItemType(): SupportItemType
+    {
+        return $this->supportItemType;
+    }
+
+    /**
+     * @param SupportItemInterface $item
+     * @return bool
+     */
+    public function equalsSupportItemType(SupportItemInterface $item): bool
+    {
+        return $this->supportItemType->equals($item->getSupportItemType());
     }
 }

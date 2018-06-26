@@ -8,9 +8,10 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\Potion\Heal;
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
-use Weedus\PhpSpecOps\Operator\Effects\Health\Heal;
+
+use Weedus\PhpSpecOps\Model\Area\Range;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\AbstractSupportItem;
+use Weedus\PhpSpecOps\Operator\Effects\Health\Heal;
 
 abstract class AbstractHealPotion extends AbstractSupportItem
 {
