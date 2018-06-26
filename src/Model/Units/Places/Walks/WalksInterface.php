@@ -17,16 +17,20 @@ interface WalksInterface extends PlaceInterface
      * @return null|EffectInterface
      */
     public function getArriveEffect(): ?EffectInterface;
+
     /**
      * @return null|EffectInterface
      */
     public function getLeaveEffect(): ?EffectInterface;
+
     /**
      * @return null|EffectInterface
      */
     public function getStandOnEffect(): ?EffectInterface;
 
     public function hasArriveEffect(): bool;
+
     public function hasStandOnEffect(): bool;
+
     public function hasLeaveEffect(): bool;
 }

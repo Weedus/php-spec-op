@@ -20,6 +20,6 @@ class SpecOp extends AbstractHuman
         $this->sight = Range::HIGH();
         $this->maxHealth = 35;
         $this->power = 3;
-        parent::__construct($name??'SpecOp', $id);
+        parent::__construct($name ?? 'SpecOp', $id);
     }
 }

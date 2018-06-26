@@ -8,8 +8,8 @@
 
 namespace Weedus\PhpSpecOps\Model\Units\Characters;
 
-use Weedus\PhpSpecOps\Model\Units\UnitInterface;
 use Weedus\PhpSpecOps\Model\Body\BodyInterface;
+use Weedus\PhpSpecOps\Model\Units\UnitInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Range;
 
 interface CharacterInterface extends UnitInterface

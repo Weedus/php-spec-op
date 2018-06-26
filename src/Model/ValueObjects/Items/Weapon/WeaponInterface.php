@@ -20,6 +20,7 @@ interface WeaponInterface extends ItemInterface
     public function getWeaponType(): WeaponType;
 
     public function equalsWeaponType(WeaponInterface $weapon): bool;
+
     /**
      * @return int
      */

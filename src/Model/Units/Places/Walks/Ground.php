@@ -14,9 +14,9 @@ use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
 
 class Ground extends AbstractPlace implements WalksInterface
 {
-    public function __construct(?string $name,?ShortUuid $id)
+    public function __construct(?string $name, ?ShortUuid $id)
     {
-        parent::__construct($name??'ground', $id);
+        parent::__construct($name ?? 'ground', $id);
     }
 
     public function isWalkable(): bool

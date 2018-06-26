@@ -14,5 +14,6 @@ use Weedus\PhpSpecOps\Model\Area\Direction;
 interface ActionInterface
 {
     public function getAction(): string;
+
     public function getDirection(): Direction;
 }

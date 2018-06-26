@@ -31,7 +31,7 @@ abstract class AbstractStanding extends AbstractEffect
     {
         $place = $field->getPlace();
         /** @var WalksInterface $place */
-        if($place->hasStandOnEffect()){
+        if ($place->hasStandOnEffect()) {
             $place->getStandOnEffect()->perform($field);
         }
     }

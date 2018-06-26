@@ -39,7 +39,7 @@ abstract class AbstractAction extends AbstractValueObject implements ActionInter
      */
     public function equals(Equalizeable $item): bool
     {
-        if(!($item instanceof AbstractAction)){
+        if (!($item instanceof AbstractAction)) {
             return false;
         }
         return $this->action === $item->action
