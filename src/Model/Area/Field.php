@@ -84,7 +84,7 @@ class Field
     public function setCharacter(?CharacterInterface $character): void
     {
         Assertion::true($this->place->isWalkable());
-        if($character !== null){
+        if ($character !== null) {
             $character->setField($this);
         }
         $this->character = $character;
@@ -122,7 +122,7 @@ class Field
      */
     public function getDirectionTo(Field $field): Direction
     {
-        if(!$this->hasSameHeight($field)){
+        if (!$this->hasSameHeight($field)) {
             return null;
         }
         return Direction::createByLocations($this->location, $field->location);
@@ -135,7 +135,7 @@ class Field
      */
     public function getDistanceTo(Field $field)
     {
-        if(!$this->hasSameHeight($field)){
+        if (!$this->hasSameHeight($field)) {
             return null;
         }
         return Distance::createByLocations($this->location, $field->location);

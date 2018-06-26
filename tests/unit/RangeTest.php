@@ -29,21 +29,21 @@ class RangeTest extends \Codeception\Test\Unit
         $r4 = Range::MEDIUM_HIGH();
         $r5 = Range::HIGH();
 
-        $this->assertEquals(0,$r0->getValue());
-        $this->assertEquals(1,$r1->getValue());
-        $this->assertEquals(2,$r2->getValue());
-        $this->assertEquals(4,$r3->getValue());
-        $this->assertEquals(5,$r4->getValue());
-        $this->assertEquals(6,$r5->getValue());
+        $this->assertEquals(0, $r0->getValue());
+        $this->assertEquals(1, $r1->getValue());
+        $this->assertEquals(2, $r2->getValue());
+        $this->assertEquals(4, $r3->getValue());
+        $this->assertEquals(5, $r4->getValue());
+        $this->assertEquals(6, $r5->getValue());
 
-        $d0 = Distance::create(0,0);
-        $d1 = Distance::create(1,0);
-        $d2 = Distance::create(2,0);
-        $d3 = Distance::create(3,0);
-        $d4 = Distance::create(4,0);
-        $d5 = Distance::create(5,0);
-        $d6 = Distance::create(6,0);
-        $d7 = Distance::create(7,0);
+        $d0 = Distance::create(0, 0);
+        $d1 = Distance::create(1, 0);
+        $d2 = Distance::create(2, 0);
+        $d3 = Distance::create(3, 0);
+        $d4 = Distance::create(4, 0);
+        $d5 = Distance::create(5, 0);
+        $d6 = Distance::create(6, 0);
+        $d7 = Distance::create(7, 0);
 
         $this->assertTrue($r0->isReachable($d0));
         $this->assertFalse($r0->isReachable($d1));

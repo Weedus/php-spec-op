@@ -26,7 +26,7 @@ class LevelLoader
         $path = $this->path . $levelName . '.php';
         Assertion::file($path);
         $config = require $path;
-        Assertion::isInstanceOf($config,LevelConfiguration::class);
+        Assertion::isInstanceOf($config, LevelConfiguration::class);
         return $config;
     }
 

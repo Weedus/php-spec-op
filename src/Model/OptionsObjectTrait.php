@@ -51,7 +51,7 @@ trait OptionsObjectTrait
      */
     public function equals(Equalizeable $item): bool
     {
-        if(!($item instanceof $this)){
+        if (!($item instanceof $this)) {
             return false;
         }
         /** @var OptionsObjectTrait $item */

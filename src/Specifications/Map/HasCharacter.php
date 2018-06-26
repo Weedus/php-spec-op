@@ -17,7 +17,7 @@ class HasCharacter implements SpecificationInterface
 
     public function isSatisfiedBy($item): bool
     {
-        if(!($item instanceof Field)){
+        if (!($item instanceof Field)) {
             return false;
         }
         return $item->hasCharacter();

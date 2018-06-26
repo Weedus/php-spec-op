@@ -40,15 +40,15 @@ final class Direction implements Equalizeable
 
 
     private static $normalizedDirections = [
-        self::NORTH => ['x'=>1,'y'=>0],
-        self::NORTH_EAST => ['x'=>1,'y'=>1],
-        self::EAST => ['x'=>0,'y'=>1],
-        self::SOUTH_EAST => ['x'=>-1,'y'=>1],
-        self::SOUTH => ['x'=>-1,'y'=>0],
-        self::SOUTH_WEST => ['x'=>-1,'y'=>-1],
-        self::WEST => ['x'=>0,'y'=>-1],
-        self::NORTH_WEST => ['x'=>1,'y'=>-1],
-        self::NONE => ['x'=>0,'y'=>0]
+        self::NORTH => ['x' => 1, 'y' => 0],
+        self::NORTH_EAST => ['x' => 1, 'y' => 1],
+        self::EAST => ['x' => 0, 'y' => 1],
+        self::SOUTH_EAST => ['x' => -1, 'y' => 1],
+        self::SOUTH => ['x' => -1, 'y' => 0],
+        self::SOUTH_WEST => ['x' => -1, 'y' => -1],
+        self::WEST => ['x' => 0, 'y' => -1],
+        self::NORTH_WEST => ['x' => 1, 'y' => -1],
+        self::NONE => ['x' => 0, 'y' => 0]
     ];
 
     /**
@@ -58,14 +58,14 @@ final class Direction implements Equalizeable
      */
     public static function createByLocations(Location $start, Location $goal)
     {
-        $normalized = self::getNormalizedDirection($start,$goal);
+        $normalized = self::getNormalizedDirection($start, $goal);
         $readable = self::normalizedToHuman($normalized);
         return self::create($readable);
     }
 
     public static function createByDistance(Distance $distance)
     {
-        $normalized = self::normalize($distance->getX(),$distance->getY());
+        $normalized = self::normalize($distance->getX(), $distance->getY());
         $readable = self::normalizedToHuman($normalized);
         return self::create($readable);
     }
@@ -76,8 +76,8 @@ final class Direction implements Equalizeable
      */
     public static function normalizedToHuman(array $normalized)
     {
-        foreach(self::$normalizedDirections as $direction => $norm){
-            if($normalized['x'] === $norm['x'] && $normalized['y'] === $norm['y']){
+        foreach (self::$normalizedDirections as $direction => $norm) {
+            if ($normalized['x'] === $norm['x'] && $normalized['y'] === $norm['y']) {
                 return $direction;
             }
         }
@@ -94,13 +94,13 @@ final class Direction implements Equalizeable
         $diffX = $goal->getX() - $start->getX();
         $diffY = $goal->getY() - $start->getY();
 
-        return self::normalize($diffX,$diffY);
+        return self::normalize($diffX, $diffY);
     }
 
     private static function normalize(int $diffX, int $diffY)
     {
 
-        $toOne = function($value){
+        $toOne = function ($value) {
             return ($value > 0 ? 1 : ($value < 0 ? -1 : 0));
         };
         $x = 0;
@@ -108,7 +108,7 @@ final class Direction implements Equalizeable
         $x2 = pow($diffX, 2);
         $y2 = pow($diffY, 2);
 
-        switch(true){
+        switch (true) {
             case $x2 > $y2:
                 $x = $toOne($diffX);
                 break;
@@ -120,6 +120,6 @@ final class Direction implements Equalizeable
                 $y = $toOne($diffY);
         }
 
-        return ['x'=>$x,'y'=>$y];
+        return ['x' => $x, 'y' => $y];
     }
 }

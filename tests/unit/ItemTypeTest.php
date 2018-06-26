@@ -23,23 +23,23 @@ class ItemTypeTest extends \Codeception\Test\Unit
     public function testCreation()
     {
         $failed = false;
-        try{
+        try {
             ItemType::create('test');
-        }catch(\Exception $exception){
+        } catch (\Exception $exception) {
             $failed = true;
-            $this->assertContains("Couldn't find constant" ,$exception->getMessage());
+            $this->assertContains("Couldn't find constant", $exception->getMessage());
         }
         $this->assertTrue($failed);
 
-        $this->assertInstanceOf(ItemType::class,ItemType::SUPPORT());
-        $this->assertInstanceOf(ItemType::class,ItemType::WEAPON());
-        $this->assertInstanceOf(ItemType::class,ItemType::ARMOR());
+        $this->assertInstanceOf(ItemType::class, ItemType::SUPPORT());
+        $this->assertInstanceOf(ItemType::class, ItemType::WEAPON());
+        $this->assertInstanceOf(ItemType::class, ItemType::ARMOR());
     }
 
     public function testCheckType()
     {
-        $this->assertEquals('support',ItemType::SUPPORT()->getValue());
-        $this->assertEquals('weapon',ItemType::WEAPON()->getValue());
-        $this->assertEquals('armor',ItemType::ARMOR()->getValue());
+        $this->assertEquals('support', ItemType::SUPPORT()->getValue());
+        $this->assertEquals('weapon', ItemType::WEAPON()->getValue());
+        $this->assertEquals('armor', ItemType::ARMOR()->getValue());
     }
 }

@@ -16,11 +16,11 @@ class LevelConfiguration implements ConfigurationInterface
 {
     /** @var string */
     private $id;
-    /** @var int  */
+    /** @var int */
     private $height;
-    /** @var int  */
+    /** @var int */
     private $length;
-    /** @var int  */
+    /** @var int */
     private $width;
     /** @var array */
     private $fields;
@@ -35,7 +35,7 @@ class LevelConfiguration implements ConfigurationInterface
      */
     public function __construct(string $id, int $length, int $width, int $height, array $fields)
     {
-        Assertion::allInteger([$length,$width,$height]);
+        Assertion::allInteger([$length, $width, $height]);
         Assertion::allIsInstanceOf($fields, FieldConfiguration::class);
 
         $this->id = $id;
@@ -78,7 +78,6 @@ class LevelConfiguration implements ConfigurationInterface
     }
 
 
-
     public function getId()
     {
         return $this->id;
@@ -86,16 +85,16 @@ class LevelConfiguration implements ConfigurationInterface
 
     public function equals(Equalizeable $item): bool
     {
-        if(!($item instanceof LevelConfiguration)){
+        if (!($item instanceof LevelConfiguration)) {
             return false;
         }
 
-        $equalFields = count(array_filter($this->fields, function(FieldConfiguration $fieldConfig)use($item){
-            $found = array_filter($item->fields,function(FieldConfiguration $config)use($fieldConfig){
-                return $fieldConfig->equals($config);
-            });
-            return count($found) === 1;
-        })) === count($this->fields);
+        $equalFields = count(array_filter($this->fields, function (FieldConfiguration $fieldConfig) use ($item) {
+                $found = array_filter($item->fields, function (FieldConfiguration $config) use ($fieldConfig) {
+                    return $fieldConfig->equals($config);
+                });
+                return count($found) === 1;
+            })) === count($this->fields);
 
 
         return $this->id === $item->id

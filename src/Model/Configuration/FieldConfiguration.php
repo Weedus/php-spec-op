@@ -31,6 +31,7 @@ class FieldConfiguration implements ConfigurationInterface
     private $place;
 
     private $defaultPlace = Ground::class;
+
     /**
      * FieldConfiguration constructor.
      * @param int $x
@@ -45,7 +46,7 @@ class FieldConfiguration implements ConfigurationInterface
         $placeClass = $placeClass ?? $this->defaultPlace;
         Assertion::classExists($placeClass);
         Assertion::implementsInterface($placeClass, PlaceInterface::class);
-        if($character !== null){
+        if ($character !== null) {
             Assertion::implementsInterface($placeClass, WalksInterface::class);
             Assertion::classExists($character);
             Assertion::implementsInterface($character, CharacterInterface::class);
@@ -101,7 +102,7 @@ class FieldConfiguration implements ConfigurationInterface
 
     public function equals(Equalizeable $item): bool
     {
-        if(!($item instanceof FieldConfiguration)){
+        if (!($item instanceof FieldConfiguration)) {
             return false;
         }
         return $this->x === $item->x

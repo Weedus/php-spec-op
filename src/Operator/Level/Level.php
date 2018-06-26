@@ -9,7 +9,6 @@
 namespace Weedus\PhpSpecOps\Operator\Level;
 
 
-
 use Weedus\PhpSpecOps\Model\Area\Map;
 use Weedus\PhpSpecOps\Model\Units\Characters\CharacterInterface;
 
@@ -46,14 +45,13 @@ final class Level
     }
 
 
-
     private function performNextStep()
     {
         $specOp = null;
         $others = [];
         /** @var CharacterInterface $char */
-        foreach($this->map->getCharacters() as $char){
-            if($char->getName() === 'SpecOp'){
+        foreach ($this->map->getCharacters() as $char) {
+            if ($char->getName() === 'SpecOp') {
                 $specOp = $char;
                 continue;
             }
@@ -61,7 +59,7 @@ final class Level
         }
         $this->performPlayerStep($specOp);
         /** @var CharacterInterface $char */
-        foreach($others as $char){
+        foreach ($others as $char) {
             $char->getBrain()->perform();
         }
     }

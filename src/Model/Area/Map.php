@@ -9,9 +9,9 @@
 namespace Weedus\PhpSpecOps\Model\Area;
 
 use Weedus\Collection\SpecificationCollectionInterface;
-use Weedus\Specification\SpecificationInterface;
 use Weedus\PhpSpecOps\Specifications\AlwaysTrue;
 use Weedus\PhpSpecOps\Specifications\Map\HasCharacter;
+use Weedus\Specification\SpecificationInterface;
 
 class Map
 {
@@ -50,7 +50,7 @@ class Map
     public function addFields(Field ...$fields)
     {
         /** @var Field $field */
-        foreach($fields as $field){
+        foreach ($fields as $field) {
             $this->addField($field);
         }
     }
@@ -70,7 +70,7 @@ class Map
      */
     public function getField(Location $location): Field
     {
-        if(!$this->hasField($location)){
+        if (!$this->hasField($location)) {
             return null;
         }
         return $this->map->offsetGet(
@@ -84,7 +84,7 @@ class Map
      */
     public function getFields(?SpecificationInterface $specification = null)
     {
-        if($specification === null){
+        if ($specification === null) {
             $specification = new AlwaysTrue();
         }
         return $this->map->findBySpecification($specification);

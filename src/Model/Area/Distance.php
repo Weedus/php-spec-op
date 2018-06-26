@@ -48,7 +48,7 @@ final class Distance
      */
     public static function createByLocations(Location $start, Location $goal)
     {
-        if($start->getZ() !== $goal->getZ()){
+        if ($start->getZ() !== $goal->getZ()) {
             throw new DistanceCalculationFailedException('start and goal on different heights');
         }
         return new self($goal->getX() - $start->getX(), $goal->getY() - $start->getY());
@@ -56,7 +56,7 @@ final class Distance
 
     public static function create(int $x, int $y)
     {
-        return new self($x,$y);
+        return new self($x, $y);
     }
 
     /**
