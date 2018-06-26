@@ -9,8 +9,6 @@
 namespace Weedus\PhpSpecOps\Model;
 
 
-use Assert\Assertion;
-
 trait OptionsObjectTrait
 {
     private $value;
@@ -50,11 +48,12 @@ trait OptionsObjectTrait
     /**
      * @param Equalizeable $item
      * @return bool
-     * @throws \Assert\AssertionFailedException
      */
     public function equals(Equalizeable $item): bool
     {
-        Assertion::isInstanceOf($item, self::class);
+        if(!($item instanceof $this)){
+            return false;
+        }
         /** @var OptionsObjectTrait $item */
         return $this->value === $item->value;
     }

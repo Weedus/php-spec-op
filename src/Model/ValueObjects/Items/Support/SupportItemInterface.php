@@ -10,10 +10,21 @@ namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
 
 use Weedus\PhpSpecOps\Model\Area\Field;
 use Weedus\PhpSpecOps\Model\Area\Range;
+use Weedus\PhpSpecOps\Model\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 
 interface SupportItemInterface extends ItemInterface
 {
+    /**
+     * @return SupportItemType
+     */
+    public function getSupportItemType(): SupportItemType;
+
+    /**
+     * @return bool
+     */
+    public function equalsSupportItemType(SupportItemInterface $item): bool;
+
     /**
      * @param Field $caster
      * @param Field $target

@@ -8,7 +8,7 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects\Items;
 
-use Weedus\PhpSpecOps\Model\Equalizeable;
+use Weedus\PhpSpecOps\Model\OptionsObjectTrait;
 use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
 
 /**
@@ -20,53 +20,9 @@ use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
  */
 class ItemType extends AbstractValueObject
 {
+    use OptionsObjectTrait;
+
     const WEAPON = 'weapon';
     const ARMOR = 'armor';
     const SUPPORT = 'support';
-
-    private $value;
-
-    protected function __construct($value)
-    {
-        $this->value = $value;
-    }
-
-    /**
-     * @param $name
-     * @param $arguments
-     * @return ItemType
-     */
-    public static function __callStatic($name, $arguments): self
-    {
-        return self::create($name);
-    }
-
-    /**
-     * @param $name
-     * @return ItemType
-     */
-    public static function create($name): self
-    {
-        return new self(constant('self::' . $name));
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param Equalizeable $item
-     * @return bool
-     */
-    public function equals(Equalizeable $item): bool
-    {
-        if(!($item instanceof ItemType)){
-            return false;
-        }
-        return $this->value === $item->value;
-    }
 }

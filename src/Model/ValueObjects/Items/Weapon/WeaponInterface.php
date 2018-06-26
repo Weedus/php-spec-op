@@ -15,6 +15,12 @@ use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
 interface WeaponInterface extends ItemInterface
 {
     /**
+     * @return WeaponType
+     */
+    public function getWeaponType(): WeaponType;
+
+    public function equalsWeaponType(WeaponInterface $weapon): bool;
+    /**
      * @return int
      */
     public function getPower(): int;

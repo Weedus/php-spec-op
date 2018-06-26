@@ -10,7 +10,7 @@ namespace Weedus\PhpSpecOps\Operator\Effects;
 
 
 use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Model\Area\Range;
 
 interface EffectInterface
 {

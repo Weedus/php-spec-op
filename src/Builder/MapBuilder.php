@@ -45,6 +45,7 @@ abstract class MapBuilder implements BuilderInterface
         },$configuration->getFields());
         /** @var Field $field */
         foreach($fields as $field){
+            $field->setMap($map);
             $map->addField($field);
         }
         self::fillHeightsWithDefault($map,$configuration->getHeightsToFill());

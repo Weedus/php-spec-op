@@ -24,29 +24,33 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
     protected $minRange;
     /** @var Range */
     protected $maxRange;
+    /** @var WeaponType  */
+    protected $weaponType;
 
-    public function __construct(string $name, int $power, int $defense, Range $minRange, Range $maxRange)
+    public function __construct(string $name, int $power, int $defense, Range $minRange, Range $maxRange, WeaponType $weaponType)
     {
         parent::__construct($name, ItemType::WEAPON());
         $this->power = $power;
         $this->defense = $defense;
         $this->minRange = $minRange;
         $this->maxRange = $maxRange;
+        $this->weaponType = $weaponType;
     }
 
     /**
      * @param Equalizeable $item
      * @return bool
-     * @throws \Assert\AssertionFailedException
      */
     public function equals(Equalizeable $item): bool
     {
-        Assertion::isInstanceOf($item, self::class);
-        /** @var AbstractWeapon $item */
+        if(!($item instanceof AbstractWeapon)){
+            return false;
+        }
         return $this->minRange->equals($item->minRange)
             && $this->maxRange->equals($item->maxRange)
             && $this->power === $item->power
             && $this->defense === $item->defense
+            && $this->equalsWeaponType($item)
             && parent::equals($item);
     }
 
@@ -78,4 +82,16 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
     {
         return $this->defense;
     }
+
+    public function getWeaponType(): WeaponType
+    {
+        return $this->weaponType;
+    }
+
+    public function equalsWeaponType(WeaponInterface $weapon): bool
+    {
+        return $this->weaponType->equals($weapon->getWeaponType());
+    }
+
+
 }
