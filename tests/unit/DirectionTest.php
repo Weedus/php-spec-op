@@ -26,9 +26,9 @@ class DirectionTest extends \Codeception\Test\Unit
     public function testCreate()
     {
         $failed = false;
-        try{
+        try {
             Direction::create('blub');
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             $failed = true;
         }
         $this->assertTrue($failed);
@@ -46,21 +46,21 @@ class DirectionTest extends \Codeception\Test\Unit
 
     public function testNormalization()
     {
-        $start = Location::create(0,0,0);
-        $end1 = Location::create(-3,-4,0);
-        $end2 = Location::create(1,0,0);
-        $end3 = Location::create(5,5,0);
-        $end4 = Location::create(0,0,0);
+        $start = Location::create(0, 0, 0);
+        $end1 = Location::create(-3, -4, 0);
+        $end2 = Location::create(1, 0, 0);
+        $end3 = Location::create(5, 5, 0);
+        $end4 = Location::create(0, 0, 0);
 
         $norm1 = Direction::getNormalizedDirection($start, $end1);
         $norm2 = Direction::getNormalizedDirection($start, $end2);
         $norm3 = Direction::getNormalizedDirection($start, $end3);
         $norm4 = Direction::getNormalizedDirection($start, $end4);
 
-        $this->assertEquals(['x'=>0,'y'=>-1],$norm1);
-        $this->assertEquals(['x'=>1,'y'=>0],$norm2);
-        $this->assertEquals(['x'=>1,'y'=>1],$norm3);
-        $this->assertEquals(['x'=>0,'y'=>0],$norm4);
+        $this->assertEquals(['x' => 0, 'y' => -1], $norm1);
+        $this->assertEquals(['x' => 1, 'y' => 0], $norm2);
+        $this->assertEquals(['x' => 1, 'y' => 1], $norm3);
+        $this->assertEquals(['x' => 0, 'y' => 0], $norm4);
 
         $this->assertEquals(Direction::WEST, Direction::normalizedToHuman($norm1));
         $this->assertEquals(Direction::NORTH, Direction::normalizedToHuman($norm2));
@@ -68,13 +68,14 @@ class DirectionTest extends \Codeception\Test\Unit
         $this->assertEquals(Direction::NONE, Direction::normalizedToHuman($norm4));
 
     }
+
     public function testCreationByLocations()
     {
-        $start = Location::create(0,0,0);
-        $end1 = Location::create(-3,-4,0);
-        $end2 = Location::create(1,0,0);
-        $end3 = Location::create(5,5,0);
-        $end4 = Location::create(0,0,0);
+        $start = Location::create(0, 0, 0);
+        $end1 = Location::create(-3, -4, 0);
+        $end2 = Location::create(1, 0, 0);
+        $end3 = Location::create(5, 5, 0);
+        $end4 = Location::create(0, 0, 0);
 
         $this->assertEquals(Direction::WEST, Direction::createByLocations($start, $end1)->getValue());
         $this->assertEquals(Direction::NORTH, Direction::createByLocations($start, $end2)->getValue());
@@ -87,11 +88,11 @@ class DirectionTest extends \Codeception\Test\Unit
      */
     public function testCreationByDistance()
     {
-        $start = Location::create(0,0,0);
-        $end1 = Location::create(-3,-4,0);
-        $end2 = Location::create(1,0,0);
-        $end3 = Location::create(5,5,0);
-        $end4 = Location::create(0,0,0);
+        $start = Location::create(0, 0, 0);
+        $end1 = Location::create(-3, -4, 0);
+        $end2 = Location::create(1, 0, 0);
+        $end3 = Location::create(5, 5, 0);
+        $end4 = Location::create(0, 0, 0);
 
         $dis1 = Distance::createByLocations($start, $end1);
         $dis2 = Distance::createByLocations($start, $end2);

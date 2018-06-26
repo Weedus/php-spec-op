@@ -22,10 +22,10 @@ abstract class LevelBuilder implements BuilderInterface
      */
     public static function get(ConfigurationInterface $configuration)
     {
-        Assertion::isInstanceOf($configuration,LevelConfiguration::class);
+        Assertion::isInstanceOf($configuration, LevelConfiguration::class);
         $map = MapBuilder::get($configuration);
         /** @var LevelConfiguration $configuration */
-        return new Level($configuration->getId(),$map);
+        return new Level($configuration->getId(), $map);
     }
 
 }

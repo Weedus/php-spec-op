@@ -26,7 +26,7 @@ abstract class MapBuilder implements BuilderInterface
      */
     public static function get(ConfigurationInterface $configuration)
     {
-        if($configuration instanceof LevelConfiguration){
+        if ($configuration instanceof LevelConfiguration) {
             return self::getByLevelConfig($configuration);
         }
         return false;
@@ -39,16 +39,16 @@ abstract class MapBuilder implements BuilderInterface
      */
     private static function getByLevelConfig(LevelConfiguration $configuration)
     {
-        $map = new Map($configuration->getLength(),$configuration->getWidth(),$configuration->getHeight());
-        $fields = array_map(function(FieldConfiguration $config){
+        $map = new Map($configuration->getLength(), $configuration->getWidth(), $configuration->getHeight());
+        $fields = array_map(function (FieldConfiguration $config) {
             return FieldBuilder::get($config);
-        },$configuration->getFields());
+        }, $configuration->getFields());
         /** @var Field $field */
-        foreach($fields as $field){
+        foreach ($fields as $field) {
             $field->setMap($map);
             $map->addField($field);
         }
-        self::fillHeightsWithDefault($map,$configuration->getHeightsToFill());
+        self::fillHeightsWithDefault($map, $configuration->getHeightsToFill());
 
         return $map;
     }
@@ -60,11 +60,11 @@ abstract class MapBuilder implements BuilderInterface
      */
     private static function fillHeightsWithDefault(Map $map, array $getHeightsToFill)
     {
-        foreach($getHeightsToFill as $z){
-            for($x = 0; $x < $map->getLength(); $x++){
-                for($y = 0; $y < $map->getLength(); $y++){
-                    if(!$map->hasField(Location::create($x,$y,$z))){
-                        $map->addField(self::getDefaultField($x,$y,$z));
+        foreach ($getHeightsToFill as $z) {
+            for ($x = 0; $x < $map->getLength(); $x++) {
+                for ($y = 0; $y < $map->getLength(); $y++) {
+                    if (!$map->hasField(Location::create($x, $y, $z))) {
+                        $map->addField(self::getDefaultField($x, $y, $z));
                     }
                 }
             }
@@ -80,6 +80,6 @@ abstract class MapBuilder implements BuilderInterface
      */
     private static function getDefaultField(int $x, int $y, int $z)
     {
-        return FieldBuilder::get(new FieldConfiguration($x,$y,$z));
+        return FieldBuilder::get(new FieldConfiguration($x, $y, $z));
     }
 }

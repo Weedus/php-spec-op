@@ -67,6 +67,6 @@ class LevelConfigurator
 
     public function getLevelConfiguration()
     {
-        return new LevelConfiguration($this->id,$this->length,$this->width,$this->height,$this->fields);
+        return new LevelConfiguration($this->id, $this->length, $this->width, $this->height, $this->fields);
     }
 }

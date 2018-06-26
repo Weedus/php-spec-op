@@ -36,6 +36,6 @@ abstract class FieldBuilder implements BuilderInterface
 
         $character = new ($configuration->getCharacter());
 
-        return new Field($location,$placeable, $character);
+        return new Field($location, $placeable, $character);
     }
 }

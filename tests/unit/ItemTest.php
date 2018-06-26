@@ -2,7 +2,6 @@
 
 namespace Weedus\Tests\PhpSpecOps\unit;
 
-use Weedus\Exceptions\NotYetImplementedException;
 use Weedus\PhpSpecOps\Model\Area\Range;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\ArmorInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\ArmorType;
@@ -77,11 +76,11 @@ class ItemTest extends \Codeception\Test\Unit
 
     public function testWeapon()
     {
-        $megaWeapon = new TestWeapon('mega_weapon', 10, 10, Range::ZERO(), Range::HIGH(),WeaponType::PISTOL());
-        $crapWeapon = new TestWeapon('crap_weapon', 1000, 0, Range::ZERO(), Range::ZERO(),WeaponType::DAGGER());
+        $megaWeapon = new TestWeapon('mega_weapon', 10, 10, Range::ZERO(), Range::HIGH(), WeaponType::PISTOL());
+        $crapWeapon = new TestWeapon('crap_weapon', 1000, 0, Range::ZERO(), Range::ZERO(), WeaponType::DAGGER());
 
-        $this->assertInstanceOf(WeaponInterface::class, $megaWeapon );
-        $this->assertInstanceOf(WeaponInterface::class, $crapWeapon );
+        $this->assertInstanceOf(WeaponInterface::class, $megaWeapon);
+        $this->assertInstanceOf(WeaponInterface::class, $crapWeapon);
         $this->assertTrue($megaWeapon->equalsType($crapWeapon));
         $this->assertFalse($megaWeapon->equals($crapWeapon));
         $this->assertFalse($megaWeapon->equalsWeaponType($crapWeapon));
@@ -99,11 +98,11 @@ class ItemTest extends \Codeception\Test\Unit
         $this->assertEquals('chest', ArmorType::CHEST()->getValue());
         $this->assertEquals('legs', ArmorType::LEGS()->getValue());
 
-        $head = new TestArmor('head',5,ArmorType::HEAD());
-        $head2 = new TestArmor('head2',7,ArmorType::HEAD());
-        $head3 = new TestArmor('head2',7,ArmorType::HEAD());
-        $chest = new TestArmor('chest',5,ArmorType::CHEST());
-        $legs = new TestArmor('legs',5,ArmorType::LEGS());
+        $head = new TestArmor('head', 5, ArmorType::HEAD());
+        $head2 = new TestArmor('head2', 7, ArmorType::HEAD());
+        $head3 = new TestArmor('head2', 7, ArmorType::HEAD());
+        $chest = new TestArmor('chest', 5, ArmorType::CHEST());
+        $legs = new TestArmor('legs', 5, ArmorType::LEGS());
 
         $this->assertInstanceOf(ArmorInterface::class, $head);
 

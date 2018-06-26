@@ -9,7 +9,6 @@
 namespace Weedus\Tests\PhpSpecOps\functional;
 
 
-use Assert\Assertion;
 use Weedus\Exceptions\NotYetImplementedException;
 
 class MapCest

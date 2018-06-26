@@ -30,9 +30,9 @@ class DistanceTest extends \Codeception\Test\Unit
         $y = -5;
         $steps = 10;
         $amount = (int)sqrt(50);
-        $distance = Distance::create(5,-5);
+        $distance = Distance::create(5, -5);
 
-        $this->makeTest($distance, $x, $y, $amount,$steps);
+        $this->makeTest($distance, $x, $y, $amount, $steps);
     }
 
     /**
@@ -41,33 +41,33 @@ class DistanceTest extends \Codeception\Test\Unit
     public function testCreateByLocations()
     {
         $heightsFailed = false;
-        try{
+        try {
             Distance::createByLocations(
-                Location::create(0,0,0),
-                Location::create(0,1,1)
+                Location::create(0, 0, 0),
+                Location::create(0, 1, 1)
             );
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             $heightsFailed = true;
-            $this->assertInstanceOf(DistanceCalculationFailedException::class,$exception);
-            $this->assertContains('start and goal on different heights',$exception->getMessage());
+            $this->assertInstanceOf(DistanceCalculationFailedException::class, $exception);
+            $this->assertContains('start and goal on different heights', $exception->getMessage());
         }
         $this->assertTrue($heightsFailed);
 
-        $start = new Location(0,0,0);
-        $goal = new Location(5,0,0);
-        $distance = Distance::createByLocations($start,$goal);
+        $start = new Location(0, 0, 0);
+        $goal = new Location(5, 0, 0);
+        $distance = Distance::createByLocations($start, $goal);
         $x = 5;
         $y = 0;
         $steps = 5;
         $amount = 5;
-        $this->makeTest($distance, $x, $y, $amount,$steps);
+        $this->makeTest($distance, $x, $y, $amount, $steps);
     }
 
     private function makeTest(Distance $distance, $x, $y, $amount, $steps)
     {
-        $this->assertEquals($x,$distance->getX());
-        $this->assertEquals($y,$distance->getY());
-        $this->assertEquals($amount,$distance->get());
-        $this->assertEquals($steps,$distance->getSteps());
+        $this->assertEquals($x, $distance->getX());
+        $this->assertEquals($y, $distance->getY());
+        $this->assertEquals($amount, $distance->get());
+        $this->assertEquals($steps, $distance->getSteps());
     }
 }
