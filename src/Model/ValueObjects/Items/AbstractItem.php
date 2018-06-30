@@ -51,10 +51,10 @@ abstract class AbstractItem extends AbstractValueObject implements ItemInterface
      */
     public function equals(Equalizeable $item): bool
     {
-        if (!($item instanceof AbstractItem)) {
+        if (!($item instanceof ItemInterface)) {
             return false;
         }
-        return $this->name === $item->name
+        return $this->name === $item->getName()
             && $this->equalsType($item);
     }
 
@@ -64,10 +64,7 @@ abstract class AbstractItem extends AbstractValueObject implements ItemInterface
      */
     public function equalsType(ItemInterface $item): bool
     {
-        if (!($item instanceof AbstractItem)) {
-            return false;
-        }
-        return $this->type->equals($item->type);
+        return $this->type->equals($item->getType());
     }
 
 

@@ -3,6 +3,15 @@
 namespace Weedus\Tests\PhpSpecOps\unit;
 
 use Weedus\Exceptions\NotYetImplementedException;
+use Weedus\PhpSpecOps\Model\Area\Range;
+use Weedus\PhpSpecOps\Model\Body\Body;
+use Weedus\PhpSpecOps\Model\Body\BodyInterface;
+use Weedus\PhpSpecOps\Model\Body\Human\HumanBody;
+use Weedus\PhpSpecOps\Model\Body\Human\HumanBodyInterface;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\ArmorType;
+use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\WeaponType;
+use Weedus\PhpSpecOps\Tests\Helper\TestArmor;
+use Weedus\PhpSpecOps\Tests\Helper\TestWeapon;
 
 class BodyTest extends \Codeception\Test\Unit
 {
@@ -20,9 +29,40 @@ class BodyTest extends \Codeception\Test\Unit
     }
 
     // tests
-    public function testSomeFeature()
+    public function testCreation()
     {
-        throw new NotYetImplementedException(__METHOD__);
+        $body1 = new Body();
+        $body2 = new HumanBody();
 
+        $this->assertInstanceOf(BodyInterface::class, $body1);
+        $this->assertInstanceOf(BodyInterface::class, $body2);
+        $this->assertNotInstanceOf(HumanBodyInterface::class, $body1);
+        $this->assertInstanceOf(HumanBodyInterface::class, $body2);
+    }
+
+    public function testSetter()
+    {
+        $body1 = new Body();
+        $body2 = new HumanBody();
+
+        $chest = new TestArmor('chest',1,ArmorType::CHEST());
+        $head = new TestArmor('head',1,ArmorType::HEAD());
+        $legs = new TestArmor('legs',1,ArmorType::LEGS());
+        $weapon = new TestWeapon('weapon',1,1,Range::ZERO(),Range::MEDIUM(),WeaponType::DAGGER());
+        $shield = new TestWeapon('weapon',1,1,Range::ZERO(),Range::MEDIUM(),WeaponType::SHIELD());
+
+
+        throw new NotYetImplementedException(__METHOD__);
+    }
+
+    public function testGetter()
+    {
+
+        throw new NotYetImplementedException(__METHOD__);
+    }
+    public function testEquals()
+    {
+
+        throw new NotYetImplementedException(__METHOD__);
     }
 }

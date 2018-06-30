@@ -10,7 +10,7 @@ namespace Weedus\PhpSpecOps\Model\Body\Human;
 
 
 use Weedus\PhpSpecOps\Model\Body\Body;
-use Weedus\PhpSpecOps\Model\ValueObjects\Equalizeable;
+use Weedus\PhpSpecOps\Model\Equalizeable;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Head\ArmorLegsInterface;
 use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\WeaponInterface;
@@ -94,13 +94,13 @@ class HumanBody extends Body implements HumanBodyInterface
 
     public function equals(Equalizeable $item): bool
     {
-        if (!($item instanceof HumanBody)) {
+        if (!($item instanceof HumanBodyInterface)) {
             return false;
         }
-        return $this->leftHand->equals($item->leftHand)
-            && $this->rightHand->equals($item->rightHand)
-            && $this->head->equals($item->head)
-            && $this->legs->equals($item->legs)
+        return $this->leftHand->equals($item->getLeftHand())
+            && $this->rightHand->equals($item->getRightHand())
+            && $this->head->equals($item->getHead())
+            && $this->legs->equals($item->getLegs())
             && parent::equals($item);
     }
 

@@ -62,10 +62,13 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
 
     public function equals(Equalizeable $item): bool
     {
-        if (!($item instanceof AbstractSupportItem)) {
+        if (!($item instanceof SupportItemInterface)) {
             return false;
         }
-        return $this->text === $item->text
+        return $this->text === $item->getText()
+            && $this->duration === $item->getDuration()
+            && $this->preparationTime === $item->getPreparationTime()
+            && $this->range->equals($item->getRange())
             && $this->equalsSupportItemType($item)
             && parent::equals($item);
     }
