@@ -26,7 +26,7 @@ class Body implements BodyInterface
     /**
      * @param ArmorChestInterface $chest
      */
-    public function setArmorChest(ArmorChestInterface $chest): void
+    public function setChest(ArmorChestInterface $chest): void
     {
         $this->chest = $chest;
     }
@@ -34,9 +34,9 @@ class Body implements BodyInterface
 
     public function equals(Equalizeable $item): bool
     {
-        if (!($item instanceof Body)) {
+        if (!($item instanceof BodyInterface)) {
             return false;
         }
-        return $this->chest->equals($item->chest);
+        return $this->chest->equals($item->getChest());
     }
 }

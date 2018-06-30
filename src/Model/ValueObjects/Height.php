@@ -8,6 +8,8 @@
 
 namespace Weedus\PhpSpecOps\Model\ValueObjects;
 
+use Weedus\PhpSpecOps\Model\OptionsObjectTrait;
+
 
 /**
  * Class Height
