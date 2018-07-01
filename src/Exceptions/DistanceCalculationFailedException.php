@@ -6,7 +6,7 @@
  * Time: 02:39
  */
 
-namespace Weedus\PhpSpecOps\Exceptions;
+namespace Weedus\PhpSpecOps\Core\Exceptions;
 
 
 class DistanceCalculationFailedException extends \Exception

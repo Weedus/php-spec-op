@@ -1,22 +1,22 @@
 <?php
 
-namespace Weedus\Tests\PhpSpecOps\unit;
+namespace Weedus\PhpSpecOps\Core\Tests\unit;
 
-use Weedus\PhpSpecOps\Model\Area\Range;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\ArmorInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\ArmorType;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\SupportItemInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\SupportItemType;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\WeaponInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\WeaponType;
-use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
-use Weedus\PhpSpecOps\Tests\Helper\TestArmor;
-use Weedus\PhpSpecOps\Tests\Helper\TestEffect;
-use Weedus\PhpSpecOps\Tests\Helper\TestItem;
-use Weedus\PhpSpecOps\Tests\Helper\TestSupportItem;
-use Weedus\PhpSpecOps\Tests\Helper\TestWeapon;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorType;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemType;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support\SupportItemInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support\SupportItemType;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponType;
+use Weedus\PhpSpecOps\Core\Operator\Effects\EffectInterface;
+use Weedus\PhpSpecOps\Core\Tests\Helper\TestArmor;
+use Weedus\PhpSpecOps\Core\Tests\Helper\TestEffect;
+use Weedus\PhpSpecOps\Core\Tests\Helper\TestItem;
+use Weedus\PhpSpecOps\Core\Tests\Helper\TestSupportItem;
+use Weedus\PhpSpecOps\Core\Tests\Helper\TestWeapon;
 
 class ItemTest extends \Codeception\Test\Unit
 {

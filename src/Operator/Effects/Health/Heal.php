@@ -6,14 +6,14 @@
  * Time: 17:40
  */
 
-namespace Weedus\PhpSpecOps\Operator\Effects\Health;
+namespace Weedus\PhpSpecOps\Core\Operator\Effects\Health;
 
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Units\Characters\CharacterEffectInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
-use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterEffectInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 class Heal extends AbstractEffect
 {

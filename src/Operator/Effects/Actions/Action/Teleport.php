@@ -6,15 +6,15 @@
  * Time: 11:00
  */
 
-namespace Weedus\PhpSpecOps\Operator\Effects\Actions\Action;
+namespace Weedus\PhpSpecOps\Core\Operator\Effects\Actions\Action;
 
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\Units\Placeables\Walkables\WalkableInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
-use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Location;
+use Weedus\PhpSpecOps\Core\Model\Units\Placeables\Walkables\WalkableInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 class Teleport extends AbstractEffect
 {

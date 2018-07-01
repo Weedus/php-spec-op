@@ -6,7 +6,7 @@
  * Time: 14:29
  */
 
-namespace Weedus\PhpSpecOps\Specifications;
+namespace Weedus\PhpSpecOps\Core\Specifications;
 
 
 use Weedus\Specification\SpecificationInterface;

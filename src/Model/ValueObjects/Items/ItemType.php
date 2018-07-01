@@ -6,10 +6,10 @@
  * Time: 12:49
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items;
 
-use Weedus\PhpSpecOps\Model\OptionsObjectTrait;
-use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
+use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 /**
  * Class ItemType

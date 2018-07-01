@@ -6,15 +6,15 @@
  * Time: 22:53
  */
 
-namespace Weedus\PhpSpecOps\Model\Configuration;
+namespace Weedus\PhpSpecOps\Core\Model\Configuration;
 
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Equalizeable;
-use Weedus\PhpSpecOps\Model\Units\Characters\CharacterInterface;
-use Weedus\PhpSpecOps\Model\Units\Places\PlaceInterface;
-use Weedus\PhpSpecOps\Model\Units\Places\Walks\Ground;
-use Weedus\PhpSpecOps\Model\Units\Places\Walks\WalksInterface;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\Places\PlaceInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\Places\Walks\Ground;
+use Weedus\PhpSpecOps\Core\Model\Units\Places\Walks\WalksInterface;
 
 class FieldConfiguration implements ConfigurationInterface
 {

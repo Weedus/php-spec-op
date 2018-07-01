@@ -6,12 +6,12 @@
  * Time: 13:08
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon;
 
-use Weedus\PhpSpecOps\Model\Area\Range;
-use Weedus\PhpSpecOps\Model\Equalizeable;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\AbstractItem;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemType;
 
 abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
 {

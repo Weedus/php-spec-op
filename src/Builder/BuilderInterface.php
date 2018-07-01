@@ -6,9 +6,9 @@
  * Time: 23:54
  */
 
-namespace Weedus\PhpSpecOps\Builder;
+namespace Weedus\PhpSpecOps\Core\Builder;
 
-use Weedus\PhpSpecOps\Model\Configuration\ConfigurationInterface;
+use Weedus\PhpSpecOps\Core\Model\Configuration\ConfigurationInterface;
 
 interface BuilderInterface
 {

@@ -6,11 +6,11 @@
  * Time: 22:39
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Chest;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Chest;
 
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\AbstractArmor;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\ArmorType;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\AbstractArmor;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorType;
 
 abstract class AbstractArmorHead extends AbstractArmor
 {

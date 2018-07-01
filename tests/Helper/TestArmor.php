@@ -6,10 +6,10 @@
  * Time: 09:05
  */
 
-namespace Weedus\PhpSpecOps\Tests\Helper;
+namespace Weedus\PhpSpecOps\Core\Tests\Helper;
 
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\AbstractArmor;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\AbstractArmor;
 
 class TestArmor extends AbstractArmor
 {

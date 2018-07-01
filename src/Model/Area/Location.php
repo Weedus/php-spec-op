@@ -6,10 +6,10 @@
  * Time: 11:33
  */
 
-namespace Weedus\PhpSpecOps\Model\Area;
+namespace Weedus\PhpSpecOps\Core\Model\Area;
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 
 final class Location implements Equalizeable
 {

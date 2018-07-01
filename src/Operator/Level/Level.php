@@ -6,11 +6,11 @@
  * Time: 22:35
  */
 
-namespace Weedus\PhpSpecOps\Operator\Level;
+namespace Weedus\PhpSpecOps\Core\Operator\Level;
 
 
-use Weedus\PhpSpecOps\Model\Area\Map;
-use Weedus\PhpSpecOps\Model\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Area\Map;
+use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterInterface;
 
 final class Level
 {

@@ -6,11 +6,11 @@
  * Time: 23:57
  */
 
-namespace Weedus\PhpSpecOps\Model\Configuration;
+namespace Weedus\PhpSpecOps\Core\Model\Configuration;
 
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 
 class LevelConfiguration implements ConfigurationInterface
 {

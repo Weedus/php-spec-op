@@ -6,10 +6,10 @@
  * Time: 23:36
  */
 
-namespace Weedus\PhpSpecOps\Operator\Effects\Actions\FinalAction\Moves;
+namespace Weedus\PhpSpecOps\Core\Operator\Effects\Actions\FinalAction\Moves;
 
 
-use Weedus\PhpSpecOps\Model\Area\Location;
+use Weedus\PhpSpecOps\Core\Model\Area\Location;
 
 class MoveNorth extends AbstractMove
 {

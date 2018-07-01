@@ -6,12 +6,12 @@
  * Time: 09:43
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Actions;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions;
 
 
-use Weedus\PhpSpecOps\Model\Area\Direction;
-use Weedus\PhpSpecOps\Model\Equalizeable;
-use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
+use Weedus\PhpSpecOps\Core\Model\Area\Direction;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 abstract class AbstractAction extends AbstractValueObject implements ActionInterface
 {

@@ -6,13 +6,13 @@
  * Time: 08:10
  */
 
-namespace Weedus\PhpSpecOps\Specifications\Map;
+namespace Weedus\PhpSpecOps\Core\Specifications\Map;
 
 
-use Weedus\PhpSpecOps\Model\Area\Distance;
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\Area\Distance;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Location;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\Specification\SpecificationInterface;
 
 class InRange implements SpecificationInterface
@@ -40,7 +40,7 @@ class InRange implements SpecificationInterface
     /**
      * @param $item
      * @return bool
-     * @throws \Weedus\PhpSpecOps\Exceptions\DistanceCalculationFailedException
+     * @throws \Weedus\PhpSpecOps\Core\Exceptions\DistanceCalculationFailedException
      */
     public function isSatisfiedBy($item): bool
     {

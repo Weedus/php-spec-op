@@ -6,7 +6,7 @@
  * Time: 11:36
  */
 
-namespace Weedus\PhpSpecOps\Model;
+namespace Weedus\PhpSpecOps\Core\Model;
 
 
 interface Equalizeable

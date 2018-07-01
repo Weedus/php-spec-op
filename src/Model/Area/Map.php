@@ -6,11 +6,11 @@
  * Time: 11:26
  */
 
-namespace Weedus\PhpSpecOps\Model\Area;
+namespace Weedus\PhpSpecOps\Core\Model\Area;
 
 use Weedus\Collection\SpecificationCollectionInterface;
-use Weedus\PhpSpecOps\Specifications\AlwaysTrue;
-use Weedus\PhpSpecOps\Specifications\Map\HasCharacter;
+use Weedus\PhpSpecOps\Core\Specifications\AlwaysTrue;
+use Weedus\PhpSpecOps\Core\Specifications\Map\HasCharacter;
 use Weedus\Specification\SpecificationInterface;
 
 class Map

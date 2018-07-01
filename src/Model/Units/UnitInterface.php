@@ -6,10 +6,10 @@
  * Time: 23:56
  */
 
-namespace Weedus\PhpSpecOps\Model\Units;
+namespace Weedus\PhpSpecOps\Core\Model\Units;
 
 
-use Weedus\PhpSpecOps\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
 
 interface UnitInterface
 {

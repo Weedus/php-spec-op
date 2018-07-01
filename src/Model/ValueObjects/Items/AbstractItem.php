@@ -6,10 +6,10 @@
  * Time: 12:45
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items;
 
-use Weedus\PhpSpecOps\Model\Equalizeable;
-use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 abstract class AbstractItem extends AbstractValueObject implements ItemInterface
 {

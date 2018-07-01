@@ -6,14 +6,14 @@
  * Time: 15:25
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support;
 
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Range;
-use Weedus\PhpSpecOps\Model\Equalizeable;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
-use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\AbstractItem;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemType;
+use Weedus\PhpSpecOps\Core\Operator\Effects\EffectInterface;
 
 class AbstractSupportItem extends AbstractItem implements SupportItemInterface
 {
@@ -76,7 +76,7 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
     /**
      * @param Field $caster
      * @param Field $target
-     * @throws \Weedus\PhpSpecOps\Exceptions\DistanceCalculationFailedException
+     * @throws \Weedus\PhpSpecOps\Core\Exceptions\DistanceCalculationFailedException
      */
     public function perform(Field $caster, Field $target): void
     {

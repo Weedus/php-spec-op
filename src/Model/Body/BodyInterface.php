@@ -6,10 +6,10 @@
  * Time: 21:35
  */
 
-namespace Weedus\PhpSpecOps\Model\Body;
+namespace Weedus\PhpSpecOps\Core\Model\Body;
 
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Head\ArmorChestInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorChestInterface;
 
 interface BodyInterface
 {

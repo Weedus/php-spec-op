@@ -6,10 +6,10 @@
  * Time: 23:52
  */
 
-namespace Weedus\PhpSpecOps\Tests\Helper;
+namespace Weedus\PhpSpecOps\Core\Tests\Helper;
 
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\AbstractItem;
 
 class TestItem extends AbstractItem
 {

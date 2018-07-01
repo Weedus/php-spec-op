@@ -6,10 +6,10 @@
  * Time: 23:16
  */
 
-namespace Weedus\PhpSpecOps\Model\Area;
+namespace Weedus\PhpSpecOps\Core\Model\Area;
 
 
-use Weedus\PhpSpecOps\Exceptions\DistanceCalculationFailedException;
+use Weedus\PhpSpecOps\Core\Exceptions\DistanceCalculationFailedException;
 
 final class Distance
 {

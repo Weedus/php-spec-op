@@ -6,12 +6,12 @@
  * Time: 14:32
  */
 
-namespace Weedus\PhpSpecOps\Tests\Helper;
+namespace Weedus\PhpSpecOps\Core\Tests\Helper;
 
 
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Range;
-use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 class TestEffect extends AbstractEffect
 {

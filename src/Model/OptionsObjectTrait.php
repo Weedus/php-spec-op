@@ -6,7 +6,7 @@
  * Time: 19:55
  */
 
-namespace Weedus\PhpSpecOps\Model;
+namespace Weedus\PhpSpecOps\Core\Model;
 
 
 trait OptionsObjectTrait

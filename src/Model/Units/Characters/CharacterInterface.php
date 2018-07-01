@@ -6,11 +6,11 @@
  * Time: 16:13
  */
 
-namespace Weedus\PhpSpecOps\Model\Units\Characters;
+namespace Weedus\PhpSpecOps\Core\Model\Units\Characters;
 
-use Weedus\PhpSpecOps\Model\Body\BodyInterface;
-use Weedus\PhpSpecOps\Model\Units\UnitInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Model\Body\BodyInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\UnitInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
 
 interface CharacterInterface extends UnitInterface
 {

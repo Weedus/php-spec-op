@@ -6,7 +6,7 @@
  * Time: 22:30
  */
 
-namespace Weedus\PhpSpecOps\Model\Units\Places\Walks;
+namespace Weedus\PhpSpecOps\Core\Model\Units\Places\Walks;
 
 
 use PascalDeVink\ShortUuid\ShortUuid;

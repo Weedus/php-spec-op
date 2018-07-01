@@ -6,7 +6,7 @@
  * Time: 23:16
  */
 
-namespace Weedus\PhpSpecOps\Operator\Effects;
+namespace Weedus\PhpSpecOps\Core\Operator\Effects;
 
 
 abstract class AbstractEffect implements EffectInterface

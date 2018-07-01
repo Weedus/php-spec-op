@@ -6,14 +6,14 @@
  * Time: 21:48
  */
 
-namespace Weedus\PhpSpecOps\Builder;
+namespace Weedus\PhpSpecOps\Core\Builder;
 
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\Configuration\ConfigurationInterface;
-use Weedus\PhpSpecOps\Model\Configuration\FieldConfiguration;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Location;
+use Weedus\PhpSpecOps\Core\Model\Configuration\ConfigurationInterface;
+use Weedus\PhpSpecOps\Core\Model\Configuration\FieldConfiguration;
 
 abstract class FieldBuilder implements BuilderInterface
 {

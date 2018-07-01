@@ -6,10 +6,10 @@
  * Time: 22:31
  */
 
-namespace Weedus\PhpSpecOps\Model\Units\Places;
+namespace Weedus\PhpSpecOps\Core\Model\Units\Places;
 
 
-use Weedus\PhpSpecOps\Model\Units\UnitInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\UnitInterface;
 
 interface PlaceInterface extends UnitInterface
 {

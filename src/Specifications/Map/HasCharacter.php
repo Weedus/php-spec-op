@@ -6,10 +6,10 @@
  * Time: 00:26
  */
 
-namespace Weedus\PhpSpecOps\Specifications\Map;
+namespace Weedus\PhpSpecOps\Core\Specifications\Map;
 
 
-use Weedus\PhpSpecOps\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
 use Weedus\Specification\SpecificationInterface;
 
 class HasCharacter implements SpecificationInterface

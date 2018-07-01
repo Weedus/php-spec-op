@@ -22,12 +22,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Weedus\\PhpSpecOps\\": "src/"
+      "Weedus\\PhpSpecOps\\Core\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Weedus\\PhpSpecOps\\Tests\\": "tests/"
+      "Weedus\\PhpSpecOps\\Core\\Tests\\": "tests/"
     }
   }
 }

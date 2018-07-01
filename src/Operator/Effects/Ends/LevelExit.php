@@ -6,13 +6,13 @@
  * Time: 23:12
  */
 
-namespace Weedus\PhpSpecOps\Operator\Effects\Ends;
+namespace Weedus\PhpSpecOps\Core\Operator\Effects\Ends;
 
 
 use Weedus\Exceptions\NotYetImplementedException;
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
-use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 class LevelExit extends AbstractEffect
 {

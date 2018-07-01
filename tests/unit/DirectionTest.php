@@ -1,11 +1,11 @@
 <?php
 
-namespace Weedus\Tests\PhpSpecOps\unit;
+namespace Weedus\PhpSpecOps\Core\Tests\unit;
 
 
-use Weedus\PhpSpecOps\Model\Area\Direction;
-use Weedus\PhpSpecOps\Model\Area\Distance;
-use Weedus\PhpSpecOps\Model\Area\Location;
+use Weedus\PhpSpecOps\Core\Model\Area\Direction;
+use Weedus\PhpSpecOps\Core\Model\Area\Distance;
+use Weedus\PhpSpecOps\Core\Model\Area\Location;
 
 class DirectionTest extends \Codeception\Test\Unit
 {
@@ -84,7 +84,7 @@ class DirectionTest extends \Codeception\Test\Unit
     }
 
     /**
-     * @throws \Weedus\PhpSpecOps\Exceptions\DistanceCalculationFailedException
+     * @throws \Weedus\PhpSpecOps\Core\Exceptions\DistanceCalculationFailedException
      */
     public function testCreationByDistance()
     {

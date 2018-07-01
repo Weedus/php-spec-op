@@ -6,15 +6,15 @@
  * Time: 23:54
  */
 
-namespace Weedus\PhpSpecOps\Builder;
+namespace Weedus\PhpSpecOps\Core\Builder;
 
 
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\Area\Map;
-use Weedus\PhpSpecOps\Model\Configuration\ConfigurationInterface;
-use Weedus\PhpSpecOps\Model\Configuration\FieldConfiguration;
-use Weedus\PhpSpecOps\Model\Configuration\LevelConfiguration;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Location;
+use Weedus\PhpSpecOps\Core\Model\Area\Map;
+use Weedus\PhpSpecOps\Core\Model\Configuration\ConfigurationInterface;
+use Weedus\PhpSpecOps\Core\Model\Configuration\FieldConfiguration;
+use Weedus\PhpSpecOps\Core\Model\Configuration\LevelConfiguration;
 
 abstract class MapBuilder implements BuilderInterface
 {
