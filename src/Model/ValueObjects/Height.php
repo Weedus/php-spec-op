@@ -6,9 +6,9 @@
  * Time: 11:35
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects;
 
-use Weedus\PhpSpecOps\Model\OptionsObjectTrait;
+use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
 
 
 /**

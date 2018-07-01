@@ -6,12 +6,12 @@
  * Time: 15:17
  */
 
-namespace Weedus\PhpSpecOps\Operator\Effects\Actions\FinalAction\Standing;
+namespace Weedus\PhpSpecOps\Core\Operator\Effects\Actions\FinalAction\Standing;
 
 
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Units\Places\Walks\WalksInterface;
-use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Units\Places\Walks\WalksInterface;
+use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 abstract class AbstractStanding extends AbstractEffect
 {

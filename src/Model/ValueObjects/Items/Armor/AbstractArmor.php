@@ -6,12 +6,12 @@
  * Time: 15:10
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor;
 
 
-use Weedus\PhpSpecOps\Model\Equalizeable;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\AbstractItem;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\AbstractItem;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemType;
 
 abstract class AbstractArmor extends AbstractItem implements ArmorInterface
 {

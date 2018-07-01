@@ -6,14 +6,14 @@
  * Time: 01:35
  */
 
-namespace Weedus\PhpSpecOps\Model\Units\Characters\Humans;
+namespace Weedus\PhpSpecOps\Core\Model\Units\Characters\Humans;
 
 use Assert\Assertion;
 use Weedus\Collection\SpecificationCollectionInterface;
-use Weedus\PhpSpecOps\Model\Body\BodyInterface;
-use Weedus\PhpSpecOps\Model\Body\Human\HumanBodyInterface;
-use Weedus\PhpSpecOps\Model\Units\Characters\AbstractCharacter;
-use Weedus\PhpSpecOps\Model\Units\Characters\BrainInterface;
+use Weedus\PhpSpecOps\Core\Model\Body\BodyInterface;
+use Weedus\PhpSpecOps\Core\Model\Body\Human\HumanBodyInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\Characters\AbstractCharacter;
+use Weedus\PhpSpecOps\Core\Model\Units\Characters\BrainInterface;
 
 abstract class AbstractHuman extends AbstractCharacter implements HumanInterface
 {

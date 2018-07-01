@@ -6,9 +6,9 @@
  * Time: 09:02
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Actions;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions;
 
-use Weedus\PhpSpecOps\Model\Area\Direction;
+use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 
 
 /**

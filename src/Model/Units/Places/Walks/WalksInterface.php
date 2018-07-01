@@ -6,10 +6,10 @@
  * Time: 23:08
  */
 
-namespace Weedus\PhpSpecOps\Model\Units\Places\Walks;
+namespace Weedus\PhpSpecOps\Core\Model\Units\Places\Walks;
 
-use Weedus\PhpSpecOps\Model\Units\Places\PlaceInterface;
-use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\Places\PlaceInterface;
+use Weedus\PhpSpecOps\Core\Operator\Effects\EffectInterface;
 
 interface WalksInterface extends PlaceInterface
 {

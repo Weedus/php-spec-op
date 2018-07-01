@@ -6,15 +6,15 @@
  * Time: 09:34
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon;
 
 
-use Weedus\PhpSpecOps\Model\OptionsObjectTrait;
-use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
+use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 /**
  * Class WeaponType
- * @package Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon
+ * @package Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon
  * @method static WeaponType PISTOL()
  * @method static WeaponType RIFLE()
  * @method static WeaponType SNIPER_RIFLE()

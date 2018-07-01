@@ -1,8 +1,8 @@
 <?php
 
-namespace Weedus\Tests\PhpSpecOps\unit;
+namespace Weedus\PhpSpecOps\Core\Tests\unit;
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemType;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemType;
 
 class ItemTypeTest extends \Codeception\Test\Unit
 {

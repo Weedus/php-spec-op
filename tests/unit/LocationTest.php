@@ -1,8 +1,8 @@
 <?php
 
-namespace Weedus\Tests\PhpSpecOps\unit;
+namespace Weedus\PhpSpecOps\Core\Tests\unit;
 
-use Weedus\PhpSpecOps\Model\Area\Location;
+use Weedus\PhpSpecOps\Core\Model\Area\Location;
 
 class LocationTest extends \Codeception\Test\Unit
 {

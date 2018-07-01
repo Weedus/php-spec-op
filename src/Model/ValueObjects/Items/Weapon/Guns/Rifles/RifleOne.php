@@ -6,10 +6,10 @@
  * Time: 13:44
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\Guns\Rifles;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\Guns\Rifles;
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\AbstractWeapon;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\AbstractWeapon;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
 
 class RifleOne extends AbstractWeapon
 {

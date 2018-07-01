@@ -6,7 +6,7 @@
  * Time: 11:36
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects;
 
 
 abstract class AbstractValueObject implements ValueObjectInterface

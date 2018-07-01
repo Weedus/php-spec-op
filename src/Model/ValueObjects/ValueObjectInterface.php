@@ -6,10 +6,10 @@
  * Time: 22:05
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects;
 
 
-use Weedus\PhpSpecOps\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 
 interface ValueObjectInterface extends Equalizeable
 {

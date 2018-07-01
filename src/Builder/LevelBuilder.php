@@ -6,12 +6,12 @@
  * Time: 22:29
  */
 
-namespace Weedus\PhpSpecOps\Builder;
+namespace Weedus\PhpSpecOps\Core\Builder;
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Configuration\ConfigurationInterface;
-use Weedus\PhpSpecOps\Model\Configuration\LevelConfiguration;
-use Weedus\PhpSpecOps\Operator\Level\Level;
+use Weedus\PhpSpecOps\Core\Model\Configuration\ConfigurationInterface;
+use Weedus\PhpSpecOps\Core\Model\Configuration\LevelConfiguration;
+use Weedus\PhpSpecOps\Core\Operator\Level\Level;
 
 abstract class LevelBuilder implements BuilderInterface
 {

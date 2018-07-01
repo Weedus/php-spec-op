@@ -6,11 +6,11 @@
  * Time: 22:10
  */
 
-namespace Weedus\PhpSpecOps\Model\Units\Characters\Humans;
+namespace Weedus\PhpSpecOps\Core\Model\Units\Characters\Humans;
 
 
 use PascalDeVink\ShortUuid\ShortUuid;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
 
 class SpecOp extends AbstractHuman
 {

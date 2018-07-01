@@ -6,9 +6,9 @@
  * Time: 16:05
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items;
 
-use Weedus\PhpSpecOps\Model\ValueObjects\ValueObjectInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\ValueObjectInterface;
 
 interface ItemInterface extends ValueObjectInterface
 {

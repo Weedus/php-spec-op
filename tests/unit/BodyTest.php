@@ -1,17 +1,17 @@
 <?php
 
-namespace Weedus\Tests\PhpSpecOps\unit;
+namespace Weedus\PhpSpecOps\Core\Tests\unit;
 
 use Weedus\Exceptions\NotYetImplementedException;
-use Weedus\PhpSpecOps\Model\Area\Range;
-use Weedus\PhpSpecOps\Model\Body\Body;
-use Weedus\PhpSpecOps\Model\Body\BodyInterface;
-use Weedus\PhpSpecOps\Model\Body\Human\HumanBody;
-use Weedus\PhpSpecOps\Model\Body\Human\HumanBodyInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\ArmorType;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\WeaponType;
-use Weedus\PhpSpecOps\Tests\Helper\TestArmor;
-use Weedus\PhpSpecOps\Tests\Helper\TestWeapon;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\Body\Body;
+use Weedus\PhpSpecOps\Core\Model\Body\BodyInterface;
+use Weedus\PhpSpecOps\Core\Model\Body\Human\HumanBody;
+use Weedus\PhpSpecOps\Core\Model\Body\Human\HumanBodyInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorType;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponType;
+use Weedus\PhpSpecOps\Core\Tests\Helper\TestArmor;
+use Weedus\PhpSpecOps\Core\Tests\Helper\TestWeapon;
 
 class BodyTest extends \Codeception\Test\Unit
 {

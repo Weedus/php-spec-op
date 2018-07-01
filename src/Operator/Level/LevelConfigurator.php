@@ -6,11 +6,11 @@
  * Time: 10:50
  */
 
-namespace Weedus\PhpSpecOps\Operator\Level;
+namespace Weedus\PhpSpecOps\Core\Operator\Level;
 
 
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Configuration\LevelConfiguration;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Configuration\LevelConfiguration;
 
 class LevelConfigurator
 {

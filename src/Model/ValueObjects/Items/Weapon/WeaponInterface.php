@@ -6,11 +6,11 @@
  * Time: 16:08
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon;
 
 
-use Weedus\PhpSpecOps\Model\Area\Range;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemInterface;
 
 interface WeaponInterface extends ItemInterface
 {

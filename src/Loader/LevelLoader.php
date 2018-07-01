@@ -6,11 +6,11 @@
  * Time: 22:29
  */
 
-namespace Weedus\PhpSpecOps\Loader;
+namespace Weedus\PhpSpecOps\Core\Loader;
 
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Configuration\LevelConfiguration;
+use Weedus\PhpSpecOps\Core\Model\Configuration\LevelConfiguration;
 
 class LevelLoader
 {

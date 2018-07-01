@@ -6,10 +6,10 @@
  * Time: 09:53
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Actions;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions;
 
 
-use Weedus\PhpSpecOps\Model\Area\Direction;
+use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 
 interface ActionInterface
 {

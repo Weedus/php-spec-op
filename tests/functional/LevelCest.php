@@ -6,7 +6,7 @@
  * Time: 00:14
  */
 
-namespace Weedus\Tests\PhpSpecOps\functional;
+namespace Weedus\PhpSpecOps\Core\Tests\functional;
 
 
 use Weedus\Exceptions\NotYetImplementedException;

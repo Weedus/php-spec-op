@@ -6,17 +6,17 @@
  * Time: 23:57
  */
 
-namespace Weedus\PhpSpecOps\Operator\Effects\Actions\FinalAction\Moves;
+namespace Weedus\PhpSpecOps\Core\Operator\Effects\Actions\FinalAction\Moves;
 
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Location;
-use Weedus\PhpSpecOps\Model\Units\Characters\CharacterEffectInterface;
-use Weedus\PhpSpecOps\Model\Units\Characters\CharacterInterface;
-use Weedus\PhpSpecOps\Model\Units\Placeables\Walkables\WalkableInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Range;
-use Weedus\PhpSpecOps\Operator\Effects\AbstractEffect;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Location;
+use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterEffectInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\Placeables\Walkables\WalkableInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 abstract class AbstractMove extends AbstractEffect
 {

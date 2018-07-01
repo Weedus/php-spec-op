@@ -6,15 +6,15 @@
  * Time: 09:35
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support;
 
 
-use Weedus\PhpSpecOps\Model\OptionsObjectTrait;
-use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
+use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 /**
  * Class SupportItemType
- * @package Weedus\PhpSpecOps\Model\ValueObjects\Items\Support
+ * @package Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support
  * @method static SupportItemType FLASK()
  * @method static SupportItemType KEY()
  */

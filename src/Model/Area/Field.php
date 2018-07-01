@@ -6,11 +6,11 @@
  * Time: 11:28
  */
 
-namespace Weedus\PhpSpecOps\Model\Area;
+namespace Weedus\PhpSpecOps\Core\Model\Area;
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Model\Units\Characters\CharacterInterface;
-use Weedus\PhpSpecOps\Model\Units\Places\PlaceInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\Places\PlaceInterface;
 
 class Field
 {
@@ -131,7 +131,7 @@ class Field
     /**
      * @param Field $field
      * @return null|Distance
-     * @throws \Weedus\PhpSpecOps\Exceptions\DistanceCalculationFailedException
+     * @throws \Weedus\PhpSpecOps\Core\Exceptions\DistanceCalculationFailedException
      */
     public function getDistanceTo(Field $field)
     {

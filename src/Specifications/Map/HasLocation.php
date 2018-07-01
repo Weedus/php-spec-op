@@ -6,11 +6,11 @@
  * Time: 09:34
  */
 
-namespace Weedus\PhpSpecOps\Specifications\Map;
+namespace Weedus\PhpSpecOps\Core\Specifications\Map;
 
 
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Location;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Location;
 use Weedus\Specification\SpecificationInterface;
 
 class HasLocation implements SpecificationInterface

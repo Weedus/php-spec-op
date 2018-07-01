@@ -6,10 +6,10 @@
  * Time: 19:18
  */
 
-namespace Weedus\PhpSpecOps\Tests\Helper;
+namespace Weedus\PhpSpecOps\Core\Tests\Helper;
 
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Support\AbstractSupportItem;
-use Weedus\PhpSpecOps\Operator\Effects\EffectInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support\AbstractSupportItem;
+use Weedus\PhpSpecOps\Core\Operator\Effects\EffectInterface;
 
 class TestSupportItem extends AbstractSupportItem
 {

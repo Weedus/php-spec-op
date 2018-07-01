@@ -6,11 +6,11 @@
  * Time: 16:11
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Support;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support;
 
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Range;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\ItemInterface;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemInterface;
 
 interface SupportItemInterface extends ItemInterface
 {

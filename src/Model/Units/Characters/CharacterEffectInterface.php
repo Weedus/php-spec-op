@@ -6,9 +6,9 @@
  * Time: 17:44
  */
 
-namespace Weedus\PhpSpecOps\Model\Units\Characters;
+namespace Weedus\PhpSpecOps\Core\Model\Units\Characters;
 
-use Weedus\PhpSpecOps\Model\Units\UnitInterface;
+use Weedus\PhpSpecOps\Core\Model\Units\UnitInterface;
 
 interface CharacterEffectInterface extends UnitInterface
 {

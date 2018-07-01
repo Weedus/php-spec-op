@@ -6,15 +6,15 @@
  * Time: 14:45
  */
 
-namespace Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor;
 
 
-use Weedus\PhpSpecOps\Model\OptionsObjectTrait;
-use Weedus\PhpSpecOps\Model\ValueObjects\AbstractValueObject;
+use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 /**
  * Class ArmorType
- * @package Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor
+ * @package Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor
  * @method static ArmorType CHEST()
  * @method static ArmorType HEAD()
  * @method static ArmorType LEGS()

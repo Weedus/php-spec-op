@@ -6,10 +6,10 @@
  * Time: 13:09
  */
 
-namespace Weedus\PhpSpecOps\Model\Area;
+namespace Weedus\PhpSpecOps\Core\Model\Area;
 
-use Weedus\PhpSpecOps\Model\Equalizeable;
-use Weedus\PhpSpecOps\Model\OptionsObjectTrait;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
 
 /**
  * Class Range

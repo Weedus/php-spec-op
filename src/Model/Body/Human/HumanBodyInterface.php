@@ -6,13 +6,13 @@
  * Time: 21:37
  */
 
-namespace Weedus\PhpSpecOps\Model\Body\Human;
+namespace Weedus\PhpSpecOps\Core\Model\Body\Human;
 
 
-use Weedus\PhpSpecOps\Model\Body\BodyInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Armor\Head\ArmorLegsInterface;
-use Weedus\PhpSpecOps\Model\ValueObjects\Items\Weapon\WeaponInterface;
+use Weedus\PhpSpecOps\Core\Model\Body\BodyInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorLegsInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponInterface;
 
 interface HumanBodyInterface extends BodyInterface
 {

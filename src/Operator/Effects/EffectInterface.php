@@ -6,11 +6,11 @@
  * Time: 16:00
  */
 
-namespace Weedus\PhpSpecOps\Operator\Effects;
+namespace Weedus\PhpSpecOps\Core\Operator\Effects;
 
 
-use Weedus\PhpSpecOps\Model\Area\Field;
-use Weedus\PhpSpecOps\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
 
 interface EffectInterface
 {
