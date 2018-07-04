@@ -11,10 +11,10 @@ namespace Weedus\PhpSpecOps\Core\Model\Configuration;
 
 use Assert\Assertion;
 use Weedus\PhpSpecOps\Core\Model\Equalizeable;
-use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterInterface;
-use Weedus\PhpSpecOps\Core\Model\Units\Places\PlaceInterface;
-use Weedus\PhpSpecOps\Core\Model\Units\Places\Walks\Ground;
-use Weedus\PhpSpecOps\Core\Model\Units\Places\Walks\WalksInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\PlaceInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\Walks\Ground;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\Walks\WalksInterface;
 
 class FieldConfiguration implements ConfigurationInterface
 {

@@ -6,7 +6,7 @@
  * Time: 22:10
  */
 
-namespace Weedus\PhpSpecOps\Core\Model\Units\Characters\Humans;
+namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans;
 
 
 use PascalDeVink\ShortUuid\ShortUuid;

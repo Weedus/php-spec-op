@@ -10,7 +10,7 @@ namespace Weedus\PhpSpecOps\Core\Operator\Level;
 
 
 use Weedus\PhpSpecOps\Core\Model\Area\Map;
-use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterInterface;
 
 final class Level
 {

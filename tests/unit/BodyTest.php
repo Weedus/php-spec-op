@@ -8,7 +8,12 @@ use Weedus\PhpSpecOps\Core\Model\Body\Body;
 use Weedus\PhpSpecOps\Core\Model\Body\BodyInterface;
 use Weedus\PhpSpecOps\Core\Model\Body\Human\HumanBody;
 use Weedus\PhpSpecOps\Core\Model\Body\Human\HumanBodyInterface;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorType;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Chest\ArmorChestInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Legs\ArmorLegsInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponType;
 use Weedus\PhpSpecOps\Core\Tests\Helper\TestArmor;
 use Weedus\PhpSpecOps\Core\Tests\Helper\TestArmorChest;
@@ -53,15 +58,22 @@ class BodyTest extends \Codeception\Test\Unit
         $weapon = new TestWeapon('weapon',1,1,Range::ZERO(),Range::MEDIUM(),WeaponType::DAGGER());
         $shield = new TestWeapon('weapon',1,1,Range::ZERO(),Range::MEDIUM(),WeaponType::SHIELD());
 
+        $this->assertNull($body->getChest());
+        $this->assertNull($body->getHead());
+        $this->assertNull($body->getLegs());
+        $this->assertNull($body->getLeftHand());
+        $this->assertNull($body->getRightHand());
 
-        throw new NotYetImplementedException(__METHOD__);
+        $body->setHead($head);
+        $body->setLegs($legs);
+        $body->setChest($chest);
+        $body->setLeftHand($weapon);
+        $body->setRightHand($shield);
 
+        $this->assertInstanceOf(ArmorChestInterface::class, $body->getChest());
+        $this->assertInstanceOf(ArmorHeadInterface::class, $body->getHead());
+        $this->assertInstanceOf(ArmorLegsInterface::class, $body->getLegs());
+        $this->assertInstanceOf(WeaponInterface::class, $body->getLeftHand());
+        $this->assertInstanceOf(WeaponInterface::class, $body->getRightHand());
     }
-
-    public function testEquals()
-    {
-
-        throw new NotYetImplementedException(__METHOD__);
-    }
-
 }

@@ -12,9 +12,9 @@ namespace Weedus\PhpSpecOps\Core\Operator\Effects\Actions\FinalAction\Moves;
 use Assert\Assertion;
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
 use Weedus\PhpSpecOps\Core\Model\Area\Location;
-use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterEffectInterface;
-use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterInterface;
-use Weedus\PhpSpecOps\Core\Model\Units\Placeables\Walkables\WalkableInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Placeables\Walkables\WalkableInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 

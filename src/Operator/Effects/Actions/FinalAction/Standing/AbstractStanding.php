@@ -10,7 +10,7 @@ namespace Weedus\PhpSpecOps\Core\Operator\Effects\Actions\FinalAction\Standing;
 
 
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
-use Weedus\PhpSpecOps\Core\Model\Units\Places\Walks\WalksInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\Walks\WalksInterface;
 use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 abstract class AbstractStanding extends AbstractEffect

@@ -6,10 +6,10 @@
  * Time: 22:30
  */
 
-namespace Weedus\PhpSpecOps\Core\Model\Units\Places;
+namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Places;
 
 
-use Weedus\PhpSpecOps\Core\Model\Units\AbstractUnit;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\AbstractUnit;
 
 abstract class AbstractPlace extends AbstractUnit implements PlaceInterface
 {

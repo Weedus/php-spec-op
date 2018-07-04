@@ -6,10 +6,10 @@
  * Time: 01:35
  */
 
-namespace Weedus\PhpSpecOps\Core\Model\Units\Characters\Humans;
+namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans;
 
 use Weedus\Collection\SpecificationCollectionInterface;
-use Weedus\PhpSpecOps\Core\Model\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterInterface;
 
 interface HumanInterface extends CharacterInterface
 {

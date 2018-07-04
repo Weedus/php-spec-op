@@ -6,7 +6,7 @@
  * Time: 11:25
  */
 
-namespace Weedus\PhpSpecOps\Core\Model\Units;
+namespace Weedus\PhpSpecOps\Core\Model\Entities\Units;
 
 
 use Weedus\PhpSpecOps\Core\Model\Area\Field;

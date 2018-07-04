@@ -6,10 +6,10 @@
  * Time: 23:44
  */
 
-namespace Weedus\PhpSpecOps\Core\Model\Units\Places\Walks;
+namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\Walks;
 
 use PascalDeVink\ShortUuid\ShortUuid;
-use Weedus\PhpSpecOps\Core\Model\Units\Places\AbstractPlace;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\AbstractPlace;
 use Weedus\PhpSpecOps\Core\Operator\Effects\EffectInterface;
 
 class Ground extends AbstractPlace implements WalksInterface
