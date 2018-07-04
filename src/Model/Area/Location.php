@@ -8,7 +8,6 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\Area;
 
-use Assert\Assertion;
 use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 
 final class Location implements Equalizeable
@@ -66,11 +65,12 @@ final class Location implements Equalizeable
     /**
      * @param Equalizeable $item
      * @return bool
-     * @throws \Assert\AssertionFailedException
      */
     public function equals(Equalizeable $item): bool
     {
-        Assertion::isInstanceOf($item, self::class);
+        if(!($item instanceof Location)){
+            return false;
+        }
         /** @var Location $item */
         return $this->x === $item->x
             && $this->y === $item->y

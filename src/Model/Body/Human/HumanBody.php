@@ -12,26 +12,26 @@ namespace Weedus\PhpSpecOps\Core\Model\Body\Human;
 use Weedus\PhpSpecOps\Core\Model\Body\Body;
 use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorLegsInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Legs\ArmorLegsInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponInterface;
 
 class HumanBody extends Body implements HumanBodyInterface
 {
 
-    /** @var WeaponInterface */
-    protected $leftHand;
-    /** @var WeaponInterface */
-    protected $rightHand;
+    /** @var WeaponInterface|null */
+    protected $leftHand = null;
+    /** @var WeaponInterface|null */
+    protected $rightHand = null;
 
-    /** @var ArmorHeadInterface */
-    protected $head;
-    /** @var ArmorLegsInterface */
-    protected $legs;
+    /** @var ArmorHeadInterface|null */
+    protected $head = null;
+    /** @var ArmorLegsInterface|null */
+    protected $legs = null;
 
     /**
-     * @return WeaponInterface
+     * @return null|WeaponInterface
      */
-    public function getLeftHand(): WeaponInterface
+    public function getLeftHand(): ?WeaponInterface
     {
         return $this->leftHand;
     }
@@ -45,9 +45,9 @@ class HumanBody extends Body implements HumanBodyInterface
     }
 
     /**
-     * @return WeaponInterface
+     * @return null|WeaponInterface
      */
-    public function getRightHand(): WeaponInterface
+    public function getRightHand(): ?WeaponInterface
     {
         return $this->rightHand;
     }
@@ -61,9 +61,9 @@ class HumanBody extends Body implements HumanBodyInterface
     }
 
     /**
-     * @return ArmorHeadInterface
+     * @return null|ArmorHeadInterface
      */
-    public function getHead(): ArmorHeadInterface
+    public function getHead(): ?ArmorHeadInterface
     {
         return $this->head;
     }
@@ -77,9 +77,9 @@ class HumanBody extends Body implements HumanBodyInterface
     }
 
     /**
-     * @return ArmorLegsInterface
+     * @return null|ArmorLegsInterface
      */
-    public function getLegs(): ArmorLegsInterface
+    public function getLegs(): ?ArmorLegsInterface
     {
         return $this->legs;
     }
@@ -91,18 +91,5 @@ class HumanBody extends Body implements HumanBodyInterface
     {
         $this->legs = $legs;
     }
-
-    public function equals(Equalizeable $item): bool
-    {
-        if (!($item instanceof HumanBodyInterface)) {
-            return false;
-        }
-        return $this->leftHand->equals($item->getLeftHand())
-            && $this->rightHand->equals($item->getRightHand())
-            && $this->head->equals($item->getHead())
-            && $this->legs->equals($item->getLegs())
-            && parent::equals($item);
-    }
-
 
 }

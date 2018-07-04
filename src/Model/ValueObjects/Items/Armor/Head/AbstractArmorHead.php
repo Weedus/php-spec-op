@@ -6,13 +6,13 @@
  * Time: 22:39
  */
 
-namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Chest;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head;
 
 
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\AbstractArmor;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorType;
 
-abstract class AbstractArmorHead extends AbstractArmor
+abstract class AbstractArmorHead extends AbstractArmor implements ArmorHeadInterface
 {
     public function __construct(string $name, int $defense)
     {

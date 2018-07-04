@@ -8,17 +8,20 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\Body;
 
+
 use Weedus\PhpSpecOps\Core\Model\Equalizeable;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorChestInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Chest\ArmorChestInterface;
 
 class Body implements BodyInterface
 {
 
-    /** @var ArmorChestInterface */
-    protected $chest;
+    /** @var ArmorChestInterface|null */
+    protected $chest = null;
 
-
-    public function getChest(): ArmorChestInterface
+    /**
+     * @return null|ArmorChestInterface
+     */
+    public function getChest(): ?ArmorChestInterface
     {
         return $this->chest;
     }
@@ -29,14 +32,5 @@ class Body implements BodyInterface
     public function setChest(ArmorChestInterface $chest): void
     {
         $this->chest = $chest;
-    }
-
-
-    public function equals(Equalizeable $item): bool
-    {
-        if (!($item instanceof BodyInterface)) {
-            return false;
-        }
-        return $this->chest->equals($item->getChest());
     }
 }

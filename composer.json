@@ -10,8 +10,7 @@
   ],
   "require": {
     "php": ">=7.2",
-    "pascaldevink/shortuuid": ">=2",
-    "beberlei/assert": ">=2.9",
+    "ramsey/uuid": ">=3.7",
     "weedus/collection": ">=1.1.1",
     "weedus/exceptions": ">=0.0.1",
     "weedus/specification": ">=1.0.5"

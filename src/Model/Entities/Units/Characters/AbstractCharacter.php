@@ -6,13 +6,13 @@
  * Time: 01:19
  */
 
-namespace Weedus\PhpSpecOps\Core\Model\Units\Characters;
+namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters;
 
 
 use Assert\Assertion;
 use PascalDeVink\ShortUuid\ShortUuid;
 use Weedus\PhpSpecOps\Core\Model\Body\BodyInterface;
-use Weedus\PhpSpecOps\Core\Model\Units\AbstractUnit;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\AbstractUnit;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
 
 abstract class AbstractCharacter extends AbstractUnit implements CharacterInterface, CharacterEffectInterface

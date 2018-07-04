@@ -10,11 +10,11 @@ $fields = [
     new \Weedus\PhpSpecOps\Core\Model\Configuration\FieldConfiguration(
         0, 0, 0,
         null,
-        \Weedus\PhpSpecOps\Core\Model\Units\Characters\Humans\SpecOp::class
+        \Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans\SpecOp::class
     ),
     new \Weedus\PhpSpecOps\Core\Model\Configuration\FieldConfiguration(
         5, 5, 0,
-        \Weedus\PhpSpecOps\Core\Model\Units\Placeables\Walkables\ExitPoint::class
+        \Weedus\PhpSpecOps\Core\Model\Entities\Units\Placeables\Walkables\ExitPoint::class
     )
 ];
 $heightToFill = [0];
