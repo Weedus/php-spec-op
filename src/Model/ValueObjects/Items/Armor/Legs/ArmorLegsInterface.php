@@ -6,7 +6,7 @@
  * Time: 02:50
  */
 
-namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head;
+namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Legs;
 
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorInterface;
 

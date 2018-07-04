@@ -12,7 +12,7 @@ namespace Weedus\PhpSpecOps\Core\Model\Body\Human;
 use Weedus\PhpSpecOps\Core\Model\Body\Body;
 use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorLegsInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Legs\ArmorLegsInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponInterface;
 
 class HumanBody extends Body implements HumanBodyInterface

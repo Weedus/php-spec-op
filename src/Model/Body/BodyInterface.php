@@ -9,7 +9,7 @@
 namespace Weedus\PhpSpecOps\Core\Model\Body;
 
 
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorChestInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Chest\ArmorChestInterface;
 
 interface BodyInterface
 {
