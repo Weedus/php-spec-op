@@ -14,10 +14,17 @@ use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 /**
  * Class Action
  * @package PhpSpecOps\ValueObjects\Actions
- * @method static Action OPEN(Direction $direction)
- * @method static Action CLOSE(Direction $direction)
- * @method static Action ACTIVATE(Direction $direction)
- * @method static Action DEACTIVATE(Direction $direction)
+ * @method static Action LOOK(?Direction $direction = null)
+ * @method static Action FEEL(?Direction $direction = null)
+ * @method static Action TASTE(?Direction $direction = null)
+ * @method static Action SMELL(?Direction $direction = null)
+ * @method static Action HEAR(?Direction $direction = null)
+ * @method static Action GRAB(?Direction $direction = null)
+ * @method static Action PUT(?Direction $direction = null)
+ * @method static Action OPEN(?Direction $direction = null)
+ * @method static Action CLOSE(?Direction $direction = null)
+ * @method static Action ACTIVATE(?Direction $direction = null)
+ * @method static Action DEACTIVATE(?Direction $direction = null)
  */
 class Action extends AbstractAction
 {
@@ -25,13 +32,15 @@ class Action extends AbstractAction
     const FEEL = 'feel';
     const TASTE = 'taste';
     const SMELL = 'smell';
+    const HEAR = 'hear';
     const GRAB = 'grab';
     const PUT = 'put';
+    const OPEN = 'open';
     const CLOSE = 'close';
     const ACTIVATE = 'activate';
     const DEACTIVATE = 'deactivate';
 
-    protected function __construct(string $action, Direction $direction)
+    protected function __construct(string $action, ?Direction $direction=null)
     {
         parent::__construct($action, $direction);
     }
@@ -48,7 +57,6 @@ class Action extends AbstractAction
         if (is_array($arguments)) {
             $direction = $arguments[0];
         }
-        /** @var Direction $direction */
         return new static(constant('self::' . $name), $direction);
     }
 

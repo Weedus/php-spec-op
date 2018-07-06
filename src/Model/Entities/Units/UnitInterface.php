@@ -10,8 +10,9 @@ namespace Weedus\PhpSpecOps\Core\Model\Entities\Units;
 
 
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Entities\EntityInterface;
 
-interface UnitInterface
+interface UnitInterface extends EntityInterface
 {
     public function getField(): Field;
 

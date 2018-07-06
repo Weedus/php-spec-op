@@ -9,11 +9,12 @@
 namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters;
 
 
-use Assert\Assertion;
-use PascalDeVink\ShortUuid\ShortUuid;
+use Ramsey\Uuid\Uuid;
+use Weedus\PhpSpecOps\Core\Exceptions\ConstructionFailureException;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Model\Body\BodyInterface;
+use Weedus\PhpSpecOps\Core\Model\Brain\BrainInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\AbstractUnit;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
 
 abstract class AbstractCharacter extends AbstractUnit implements CharacterInterface, CharacterEffectInterface
 {
@@ -28,18 +29,20 @@ abstract class AbstractCharacter extends AbstractUnit implements CharacterInterf
     protected $sight;
     /** @var BodyInterface */
     protected $body;
+    /** @var BrainInterface */
+    protected $brain;
 
     /**
      * AbstractCharacter constructor.
      * @param string $name
-     * @param null|ShortUuid $id
-     * @throws \Assert\AssertionFailedException
+     * @param null|Uuid $id
+     * @throws ConstructionFailureException
      */
-    public function __construct(string $name, ?ShortUuid $id = null)
+    public function __construct(string $name, BrainInterface $brain, BodyInterface $body, ?Uuid $id = null)
     {
-        Assertion::notEmpty($this->maxHealth, 'maxHealth empty');
-        Assertion::notEmpty($this->power, 'power empty');
-        Assertion::notEmpty($this->sight, 'sight empty');
+        $this->validateConstruct();
+        $this->brain = $brain;
+        $this->body = $body;
         parent::__construct($name, $id);
     }
 
@@ -84,15 +87,36 @@ abstract class AbstractCharacter extends AbstractUnit implements CharacterInterf
     }
 
     /**
-     * @param BodyInterface $body
+     * @return BrainInterface
      */
-    public function setBody(BodyInterface $body): void
+    public function getBrain(): BrainInterface
     {
-        $this->body = $body;
+        return $this->brain;
     }
+
 
     public function isDead(): bool
     {
         return $this->health <= 0;
+    }
+
+    /**
+     * @throws ConstructionFailureException
+     */
+    protected function validateConstruct()
+    {
+        $missing = [];
+        if(empty($this->maxHealth)){
+            $missing[] = 'maxHealth';
+        }
+        if(empty($this->power)){
+            $missing[] = 'power';
+        }
+        if(empty($this->sight)){
+            $missing[] = 'sight';
+        }
+        if(!empty($missing)){
+            throw new ConstructionFailureException('attributes not set: ['.implode(', ', $missing).']');
+        }
     }
 }

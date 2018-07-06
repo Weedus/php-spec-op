@@ -10,8 +10,9 @@ namespace Weedus\PhpSpecOps\Core\Model\Entities\Units;
 
 
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Entities\AbstractEntity;
 
-abstract class AbstractUnit implements UnitInterface
+abstract class AbstractUnit extends AbstractEntity implements UnitInterface
 {
     /** @var Field */
     protected $field;

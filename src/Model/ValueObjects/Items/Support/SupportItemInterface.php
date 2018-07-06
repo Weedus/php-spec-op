@@ -11,8 +11,9 @@ namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support;
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\UtilityInterface;
 
-interface SupportItemInterface extends ItemInterface
+interface SupportItemInterface extends ItemInterface, UtilityInterface
 {
     /**
      * @return SupportItemType
@@ -40,13 +41,4 @@ interface SupportItemInterface extends ItemInterface
      */
     public function getRange(): Range;
 
-    /**
-     * @return int
-     */
-    public function getPreparationTime(): int;
-
-    /**
-     * @return int
-     */
-    public function getDuration(): int;
 }

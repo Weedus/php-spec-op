@@ -17,12 +17,16 @@ use Weedus\PhpSpecOps\Core\Model\Area\Direction;
  * @method static FinalAction MOVE(Direction $direction)
  * @method static FinalAction ATTACK(Direction $direction)
  * @method static FinalAction REST(Direction $direction)
+ * @method static FinalAction PREPARE(Direction $direction)
+ * @method static FinalAction PERFORM(Direction $direction)
  */
 class FinalAction extends AbstractAction
 {
     const MOVE = 'move';
     const ATTACK = 'attack';
     const REST = 'rest';
+    const PREPARE = 'prepare';
+    const PERFORM = 'perform';
 
     protected function __construct(string $action, Direction $direction)
     {
@@ -34,7 +38,6 @@ class FinalAction extends AbstractAction
      * @param $name
      * @param $arguments
      * @return FinalAction
-     * @throws \Assert\AssertionFailedException
      */
     public static function __callStatic($name, $arguments)
     {

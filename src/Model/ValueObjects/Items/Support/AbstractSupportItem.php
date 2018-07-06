@@ -23,10 +23,12 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
     protected $text;
     /** @var Range */
     protected $range;
-    /** @var int */
+    /** @var int|null */
     protected $preparationTime;
-    /** @var int */
+    /** @var int|null */
     protected $duration;
+    /** @var int|null */
+    protected $utilizations;
     /** @var SupportItemType */
     protected $supportItemType;
 
@@ -37,6 +39,7 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
         Range $range,
         int $preparationTime,
         int $duration,
+        int $utilizations,
         SupportItemType $supportItemType
     )
     {
@@ -46,6 +49,7 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
         $this->range = $range;
         $this->preparationTime = $preparationTime;
         $this->duration = $duration;
+        $this->utilizations = $utilizations;
         $this->supportItemType = $supportItemType;
     }
 
@@ -83,23 +87,32 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
         $distance = $caster->getDistanceTo($target);
         if ($this->range->isReachable($distance)) {
             $this->effect->perform($target);
+            $this->utilizations -= 1;
         }
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getPreparationTime(): int
+    public function getPreparationTime(): ?int
     {
         return $this->preparationTime;
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getDuration(): int
+    public function getDuration(): ?int
     {
         return $this->duration;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getUtilizations(): ?int
+    {
+        return $this->utilizations;
     }
 
     /**
