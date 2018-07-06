@@ -18,7 +18,7 @@ abstract class AbstractAction extends AbstractValueObject implements ActionInter
 
     /** @var string */
     private $action;
-    /** @var Direction */
+    /** @var Direction|null */
     private $direction;
 
     /**
@@ -26,7 +26,7 @@ abstract class AbstractAction extends AbstractValueObject implements ActionInter
      * @param string $action
      * @param Direction $direction
      */
-    public function __construct(string $action, Direction $direction)
+    public function __construct(string $action, ?Direction $direction = null)
     {
         $this->action = $action;
         $this->direction = $direction;
@@ -35,7 +35,6 @@ abstract class AbstractAction extends AbstractValueObject implements ActionInter
     /**
      * @param Equalizeable $item
      * @return bool
-     * @throws \Assert\AssertionFailedException
      */
     public function equals(Equalizeable $item): bool
     {
@@ -51,7 +50,7 @@ abstract class AbstractAction extends AbstractValueObject implements ActionInter
         return $this->action;
     }
 
-    public function getDirection(): Direction
+    public function getDirection(): ?Direction
     {
         return $this->direction;
     }

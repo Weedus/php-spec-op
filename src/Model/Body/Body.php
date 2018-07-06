@@ -8,8 +8,6 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\Body;
 
-
-use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Chest\ArmorChestInterface;
 
 class Body implements BodyInterface
@@ -32,5 +30,10 @@ class Body implements BodyInterface
     public function setChest(ArmorChestInterface $chest): void
     {
         $this->chest = $chest;
+    }
+
+    public static function create()
+    {
+        return new static();
     }
 }

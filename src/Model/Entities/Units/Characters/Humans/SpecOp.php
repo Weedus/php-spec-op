@@ -9,17 +9,18 @@
 namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans;
 
 
-use PascalDeVink\ShortUuid\ShortUuid;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Ramsey\Uuid\Uuid;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\Brain\BrainInterface;
 
 class SpecOp extends AbstractHuman
 {
 
-    public function __construct(?ShortUuid $id = null)
+    public function __construct(BrainInterface $brain, ?string $name= null, ?Uuid $id = null)
     {
         $this->sight = Range::HIGH();
         $this->maxHealth = 35;
         $this->power = 3;
-        parent::__construct($name ?? 'SpecOp', $id);
+        parent::__construct($name ?? 'SpecOp', $brain, $id);
     }
 }

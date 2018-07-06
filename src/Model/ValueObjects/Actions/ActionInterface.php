@@ -15,5 +15,5 @@ interface ActionInterface
 {
     public function getAction(): string;
 
-    public function getDirection(): Direction;
+    public function getDirection(): ?Direction;
 }

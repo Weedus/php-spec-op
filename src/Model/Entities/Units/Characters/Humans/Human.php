@@ -8,14 +8,14 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans;
 
-
-use PascalDeVink\ShortUuid\ShortUuid;
+use Ramsey\Uuid\Uuid;
+use Weedus\PhpSpecOps\Core\Model\Brain\BrainInterface;
 
 class Human extends AbstractHuman
 {
-    public function __construct(?string $name = null, ?ShortUuid $id = null)
+    public function __construct(BrainInterface $brain, ?string $name = null, ?Uuid $id = null)
     {
-        parent::__construct($name ?? 'Human', $id);
+        parent::__construct($name ?? 'Human', $brain, $id);
     }
 
 }

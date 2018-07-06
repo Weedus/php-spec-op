@@ -51,7 +51,6 @@ class ItemTest extends \Codeception\Test\Unit
         $this->assertInstanceOf(ItemInterface::class, $support);
         $this->assertInstanceOf(ItemInterface::class, $support2);
 
-
         $this->assertTrue($armor->equalsType($armor));
         $this->assertTrue($armor->equalsType($armor2));
         $this->assertTrue($armor->equals($armor));
@@ -132,6 +131,7 @@ class ItemTest extends \Codeception\Test\Unit
             Range::MEDIUM(),
             0,
             0,
+            2,
             SupportItemType::FLASK()
         );
         $item2 = new TestSupportItem(
@@ -141,6 +141,7 @@ class ItemTest extends \Codeception\Test\Unit
             Range::MEDIUM(),
             0,
             0,
+            1,
             SupportItemType::FLASK()
         );
 
@@ -150,9 +151,11 @@ class ItemTest extends \Codeception\Test\Unit
         $this->assertTrue(Range::MEDIUM()->equals($item->getRange()));
         $this->assertEquals(0, $item->getPreparationTime());
         $this->assertEquals(0, $item->getDuration());
+        $this->assertEquals(2, $item->getUtilizations());
         $this->assertTrue($item->equals($item));
         $this->assertTrue($item->equalsType($item));
         $this->assertTrue($item->equalsSupportItemType($item));
         $this->assertFalse($item->equals($item2));
+
     }
 }
