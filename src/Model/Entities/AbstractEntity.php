@@ -39,7 +39,7 @@ class AbstractEntity implements EntityInterface
         return $this->id;
     }
 
-    final public function equals(Equalizeable $item): bool
+    final public function equals(?Equalizeable $item): bool
     {
         if(!($item instanceof EntityInterface)){
             return false;

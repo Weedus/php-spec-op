@@ -15,7 +15,7 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\AbstractItem;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemType;
 use Weedus\PhpSpecOps\Core\Operator\Effects\EffectInterface;
 
-class AbstractSupportItem extends AbstractItem implements SupportItemInterface
+abstract class AbstractSupportItem extends AbstractItem implements SupportItemInterface
 {
     /** @var EffectInterface */
     protected $effect;
@@ -64,7 +64,7 @@ class AbstractSupportItem extends AbstractItem implements SupportItemInterface
         return $this->range;
     }
 
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof SupportItemInterface)) {
             return false;

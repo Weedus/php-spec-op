@@ -40,7 +40,7 @@ abstract class AbstractArmor extends AbstractItem implements ArmorInterface
         return $this->armorType;
     }
 
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof ArmorInterface)) {
             return false;

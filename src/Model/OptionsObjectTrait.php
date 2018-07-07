@@ -49,7 +49,7 @@ trait OptionsObjectTrait
      * @param Equalizeable $item
      * @return bool
      */
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof $this)) {
             return false;

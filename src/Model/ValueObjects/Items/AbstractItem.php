@@ -49,7 +49,7 @@ abstract class AbstractItem extends AbstractValueObject implements ItemInterface
      * @param Equalizeable $item
      * @return bool
      */
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof ItemInterface)) {
             return false;

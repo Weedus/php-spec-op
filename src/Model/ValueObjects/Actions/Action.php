@@ -14,17 +14,17 @@ use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 /**
  * Class Action
  * @package PhpSpecOps\ValueObjects\Actions
- * @method static Action LOOK(?Direction $direction = null)
- * @method static Action FEEL(?Direction $direction = null)
+ * @method static Action LOOK(Direction $direction)
+ * @method static Action FEEL(Direction $direction)
  * @method static Action TASTE(?Direction $direction = null)
  * @method static Action SMELL(?Direction $direction = null)
  * @method static Action HEAR(?Direction $direction = null)
- * @method static Action GRAB(?Direction $direction = null)
- * @method static Action PUT(?Direction $direction = null)
- * @method static Action OPEN(?Direction $direction = null)
- * @method static Action CLOSE(?Direction $direction = null)
- * @method static Action ACTIVATE(?Direction $direction = null)
- * @method static Action DEACTIVATE(?Direction $direction = null)
+ * @method static Action GRAB(Direction $direction)
+ * @method static Action PUT(Direction $direction)
+ * @method static Action OPEN(Direction $direction)
+ * @method static Action CLOSE(Direction $direction)
+ * @method static Action ACTIVATE(Direction $direction)
+ * @method static Action DEACTIVATE(Direction $direction)
  */
 class Action extends AbstractAction
 {
@@ -53,8 +53,8 @@ class Action extends AbstractAction
      */
     public static function __callStatic($name, $arguments)
     {
-        $direction = $arguments;
-        if (is_array($arguments)) {
+        $direction = null;
+        if (!empty($arguments)) {
             $direction = $arguments[0];
         }
         return new static(constant('self::' . $name), $direction);

@@ -36,13 +36,16 @@ abstract class AbstractAction extends AbstractValueObject implements ActionInter
      * @param Equalizeable $item
      * @return bool
      */
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
-        if (!($item instanceof AbstractAction)) {
+        if (!($item instanceof ActionInterface)) {
             return false;
         }
-        return $this->action === $item->action
-            && $this->direction->equals($item->direction);
+        $directionCompare = $this->direction
+            ? $this->direction->equals($item->getDirection())
+            : $this->direction === $item->getDirection();
+        return $this->action === $item->getAction()
+            && $directionCompare;
     }
 
     public function getAction(): string

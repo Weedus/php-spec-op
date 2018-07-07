@@ -11,5 +11,5 @@ namespace Weedus\PhpSpecOps\Core\Model;
 
 interface Equalizeable
 {
-    public function equals(Equalizeable $item): bool;
+    public function equals(?Equalizeable $item): bool;
 }

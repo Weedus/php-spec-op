@@ -66,7 +66,7 @@ final class Location implements Equalizeable
      * @param Equalizeable $item
      * @return bool
      */
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if(!($item instanceof Location)){
             return false;

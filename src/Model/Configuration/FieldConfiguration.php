@@ -100,7 +100,7 @@ class FieldConfiguration implements ConfigurationInterface
     }
 
 
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof FieldConfiguration)) {
             return false;
