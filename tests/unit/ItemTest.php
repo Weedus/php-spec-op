@@ -2,7 +2,9 @@
 
 namespace Weedus\PhpSpecOps\Core\Tests\unit;
 
+use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\FinalAction;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorType;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemInterface;
@@ -129,7 +131,7 @@ class ItemTest extends \Codeception\Test\Unit
             'just for testing',
             TestEffect::create(),
             Range::MEDIUM(),
-            0,
+            2,
             0,
             2,
             SupportItemType::FLASK()
@@ -149,13 +151,20 @@ class ItemTest extends \Codeception\Test\Unit
         $this->assertEquals('just for testing', $item->getText());
         $this->assertInstanceOf(EffectInterface::class, $item->getEffect());
         $this->assertTrue(Range::MEDIUM()->equals($item->getRange()));
-        $this->assertEquals(0, $item->getPreparationTime());
+        $this->assertEquals(2, $item->getPreparationTime());
+        $this->assertEquals(0, $item2->getPreparationTime());
         $this->assertEquals(0, $item->getDuration());
         $this->assertEquals(2, $item->getUtilizations());
         $this->assertTrue($item->equals($item));
         $this->assertTrue($item->equalsType($item));
         $this->assertTrue($item->equalsSupportItemType($item));
         $this->assertFalse($item->equals($item2));
-
+        $this->assertEquals([
+            FinalAction::PREPARE(),
+            FinalAction::PREPARE(),
+            FinalAction::PERFORM(Direction::WEST())
+        ],$item->getActions(Direction::WEST()));
+        $this->assertNotEquals([FinalAction::PERFORM()],$item->getActions());
+        $this->assertEquals([FinalAction::PERFORM()],$item2->getActions());
     }
 }

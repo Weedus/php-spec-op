@@ -8,9 +8,12 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support;
 
+use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Model\Equalizeable;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\ActionInterface;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\FinalAction;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\AbstractItem;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemType;
 use Weedus\PhpSpecOps\Core\Operator\Effects\EffectInterface;
@@ -78,18 +81,21 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
     }
 
     /**
-     * @param Field $caster
-     * @param Field $target
-     * @throws \Weedus\PhpSpecOps\Core\Exceptions\DistanceCalculationFailedException
+     * @param null|Direction $direction
+     * @return ActionInterface[]
      */
-    public function perform(Field $caster, Field $target): void
+    public function getActions(?Direction $direction = null): array
     {
-        $distance = $caster->getDistanceTo($target);
-        if ($this->range->isReachable($distance)) {
-            $this->effect->perform($target);
-            $this->utilizations -= 1;
+        $usage = [];
+
+        for($i = 1; $i <= $this->preparationTime; $i++){
+            $usage[] = FinalAction::PREPARE();
         }
+        $usage[] = FinalAction::PERFORM($direction);
+
+        return $usage;
     }
+
 
     /**
      * @return int|null
