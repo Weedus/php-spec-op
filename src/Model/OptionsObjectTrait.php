@@ -21,6 +21,7 @@ trait OptionsObjectTrait
     /**
      * @param $name
      * @param $arguments
+     *
      * @return OptionsObjectTrait
      */
     public static function __callStatic($name, $arguments): self
@@ -30,6 +31,7 @@ trait OptionsObjectTrait
 
     /**
      * @param $name
+     *
      * @return OptionsObjectTrait
      */
     public static function create($name): self
@@ -47,9 +49,10 @@ trait OptionsObjectTrait
 
     /**
      * @param Equalizeable $item
+     *
      * @return bool
      */
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof $this)) {
             return false;

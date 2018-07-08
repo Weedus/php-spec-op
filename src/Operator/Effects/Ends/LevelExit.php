@@ -16,7 +16,6 @@ use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 class LevelExit extends AbstractEffect
 {
-
     /**
      * @return Range
      */
@@ -29,6 +28,4 @@ class LevelExit extends AbstractEffect
     {
         throw new NotYetImplementedException(__CLASS__ . '->' . __METHOD__);
     }
-
-
 }

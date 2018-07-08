@@ -8,8 +8,9 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support;
 
-use Weedus\PhpSpecOps\Core\Model\Area\Field;
+use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\ActionInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\UtilityInterface;
 
@@ -26,10 +27,11 @@ interface SupportItemInterface extends ItemInterface, UtilityInterface
     public function equalsSupportItemType(SupportItemInterface $item): bool;
 
     /**
-     * @param Field $caster
-     * @param Field $target
+     * @param null|Direction $direction
+     *
+     * @return ActionInterface[]
      */
-    public function perform(Field $caster, Field $target): void;
+    public function getActions(?Direction $direction = null): array;
 
     /**
      * @return string
@@ -40,5 +42,4 @@ interface SupportItemInterface extends ItemInterface, UtilityInterface
      * @return Range
      */
     public function getRange(): Range;
-
 }

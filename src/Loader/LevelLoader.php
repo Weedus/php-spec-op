@@ -18,6 +18,7 @@ class LevelLoader
 
     /**
      * @param $levelName
+     *
      * @return mixed
      * @throws \Assert\AssertionFailedException
      */

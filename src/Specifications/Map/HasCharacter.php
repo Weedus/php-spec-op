@@ -14,7 +14,6 @@ use Weedus\Specification\SpecificationInterface;
 
 class HasCharacter implements SpecificationInterface
 {
-
     public function isSatisfiedBy($item): bool
     {
         if (!($item instanceof Field)) {

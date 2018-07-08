@@ -18,7 +18,7 @@ abstract class AbstractStanding extends AbstractEffect
     abstract protected function performEffect(Field $caster, ?Field $target = null);
 
     /**
-     * @param Field $caster
+     * @param Field      $caster
      * @param null|Field $target
      */
     public function perform(Field $caster, ?Field $target = null): void

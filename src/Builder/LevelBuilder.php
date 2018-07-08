@@ -17,6 +17,7 @@ abstract class LevelBuilder implements BuilderInterface
 {
     /**
      * @param ConfigurationInterface $configuration
+     *
      * @return Level
      * @throws \Assert\AssertionFailedException
      */
@@ -27,5 +28,4 @@ abstract class LevelBuilder implements BuilderInterface
         /** @var LevelConfiguration $configuration */
         return new Level($configuration->getId(), $map);
     }
-
 }

@@ -10,11 +10,11 @@ namespace Weedus\PhpSpecOps\Core\Model\Configuration;
 
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Core\Model\Equalizeable;
-use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\PlaceInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\Walks\Ground;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\Walks\WalksInterface;
+use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 
 class FieldConfiguration implements ConfigurationInterface
 {
@@ -26,19 +26,19 @@ class FieldConfiguration implements ConfigurationInterface
     private $z;
     /** @var string|null */
     private $character;
-
     /** @var string */
     private $place;
-
     private $defaultPlace = Ground::class;
 
     /**
      * FieldConfiguration constructor.
-     * @param int $x
-     * @param int $y
-     * @param int $z
-     * @param string $placeClass
+     *
+     * @param int         $x
+     * @param int         $y
+     * @param int         $z
+     * @param string      $placeClass
      * @param null|string $character
+     *
      * @throws \Assert\AssertionFailedException
      */
     public function __construct(int $x, int $y, int $z, ?string $placeClass = null, ?string $character = null)
@@ -49,7 +49,7 @@ class FieldConfiguration implements ConfigurationInterface
         if ($character !== null) {
             Assertion::implementsInterface($placeClass, WalksInterface::class);
             Assertion::classExists($character);
-            Assertion::implementsInterface($character, CharacterInterface::class);
+            Assertion::implementsInterface($character, CharacterEffectInterface::class);
         }
         $this->x = $x;
         $this->y = $y;
@@ -82,7 +82,6 @@ class FieldConfiguration implements ConfigurationInterface
         return $this->z;
     }
 
-
     /**
      * @return null|string
      */
@@ -99,8 +98,7 @@ class FieldConfiguration implements ConfigurationInterface
         return $this->place;
     }
 
-
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof FieldConfiguration)) {
             return false;

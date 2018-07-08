@@ -22,6 +22,7 @@ class Heal extends AbstractEffect
 
     /**
      * Heal constructor.
+     *
      * @param int $value
      */
     public function __construct(int $value)
@@ -45,9 +46,9 @@ class Heal extends AbstractEffect
         $char->addHealth($this->value);
     }
 
-
     /**
      * @param null $value
+     *
      * @return mixed|Heal
      * @throws \Assert\AssertionFailedException
      */
@@ -56,6 +57,4 @@ class Heal extends AbstractEffect
         Assertion::integer($value);
         return new static($value);
     }
-
-
 }

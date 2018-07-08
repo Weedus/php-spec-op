@@ -15,10 +15,8 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemType;
 
 abstract class AbstractArmor extends AbstractItem implements ArmorInterface
 {
-
     /** @var ArmorType */
     protected $armorType;
-
     /** @var int */
     protected $defense;
 
@@ -34,13 +32,12 @@ abstract class AbstractArmor extends AbstractItem implements ArmorInterface
         return $this->defense;
     }
 
-
     public function getArmorType(): ArmorType
     {
         return $this->armorType;
     }
 
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof ArmorInterface)) {
             return false;
@@ -50,6 +47,7 @@ abstract class AbstractArmor extends AbstractItem implements ArmorInterface
 
     /**
      * @param ArmorInterface $item
+     *
      * @return bool
      */
     public function equalsArmorType(ArmorInterface $item): bool

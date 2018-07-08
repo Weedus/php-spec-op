@@ -23,6 +23,7 @@ class Teleport extends AbstractEffect
 
     /**
      * Teleport constructor.
+     *
      * @param Location $targetLocation
      */
     public function __construct(Location $targetLocation)
@@ -44,8 +45,9 @@ class Teleport extends AbstractEffect
     }
 
     /**
-     * @param Field $caster
+     * @param Field      $caster
      * @param null|Field $target
+     *
      * @throws \Assert\AssertionFailedException
      */
     public function perform(Field $caster, ?Field $target = null): void

@@ -13,6 +13,7 @@ use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
 
 /**
  * Class Height
+ *
  * @package PhpSpecOps\ValueObjects
  * @method static Height LOW()
  * @method static Height MEDIUM()
@@ -21,7 +22,6 @@ use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
 class Height extends AbstractValueObject
 {
     use OptionsObjectTrait;
-
     const LOW = 'low';
     const MEDIUM = 'medium';
     const HIGH = 'high';

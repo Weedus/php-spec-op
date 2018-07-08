@@ -26,9 +26,10 @@ class InRange implements SpecificationInterface
 
     /**
      * InRange constructor.
+     *
      * @param Location $location
-     * @param Range $minRange
-     * @param Range $maxRange
+     * @param Range    $minRange
+     * @param Range    $maxRange
      */
     public function __construct(Location $location, Range $minRange, Range $maxRange)
     {
@@ -39,12 +40,13 @@ class InRange implements SpecificationInterface
 
     /**
      * @param $item
+     *
      * @return bool
      * @throws \Weedus\PhpSpecOps\Core\Exceptions\DistanceCalculationFailedException
      */
     public function isSatisfiedBy($item): bool
     {
-        if(!($item instanceof Field)){
+        if (!($item instanceof Field)) {
             return false;
         }
         $distance = Distance::createByLocations($this->location, $item->getLocation());

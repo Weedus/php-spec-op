@@ -13,6 +13,7 @@ use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
 
 /**
  * Class Range
+ *
  * @package PhpSpecOps\ValueObjects
  * @method static Range ZERO()
  * @method static Range LOW()
@@ -24,7 +25,6 @@ use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
 final class Range implements Equalizeable
 {
     use OptionsObjectTrait;
-
     const ZERO = 0;
     const LOW = 1;
     const MEDIUM_LOW = 2;

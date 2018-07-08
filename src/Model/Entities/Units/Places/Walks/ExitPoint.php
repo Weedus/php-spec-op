@@ -22,5 +22,4 @@ class ExitPoint extends Ground
     {
         return true;
     }
-
 }

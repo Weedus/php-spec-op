@@ -9,7 +9,9 @@
 namespace Weedus\PhpSpecOps\Core\Model\Brain;
 
 
-class BrainInterface
-{
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\ActionInterface;
 
+interface BrainInterface
+{
+    public function solve(SituationInterface $situation): ActionInterface;
 }

@@ -14,6 +14,7 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 /**
  * Class SupportItemType
+ *
  * @package Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support
  * @method static SupportItemType FLASK()
  * @method static SupportItemType KEY()
@@ -21,7 +22,6 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 class SupportItemType extends AbstractValueObject
 {
     use OptionsObjectTrait;
-
     const FLASK = 'flask';
     const KEY = 'key';
 }

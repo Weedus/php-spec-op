@@ -13,7 +13,6 @@ use Weedus\Specification\SpecificationInterface;
 
 class AlwaysTrue implements SpecificationInterface
 {
-
     public function isSatisfiedBy($item): bool
     {
         return true;

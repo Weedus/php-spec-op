@@ -19,6 +19,7 @@ abstract class FieldBuilder implements BuilderInterface
 {
     /**
      * @param ConfigurationInterface $configuration
+     *
      * @return bool|Field
      * @throws \Assert\AssertionFailedException
      */

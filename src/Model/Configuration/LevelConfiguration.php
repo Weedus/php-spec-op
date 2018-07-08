@@ -27,11 +27,12 @@ class LevelConfiguration implements ConfigurationInterface
 
     /**
      * LevelConfiguration constructor.
+     *
      * @param string $id
-     * @param int $length
-     * @param int $width
-     * @param int $height
-     * @param array $fields
+     * @param int    $length
+     * @param int    $width
+     * @param int    $height
+     * @param array  $fields
      */
     public function __construct(string $id, int $length, int $width, int $height, array $fields)
     {
@@ -77,13 +78,12 @@ class LevelConfiguration implements ConfigurationInterface
         return $this->fields;
     }
 
-
     public function getId()
     {
         return $this->id;
     }
 
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof LevelConfiguration)) {
             return false;

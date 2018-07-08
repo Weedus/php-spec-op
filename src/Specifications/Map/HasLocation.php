@@ -20,6 +20,7 @@ class HasLocation implements SpecificationInterface
 
     /**
      * HasLocation constructor.
+     *
      * @param Location $location
      */
     public function __construct(Location $location)
@@ -29,6 +30,7 @@ class HasLocation implements SpecificationInterface
 
     /**
      * @param $item
+     *
      * @return bool
      * @throws \Assert\AssertionFailedException
      */

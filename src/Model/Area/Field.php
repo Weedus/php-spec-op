@@ -9,7 +9,7 @@
 namespace Weedus\PhpSpecOps\Core\Model\Area;
 
 use Assert\Assertion;
-use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\PlaceInterface;
 
 class Field
@@ -18,32 +18,34 @@ class Field
     private $map;
     /** @var Location */
     private $location;
-    /** @var CharacterInterface|null */
+    /** @var CharacterEffectInterface|null */
     private $character;
-
     /** @var PlaceInterface */
     private $place;
 
     /**
-     * @param Location $location
-     * @param PlaceInterface $place
-     * @param null|CharacterInterface $character
+     * @param Location                 $location
+     * @param PlaceInterface           $place
+     * @param null|CharacterEffectInterface $character
+     *
      * @return Field
      * @throws \Assert\AssertionFailedException
      */
-    public static function create(Location $location, PlaceInterface $place, ?CharacterInterface $character = null)
+    public static function create(Location $location, PlaceInterface $place, ?CharacterEffectInterface $character = null)
     {
         return new static($location, $place, $character);
     }
 
     /**
      * Field constructor.
-     * @param Location $location
-     * @param PlaceInterface $place
-     * @param null|CharacterInterface $character
+     *
+     * @param Location                 $location
+     * @param PlaceInterface           $place
+     * @param null|CharacterEffectInterface $character
+     *
      * @throws \Assert\AssertionFailedException
      */
-    public function __construct(Location $location, PlaceInterface $place, ?CharacterInterface $character = null)
+    public function __construct(Location $location, PlaceInterface $place, ?CharacterEffectInterface $character = null)
     {
         $this->location = $location;
         $this->place = $place;
@@ -52,6 +54,7 @@ class Field
 
     /**
      * @param Map $map
+     *
      * @return Field
      */
     public function setMap(Map $map): self
@@ -68,7 +71,6 @@ class Field
         return $this->map;
     }
 
-
     /**
      * @return Location
      */
@@ -78,10 +80,11 @@ class Field
     }
 
     /**
-     * @param null|CharacterInterface $character
+     * @param null|CharacterEffectInterface $character
+     *
      * @throws \Assert\AssertionFailedException
      */
-    public function setCharacter(?CharacterInterface $character): void
+    public function setCharacter(?CharacterEffectInterface $character): void
     {
         Assertion::true($this->place->isWalkable());
         if ($character !== null) {
@@ -101,9 +104,9 @@ class Field
     }
 
     /**
-     * @return CharacterInterface|null
+     * @return CharacterEffectInterface|null
      */
-    public function getCharacter(): ?CharacterInterface
+    public function getCharacter(): ?CharacterEffectInterface
     {
         return $this->character;
     }
@@ -118,6 +121,7 @@ class Field
 
     /**
      * @param Field $field
+     *
      * @return Direction
      */
     public function getDirectionTo(Field $field): Direction
@@ -130,6 +134,7 @@ class Field
 
     /**
      * @param Field $field
+     *
      * @return null|Distance
      * @throws \Weedus\PhpSpecOps\Core\Exceptions\DistanceCalculationFailedException
      */

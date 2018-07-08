@@ -20,7 +20,8 @@ abstract class AbstractItem extends AbstractValueObject implements ItemInterface
 
     /**
      * AbstractItem constructor.
-     * @param string $name
+     *
+     * @param string   $name
      * @param ItemType $type
      */
     public function __construct(string $name, ItemType $type)
@@ -47,9 +48,10 @@ abstract class AbstractItem extends AbstractValueObject implements ItemInterface
 
     /**
      * @param Equalizeable $item
+     *
      * @return bool
      */
-    public function equals(Equalizeable $item): bool
+    public function equals(?Equalizeable $item): bool
     {
         if (!($item instanceof ItemInterface)) {
             return false;
@@ -60,12 +62,11 @@ abstract class AbstractItem extends AbstractValueObject implements ItemInterface
 
     /**
      * @param ItemInterface $item
+     *
      * @return bool
      */
     public function equalsType(ItemInterface $item): bool
     {
         return $this->type->equals($item->getType());
     }
-
-
 }

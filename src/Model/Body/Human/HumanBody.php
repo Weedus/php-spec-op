@@ -10,19 +10,16 @@ namespace Weedus\PhpSpecOps\Core\Model\Body\Human;
 
 
 use Weedus\PhpSpecOps\Core\Model\Body\Body;
-use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Legs\ArmorLegsInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponInterface;
 
 class HumanBody extends Body implements HumanBodyInterface
 {
-
     /** @var WeaponInterface|null */
     protected $leftHand = null;
     /** @var WeaponInterface|null */
     protected $rightHand = null;
-
     /** @var ArmorHeadInterface|null */
     protected $head = null;
     /** @var ArmorLegsInterface|null */
@@ -91,5 +88,4 @@ class HumanBody extends Body implements HumanBodyInterface
     {
         $this->legs = $legs;
     }
-
 }

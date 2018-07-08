@@ -12,6 +12,5 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Chest\ArmorChestInterf
 
 interface BodyInterface
 {
-
     public function getChest(): ?ArmorChestInterface;
 }

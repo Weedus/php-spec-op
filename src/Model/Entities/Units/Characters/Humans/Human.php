@@ -17,5 +17,4 @@ class Human extends AbstractHuman
     {
         parent::__construct($name ?? 'Human', $brain, $id);
     }
-
 }
