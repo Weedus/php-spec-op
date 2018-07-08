@@ -18,5 +18,4 @@ class PistolOne extends AbstractWeapon
     {
         parent::__construct('PistolOne', 3, 1, Range::LOW(), Range::MEDIUM());
     }
-
 }

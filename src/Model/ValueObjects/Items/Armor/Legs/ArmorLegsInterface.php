@@ -12,5 +12,4 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorInterface;
 
 interface ArmorLegsInterface extends ArmorInterface
 {
-
 }

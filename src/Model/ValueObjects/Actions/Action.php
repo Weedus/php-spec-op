@@ -13,6 +13,7 @@ use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 
 /**
  * Class Action
+ *
  * @package PhpSpecOps\ValueObjects\Actions
  * @method static Action LOOK(Direction $direction)
  * @method static Action FEEL(Direction $direction)
@@ -40,15 +41,15 @@ class Action extends AbstractAction
     const ACTIVATE = 'activate';
     const DEACTIVATE = 'deactivate';
 
-    protected function __construct(string $action, ?Direction $direction=null)
+    protected function __construct(string $action, ?Direction $direction = null)
     {
         parent::__construct($action, $direction);
     }
 
-
     /**
      * @param $name
      * @param $arguments
+     *
      * @return Action
      */
     public static function __callStatic($name, $arguments)
@@ -59,6 +60,4 @@ class Action extends AbstractAction
         }
         return new static(constant('self::' . $name), $direction);
     }
-
-
 }

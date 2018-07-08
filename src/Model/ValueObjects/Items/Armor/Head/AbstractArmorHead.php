@@ -18,5 +18,4 @@ abstract class AbstractArmorHead extends AbstractArmor implements ArmorHeadInter
     {
         parent::__construct($name, $defense, ArmorType::HEAD());
     }
-
 }

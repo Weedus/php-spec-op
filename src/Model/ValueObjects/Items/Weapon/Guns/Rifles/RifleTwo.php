@@ -17,5 +17,4 @@ class RifleTwo extends AbstractWeapon
     {
         parent::__construct('RifleTwo', 7, 2, Range::MEDIUM(), Range::HIGH());
     }
-
 }

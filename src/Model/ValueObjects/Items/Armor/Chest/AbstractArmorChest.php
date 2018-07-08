@@ -18,5 +18,4 @@ abstract class AbstractArmorChest extends AbstractArmor implements ArmorChestInt
     {
         parent::__construct($name, $defense, ArmorType::CHEST());
     }
-
 }

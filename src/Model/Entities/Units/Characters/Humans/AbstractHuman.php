@@ -21,10 +21,8 @@ abstract class AbstractHuman extends AbstractCharacter implements HumanInterface
 
     public function __construct(string $name, BrainInterface $brain, ?Uuid $id = null)
     {
-
         parent::__construct($name, $brain, HumanBody::create(), $id);
     }
-
 
     public function getInventory(): SpecificationCollectionInterface
     {
@@ -38,6 +36,4 @@ abstract class AbstractHuman extends AbstractCharacter implements HumanInterface
     {
         $this->inventory = $inventory;
     }
-
-
 }

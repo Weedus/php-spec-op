@@ -13,6 +13,7 @@ use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 
 /**
  * Class FinalAction
+ *
  * @package PhpSpecOps\ValueObjects\Actions
  * @method static FinalAction MOVE(Direction $direction)
  * @method static FinalAction ATTACK(Direction $direction)
@@ -28,15 +29,15 @@ class FinalAction extends AbstractAction
     const PREPARE = 'prepare';
     const PERFORM = 'perform';
 
-    protected function __construct(string $action, ?Direction $direction=null)
+    protected function __construct(string $action, ?Direction $direction = null)
     {
         parent::__construct($action, $direction);
     }
 
-
     /**
      * @param $name
      * @param $arguments
+     *
      * @return FinalAction
      */
     public static function __callStatic($name, $arguments)
@@ -48,6 +49,4 @@ class FinalAction extends AbstractAction
         /** @var Direction $direction */
         return new static(constant('self::' . $name), $direction);
     }
-
-
 }

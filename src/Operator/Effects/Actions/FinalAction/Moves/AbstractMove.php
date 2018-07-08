@@ -13,7 +13,7 @@ use Assert\Assertion;
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
 use Weedus\PhpSpecOps\Core\Model\Area\Location;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
-use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Placeables\Walkables\WalkableInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
 use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
@@ -30,6 +30,7 @@ abstract class AbstractMove extends AbstractEffect
 
     /**
      * @param null $value
+     *
      * @return mixed
      * @throws \Assert\AssertionFailedException
      */
@@ -41,7 +42,8 @@ abstract class AbstractMove extends AbstractEffect
 
     /**
      * @param CharacterEffectInterface $target
-     * @param Field $field
+     * @param Field                    $field
+     *
      * @throws \Assert\AssertionFailedException
      */
     private function move(CharacterEffectInterface $target, Field $field)
@@ -52,23 +54,21 @@ abstract class AbstractMove extends AbstractEffect
         $this->performLeaveEffect($target);
         $target->getField()->unsetCharacter();
 
-        Assertion::isInstanceOf($target, CharacterInterface::class);
-        /** @var CharacterInterface $target */
+        Assertion::isInstanceOf($target, CharacterEffectInterface::class);
+        /** @var CharacterEffectInterface $target */
         $field->setCharacter($target);
         $this->performArriveEffect($target);
-
     }
-
 
     protected function newLocation(Location $location): Location
     {
         return Location::create($location->getX(), $location->getY(), $location->getZ());
-
     }
 
     /**
-     * @param Field $caster
+     * @param Field      $caster
      * @param null|Field $target
+     *
      * @throws \Assert\AssertionFailedException
      */
     public function perform(Field $caster, ?Field $target = null): void
@@ -81,6 +81,7 @@ abstract class AbstractMove extends AbstractEffect
 
     /**
      * @param null|Field $field
+     *
      * @throws \Assert\AssertionFailedException
      */
     private function checkFieldToWalk(?Field $field = null): void
@@ -93,6 +94,7 @@ abstract class AbstractMove extends AbstractEffect
 
     /**
      * @param null|Field $field
+     *
      * @throws \Assert\AssertionFailedException
      */
     private function checkFieldForStairs(?Field $field = null): void
@@ -122,5 +124,4 @@ abstract class AbstractMove extends AbstractEffect
         }
         $placeable->getArriveEffect()->perform($target);
     }
-
 }

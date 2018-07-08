@@ -13,5 +13,4 @@ use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 
 interface ValueObjectInterface extends Equalizeable
 {
-
 }

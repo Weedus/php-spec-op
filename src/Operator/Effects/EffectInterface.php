@@ -14,14 +14,13 @@ use Weedus\PhpSpecOps\Core\Model\Area\Range;
 
 interface EffectInterface
 {
-
     /**
      * @return Range
      */
     public function getRange(): Range;
 
     /**
-     * @param Field $caster
+     * @param Field      $caster
      * @param null|Field $target
      */
     public function perform(Field $caster, ?Field $target = null): void;

@@ -18,5 +18,4 @@ abstract class AbstractArmorLegs extends AbstractArmor implements ArmorLegsInter
     {
         parent::__construct($name, $defense, ArmorType::LEGS());
     }
-
 }

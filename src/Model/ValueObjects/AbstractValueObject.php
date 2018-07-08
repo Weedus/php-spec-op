@@ -11,5 +11,4 @@ namespace Weedus\PhpSpecOps\Core\Model\ValueObjects;
 
 abstract class AbstractValueObject implements ValueObjectInterface
 {
-
 }

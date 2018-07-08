@@ -38,6 +38,7 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
 
     /**
      * @param Equalizeable $item
+     *
      * @return bool
      */
     public function equals(?Equalizeable $item): bool
@@ -91,6 +92,4 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
     {
         return $this->weaponType->equals($weapon->getWeaponType());
     }
-
-
 }

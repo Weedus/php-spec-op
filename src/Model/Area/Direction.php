@@ -13,6 +13,7 @@ use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
 
 /**
  * Class Direction
+ *
  * @package PhpSpecOps\ValueObjects
  * @method static Direction NORTH()
  * @method static Direction NORTH_EAST()
@@ -27,7 +28,6 @@ use Weedus\PhpSpecOps\Core\Model\OptionsObjectTrait;
 final class Direction implements Equalizeable
 {
     use OptionsObjectTrait;
-
     const NORTH = 'north';
     const NORTH_EAST = 'north_east';
     const EAST = 'east';
@@ -37,8 +37,6 @@ final class Direction implements Equalizeable
     const WEST = 'west';
     const NORTH_WEST = 'north_west';
     const NONE = 'none';
-
-
     private static $normalizedDirections = [
         self::NORTH => ['x' => 1, 'y' => 0],
         self::NORTH_EAST => ['x' => 1, 'y' => 1],
@@ -54,6 +52,7 @@ final class Direction implements Equalizeable
     /**
      * @param Location $start
      * @param Location $goal
+     *
      * @return Direction|OptionsObjectTrait
      */
     public static function createByLocations(Location $start, Location $goal)
@@ -72,6 +71,7 @@ final class Direction implements Equalizeable
 
     /**
      * @param array $normalized
+     *
      * @return int|null|string
      */
     public static function normalizedToHuman(array $normalized)
@@ -87,6 +87,7 @@ final class Direction implements Equalizeable
     /**
      * @param Location $start
      * @param Location $goal
+     *
      * @return array
      */
     public static function getNormalizedDirection(Location $start, Location $goal)
@@ -99,7 +100,6 @@ final class Direction implements Equalizeable
 
     private static function normalize(int $diffX, int $diffY)
     {
-
         $toOne = function ($value) {
             return ($value > 0 ? 1 : ($value < 0 ? -1 : 0));
         };

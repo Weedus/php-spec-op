@@ -16,7 +16,6 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponInterface;
 
 interface HumanBodyInterface extends BodyInterface
 {
-
     public function getLeftHand(): ?WeaponInterface;
 
     public function getRightHand(): ?WeaponInterface;
@@ -24,5 +23,4 @@ interface HumanBodyInterface extends BodyInterface
     public function getHead(): ?ArmorHeadInterface;
 
     public function getLegs(): ?ArmorLegsInterface;
-
 }

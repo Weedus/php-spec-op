@@ -16,11 +16,12 @@ class AbstractEntity implements EntityInterface
 {
     /** @var Uuid */
     protected $id;
-    /** @var string  */
+    /** @var string */
     protected $name;
 
     /**
      * AbstractEntity constructor.
+     *
      * @param null|Uuid $id
      */
     public function __construct(string $name, ?Uuid $id = null)
@@ -41,7 +42,7 @@ class AbstractEntity implements EntityInterface
 
     final public function equals(?Equalizeable $item): bool
     {
-        if(!($item instanceof EntityInterface)){
+        if (!($item instanceof EntityInterface)) {
             return false;
         }
         return $this->id->equals($item->getId());

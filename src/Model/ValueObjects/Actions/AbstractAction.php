@@ -15,7 +15,6 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 abstract class AbstractAction extends AbstractValueObject implements ActionInterface
 {
-
     /** @var string */
     private $action;
     /** @var Direction|null */
@@ -23,7 +22,8 @@ abstract class AbstractAction extends AbstractValueObject implements ActionInter
 
     /**
      * AbstractAction constructor.
-     * @param string $action
+     *
+     * @param string    $action
      * @param Direction $direction
      */
     public function __construct(string $action, ?Direction $direction = null)
@@ -34,6 +34,7 @@ abstract class AbstractAction extends AbstractValueObject implements ActionInter
 
     /**
      * @param Equalizeable $item
+     *
      * @return bool
      */
     public function equals(?Equalizeable $item): bool

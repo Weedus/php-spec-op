@@ -13,7 +13,6 @@ use Weedus\PhpSpecOps\Core\Model\Entities\Units\AbstractUnit;
 
 abstract class AbstractPlace extends AbstractUnit implements PlaceInterface
 {
-
     public function isExit(): bool
     {
         return false;
@@ -42,19 +41,16 @@ abstract class AbstractPlace extends AbstractUnit implements PlaceInterface
     public function isOpen(): bool
     {
         return false;
-
     }
 
     public function isClosed(): bool
     {
         return false;
-
     }
 
     public function isBreakable(): bool
     {
         return false;
-
     }
 
     public function isStairs(): bool

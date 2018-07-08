@@ -18,9 +18,9 @@ use Weedus\PhpSpecOps\Core\Model\Configuration\LevelConfiguration;
 
 abstract class MapBuilder implements BuilderInterface
 {
-
     /**
      * @param ConfigurationInterface $configuration
+     *
      * @return bool|Map
      * @throws \Assert\AssertionFailedException
      */
@@ -34,6 +34,7 @@ abstract class MapBuilder implements BuilderInterface
 
     /**
      * @param LevelConfiguration $configuration
+     *
      * @return Map
      * @throws \Assert\AssertionFailedException
      */
@@ -54,8 +55,9 @@ abstract class MapBuilder implements BuilderInterface
     }
 
     /**
-     * @param Map $map
+     * @param Map   $map
      * @param array $getHeightsToFill
+     *
      * @throws \Assert\AssertionFailedException
      */
     private static function fillHeightsWithDefault(Map $map, array $getHeightsToFill)
@@ -75,6 +77,7 @@ abstract class MapBuilder implements BuilderInterface
      * @param int $x
      * @param int $y
      * @param int $z
+     *
      * @return bool|Field
      * @throws \Assert\AssertionFailedException
      */

@@ -22,6 +22,7 @@ class Damage extends AbstractEffect
 
     /**
      * Damage constructor.
+     *
      * @param int $value
      */
     public function __construct(int $value)
@@ -45,9 +46,9 @@ class Damage extends AbstractEffect
         $char->subHealth($this->value);
     }
 
-
     /**
      * @param null $value
+     *
      * @return mixed|Heal
      * @throws \Assert\AssertionFailedException
      */

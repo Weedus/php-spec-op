@@ -16,13 +16,12 @@ use Weedus\PhpSpecOps\Core\Model\Body\BodyInterface;
 use Weedus\PhpSpecOps\Core\Model\Brain\BrainInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\AbstractUnit;
 
-abstract class AbstractCharacter extends AbstractUnit implements CharacterInterface, CharacterEffectInterface
+abstract class AbstractCharacter extends AbstractUnit implements BrainAwareInterface, CharacterEffectInterface
 {
     /** @var int */
     protected $maxHealth;
     /** @var int */
     protected $health;
-
     /** @var int */
     protected $power;
     /** @var Range */
@@ -33,9 +32,11 @@ abstract class AbstractCharacter extends AbstractUnit implements CharacterInterf
     protected $brain;
 
     /**
-     * AbstractCharacter constructor.
-     * @param string $name
+     * AbstractBrainAware constructor.
+     *
+     * @param string    $name
      * @param null|Uuid $id
+     *
      * @throws ConstructionFailureException
      */
     public function __construct(string $name, BrainInterface $brain, BodyInterface $body, ?Uuid $id = null)
@@ -46,11 +47,9 @@ abstract class AbstractCharacter extends AbstractUnit implements CharacterInterf
         parent::__construct($name, $id);
     }
 
-
     public function addHealth(int $amount)
     {
         $this->health = min([$this->maxHealth, $this->health + $amount]);
-
     }
 
     public function subHealth(int $amount)
@@ -94,7 +93,6 @@ abstract class AbstractCharacter extends AbstractUnit implements CharacterInterf
         return $this->brain;
     }
 
-
     public function isDead(): bool
     {
         return $this->health <= 0;
@@ -106,17 +104,17 @@ abstract class AbstractCharacter extends AbstractUnit implements CharacterInterf
     protected function validateConstruct()
     {
         $missing = [];
-        if(empty($this->maxHealth)){
+        if (empty($this->maxHealth)) {
             $missing[] = 'maxHealth';
         }
-        if(empty($this->power)){
+        if (empty($this->power)) {
             $missing[] = 'power';
         }
-        if(empty($this->sight)){
+        if (empty($this->sight)) {
             $missing[] = 'sight';
         }
-        if(!empty($missing)){
-            throw new ConstructionFailureException('attributes not set: ['.implode(', ', $missing).']');
+        if (!empty($missing)) {
+            throw new ConstructionFailureException('attributes not set: [' . implode(', ', $missing) . ']');
         }
     }
 }

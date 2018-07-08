@@ -14,6 +14,7 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 /**
  * Class ArmorType
+ *
  * @package Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor
  * @method static ArmorType CHEST()
  * @method static ArmorType HEAD()
@@ -22,7 +23,6 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 class ArmorType extends AbstractValueObject
 {
     use OptionsObjectTrait;
-
     const CHEST = 'chest';
     const HEAD = 'head';
     const LEGS = 'legs';

@@ -14,6 +14,7 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 /**
  * Class WeaponType
+ *
  * @package Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon
  * @method static WeaponType PISTOL()
  * @method static WeaponType RIFLE()
@@ -30,7 +31,6 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 class WeaponType extends AbstractValueObject
 {
     use OptionsObjectTrait;
-
     const PISTOL = 'pistol';
     const RIFLE = 'rifle';
     const SNIPER_RIFLE = 'sniper_rifle';

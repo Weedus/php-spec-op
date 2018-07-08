@@ -9,7 +9,6 @@
 namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support;
 
 use Weedus\PhpSpecOps\Core\Model\Area\Direction;
-use Weedus\PhpSpecOps\Core\Model\Area\Field;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\ActionInterface;
@@ -56,7 +55,6 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
         $this->supportItemType = $supportItemType;
     }
 
-
     public function getText(): string
     {
         return $this->text;
@@ -82,20 +80,20 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
 
     /**
      * @param null|Direction $direction
+     *
      * @return ActionInterface[]
      */
     public function getActions(?Direction $direction = null): array
     {
         $usage = [];
 
-        for($i = 1; $i <= $this->preparationTime; $i++){
+        for ($i = 1; $i <= $this->preparationTime; $i++) {
             $usage[] = FinalAction::PREPARE();
         }
         $usage[] = FinalAction::PERFORM($direction);
 
         return $usage;
     }
-
 
     /**
      * @return int|null
@@ -131,6 +129,7 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
 
     /**
      * @param SupportItemInterface $item
+     *
      * @return bool
      */
     public function equalsSupportItemType(SupportItemInterface $item): bool

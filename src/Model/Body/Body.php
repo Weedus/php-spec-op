@@ -12,7 +12,6 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Chest\ArmorChestInterf
 
 class Body implements BodyInterface
 {
-
     /** @var ArmorChestInterface|null */
     protected $chest = null;
 

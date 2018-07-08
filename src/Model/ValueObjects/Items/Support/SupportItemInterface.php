@@ -28,6 +28,7 @@ interface SupportItemInterface extends ItemInterface, UtilityInterface
 
     /**
      * @param null|Direction $direction
+     *
      * @return ActionInterface[]
      */
     public function getActions(?Direction $direction = null): array;
@@ -41,5 +42,4 @@ interface SupportItemInterface extends ItemInterface, UtilityInterface
      * @return Range
      */
     public function getRange(): Range;
-
 }

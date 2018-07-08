@@ -66,7 +66,6 @@ class Ground extends AbstractPlace implements WalksInterface
         return !empty($this->getArriveEffect());
     }
 
-
     public function hasStandOnEffect(): bool
     {
         return !empty($this->getStandOnEffect());

@@ -15,8 +15,7 @@ use Weedus\PhpSpecOps\Core\Model\Brain\BrainInterface;
 
 class SpecOp extends AbstractHuman
 {
-
-    public function __construct(BrainInterface $brain, ?string $name= null, ?Uuid $id = null)
+    public function __construct(BrainInterface $brain, ?string $name = null, ?Uuid $id = null)
     {
         $this->sight = Range::HIGH();
         $this->maxHealth = 35;

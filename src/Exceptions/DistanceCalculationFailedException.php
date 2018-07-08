@@ -11,5 +11,4 @@ namespace Weedus\PhpSpecOps\Core\Exceptions;
 
 class DistanceCalculationFailedException extends \Exception
 {
-
 }

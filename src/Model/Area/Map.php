@@ -15,12 +15,12 @@ use Weedus\Specification\SpecificationInterface;
 
 class Map
 {
-
     /** @var SpecificationCollectionInterface */
     private $map;
 
     /**
      * Map constructor.
+     *
      * @param SpecificationCollectionInterface $collection
      */
     public function __construct(SpecificationCollectionInterface $collection)
@@ -57,15 +57,14 @@ class Map
 
     public function hasField(Location $location)
     {
-
         return $this->map->offsetExists(
             $this->createOffset($location)
         );
     }
 
-
     /**
      * @param Location $location
+     *
      * @return Field
      */
     public function getField(Location $location): Field
@@ -80,6 +79,7 @@ class Map
 
     /**
      * @param SpecificationInterface $specification
+     *
      * @return mixed
      */
     public function getFields(?SpecificationInterface $specification = null)
@@ -94,5 +94,4 @@ class Map
     {
         return $this->getFields(new HasCharacter());
     }
-
 }

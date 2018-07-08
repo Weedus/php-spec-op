@@ -26,6 +26,7 @@ final class Location implements Equalizeable
 
     /**
      * Location constructor.
+     *
      * @param int $x
      * @param int $y
      * @param int $z
@@ -61,14 +62,14 @@ final class Location implements Equalizeable
         return $this->z;
     }
 
-
     /**
      * @param Equalizeable $item
+     *
      * @return bool
      */
     public function equals(?Equalizeable $item): bool
     {
-        if(!($item instanceof Location)){
+        if (!($item instanceof Location)) {
             return false;
         }
         /** @var Location $item */
@@ -79,6 +80,7 @@ final class Location implements Equalizeable
 
     /**
      * @param int $x
+     *
      * @return Location
      */
     public function setX(int $x): self
@@ -89,6 +91,7 @@ final class Location implements Equalizeable
 
     /**
      * @param int $y
+     *
      * @return Location
      */
     public function setY(int $y): self
@@ -99,6 +102,7 @@ final class Location implements Equalizeable
 
     /**
      * @param int $z
+     *
      * @return Location
      */
     public function setZ(int $z): self
@@ -106,6 +110,4 @@ final class Location implements Equalizeable
         $this->z = $z;
         return $this;
     }
-
-
 }

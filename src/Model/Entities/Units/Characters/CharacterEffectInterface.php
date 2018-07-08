@@ -8,9 +8,7 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters;
 
-use Weedus\PhpSpecOps\Core\Model\Entities\Units\UnitInterface;
-
-interface CharacterEffectInterface extends UnitInterface
+interface CharacterEffectInterface extends CharacterCoreInterface
 {
     public function addHealth(int $amount);
 

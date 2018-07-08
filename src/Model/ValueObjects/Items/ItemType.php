@@ -13,6 +13,7 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 
 /**
  * Class ItemType
+ *
  * @package PhpSpecOps\ValueObjects\Items
  * @method static ItemType WEAPON()
  * @method static ItemType ARMOR()
@@ -21,7 +22,6 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\AbstractValueObject;
 class ItemType extends AbstractValueObject
 {
     use OptionsObjectTrait;
-
     const WEAPON = 'weapon';
     const ARMOR = 'armor';
     const SUPPORT = 'support';

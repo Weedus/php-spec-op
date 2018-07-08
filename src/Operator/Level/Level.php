@@ -10,15 +10,13 @@ namespace Weedus\PhpSpecOps\Core\Operator\Level;
 
 
 use Weedus\PhpSpecOps\Core\Model\Area\Map;
-use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterInterface;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
 
 final class Level
 {
     const EXIT_POINT = 'exit';
     const DEAD = 'dead';
-
     public static $levelEnd = null;
-
     private $id;
     /** @var Map */
     private $map;
@@ -27,7 +25,8 @@ final class Level
 
     /**
      * Level constructor.
-     * @param $id
+     *
+     * @param     $id
      * @param Map $map
      */
     public function __construct($id, Map $map)
@@ -44,12 +43,11 @@ final class Level
         $this->player = $player;
     }
 
-
     private function performNextStep()
     {
         $specOp = null;
         $others = [];
-        /** @var CharacterInterface $char */
+        /** @var CharacterEffectInterface $char */
         foreach ($this->map->getCharacters() as $char) {
             if ($char->getName() === 'SpecOp') {
                 $specOp = $char;
@@ -58,11 +56,9 @@ final class Level
             $others[] = $char;
         }
         $this->performPlayerStep($specOp);
-        /** @var CharacterInterface $char */
+        /** @var CharacterEffectInterface $char */
         foreach ($others as $char) {
             $char->getBrain()->perform();
         }
     }
-
-
 }

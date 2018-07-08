@@ -22,9 +22,9 @@ final class Distance
     /** @var int */
     private $steps;
 
-
     /**
      * Distance constructor.
+     *
      * @param int $x
      * @param int $y
      */
@@ -38,12 +38,12 @@ final class Distance
         $this->distance = (int)sqrt(
             pow($x, 2) + pow($y, 2)
         );
-
     }
 
     /**
      * @param Location $start
      * @param Location $goal
+     *
      * @return Distance
      * @throws DistanceCalculationFailedException
      */

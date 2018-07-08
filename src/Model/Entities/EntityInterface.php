@@ -15,5 +15,6 @@ use Weedus\PhpSpecOps\Core\Model\Equalizeable;
 interface EntityInterface extends Equalizeable
 {
     public function getId(): Uuid;
+
     public function getName(): string;
 }
