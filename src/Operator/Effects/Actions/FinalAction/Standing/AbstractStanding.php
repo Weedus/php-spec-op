@@ -27,6 +27,11 @@ abstract class AbstractStanding extends AbstractEffect
         $this->performEffect($caster, $target);
     }
 
+    /**
+     * @param Field $field
+     *
+     * TODO WTF? what should this be? may cause loop i think!!
+     */
     protected function performStandOnEffect(Field $field)
     {
         $place = $field->getPlace();
