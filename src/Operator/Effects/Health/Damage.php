@@ -8,11 +8,9 @@
 
 namespace Weedus\PhpSpecOps\Core\Operator\Effects\Health;
 
-
-use Assert\Assertion;
+use Weedus\Exceptions\InvalidArgumentException;
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
-use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 class Damage extends AbstractEffect
@@ -20,41 +18,18 @@ class Damage extends AbstractEffect
     /** @var int */
     protected $value;
 
-    /**
-     * Damage constructor.
-     *
-     * @param int $value
-     */
     public function __construct(int $value)
     {
-        Assertion::greaterOrEqualThan($value, 0);
+        if($value <= 0){
+            throw new InvalidArgumentException('greater than zero',$value);
+        }
         $this->value = $value;
-    }
-
-    /**
-     * @return Range
-     */
-    public function getRange(): Range
-    {
-        return Range::ZERO();
+        parent::__construct(0, 0, Range::ZERO());
     }
 
     public function perform(Field $caster, ?Field $target = null): void
     {
         $char = $caster->getCharacter();
-        /** @var CharacterEffectInterface $char */
         $char->subHealth($this->value);
-    }
-
-    /**
-     * @param null $value
-     *
-     * @return mixed|Heal
-     * @throws \Assert\AssertionFailedException
-     */
-    public static function create($value = null)
-    {
-        Assertion::integer($value);
-        return new static($value);
     }
 }

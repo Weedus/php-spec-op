@@ -10,7 +10,7 @@ namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters;
 
 use Weedus\PhpSpecOps\Core\Model\Brain\BrainInterface;
 
-interface BrainAwareInterface extends CharacterCoreInterface
+interface BrainAwareInterface
 {
     public function getBrain(): BrainInterface;
 }

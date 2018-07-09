@@ -9,11 +9,12 @@
 namespace Weedus\PhpSpecOps\Core\Operator\Effects\Actions\Action;
 
 
-use Assert\Assertion;
+
+use Weedus\Exceptions\InvalidArgumentException;
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
 use Weedus\PhpSpecOps\Core\Model\Area\Location;
-use Weedus\PhpSpecOps\Core\Model\Entities\Units\Placeables\Walkables\WalkableInterface;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\Walks\WalksInterface;
 use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 class Teleport extends AbstractEffect
@@ -29,37 +30,28 @@ class Teleport extends AbstractEffect
     public function __construct(Location $targetLocation)
     {
         $this->targetLocation = $targetLocation;
-    }
-
-    public static function create($value = null)
-    {
-        return new self($value);
-    }
-
-    /**
-     * @return Range
-     */
-    public function getRange(): Range
-    {
-        return Range::ZERO();
+        parent::__construct(0, 0, Range::ZERO());
     }
 
     /**
      * @param Field      $caster
      * @param null|Field $target
-     *
-     * @throws \Assert\AssertionFailedException
      */
     public function perform(Field $caster, ?Field $target = null): void
     {
-        Assertion::notNull($target);
-        Assertion::null($target->getCharacter());
-        Assertion::notNull($target->getPlace());
-        Assertion::true($target->getPlace()->isWalkable());
+        if($target === null || $target->hasCharacter() || !$target->getPlace()->isWalkable()){
+            $message = 'Target: '.($target===null?'No Field':'Field ');
+            if($target!==null){
+                /** @var Field $target */
+                $message .= ($target->hasCharacter() ? 'with ' : ' without ') . 'Character ';
+                $message .= 'with ' . ($target->getPlace()->isWalkable() ? 'walkable ' : ' not walkable ') . 'Place';
+            }
+            throw new InvalidArgumentException('Target: Field without Character, with walkable Place',$message);
+        }
         $character = $caster->getCharacter();
 
         $castPlace = $caster->getPlace();
-        /** @var WalkableInterface $castPlace */
+        /** @var WalksInterface $castPlace */
         if ($castPlace->hasLeaveEffect()) {
             $castPlace->getLeaveEffect()->perform($caster);
         }
@@ -67,7 +59,7 @@ class Teleport extends AbstractEffect
 
         $target->setCharacter($character);
         $targetPlace = $target->getPlace();
-        /** @var WalkableInterface $targetPlace */
+        /** @var WalksInterface $targetPlace */
         if ($targetPlace->hasArriveEffect()) {
             $targetPlace->getArriveEffect()->perform($target);
         }

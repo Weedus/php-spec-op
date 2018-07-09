@@ -11,19 +11,22 @@ namespace Weedus\PhpSpecOps\Core\Operator\Effects\Ends;
 
 use Weedus\Exceptions\NotYetImplementedException;
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 class LevelExit extends AbstractEffect
 {
-    /**
-     * @return Range
-     */
-    public function getRange(): Range
+    public function __construct()
     {
-        return Range::ZERO();
+        parent::__construct(0, 0, Range::ZERO());
     }
 
+    /**
+     * @param Field      $caster
+     * @param null|Field $target
+     *
+     * @throws NotYetImplementedException
+     */
     public function perform(Field $caster, ?Field $target = null): void
     {
         throw new NotYetImplementedException(__CLASS__ . '->' . __METHOD__);

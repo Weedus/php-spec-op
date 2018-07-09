@@ -6,7 +6,7 @@
  * Time: 13:26
  */
 
-namespace Weedus\PhpSpecOps\Core\Model;
+namespace Weedus\PhpSpecOps\Core\Model\Brain;
 
 
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;

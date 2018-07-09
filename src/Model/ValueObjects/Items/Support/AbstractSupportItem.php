@@ -26,10 +26,6 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
     /** @var Range */
     protected $range;
     /** @var int|null */
-    protected $preparationTime;
-    /** @var int|null */
-    protected $duration;
-    /** @var int|null */
     protected $utilizations;
     /** @var SupportItemType */
     protected $supportItemType;
@@ -39,8 +35,6 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
         string $text,
         EffectInterface $effect,
         Range $range,
-        int $preparationTime,
-        int $duration,
         int $utilizations,
         SupportItemType $supportItemType
     )
@@ -49,8 +43,6 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
         $this->text = $text;
         $this->effect = $effect;
         $this->range = $range;
-        $this->preparationTime = $preparationTime;
-        $this->duration = $duration;
         $this->utilizations = $utilizations;
         $this->supportItemType = $supportItemType;
     }
@@ -93,22 +85,6 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
         $usage[] = FinalAction::PERFORM($direction);
 
         return $usage;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getPreparationTime(): ?int
-    {
-        return $this->preparationTime;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getDuration(): ?int
-    {
-        return $this->duration;
     }
 
     /**

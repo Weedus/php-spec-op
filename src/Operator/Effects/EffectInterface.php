@@ -24,4 +24,14 @@ interface EffectInterface
      * @param null|Field $target
      */
     public function perform(Field $caster, ?Field $target = null): void;
+
+    /**
+     * @return int
+     */
+    public function getPreparationTime(): int;
+
+    /**
+     * @return int
+     */
+    public function getDuration(): int;
 }
