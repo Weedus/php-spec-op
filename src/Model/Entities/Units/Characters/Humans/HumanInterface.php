@@ -8,10 +8,10 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans;
 
-use Weedus\Collection\SpecificationCollectionInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
+use Weedus\PhpSpecOps\Core\Model\Inventory\InventoryInterface;
 
 interface HumanInterface extends CharacterEffectInterface
 {
-    public function getInventory(): SpecificationCollectionInterface;
+    public function getInventory(): InventoryInterface;
 }

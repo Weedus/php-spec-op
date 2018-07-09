@@ -9,14 +9,14 @@
 namespace Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans;
 
 use Ramsey\Uuid\Uuid;
-use Weedus\Collection\SpecificationCollectionInterface;
 use Weedus\PhpSpecOps\Core\Model\Body\Human\HumanBody;
 use Weedus\PhpSpecOps\Core\Model\Brain\BrainInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\AbstractCharacter;
+use Weedus\PhpSpecOps\Core\Model\Inventory\InventoryInterface;
 
 abstract class AbstractHuman extends AbstractCharacter implements HumanInterface
 {
-    /** @var SpecificationCollectionInterface */
+    /** @var InventoryInterface */
     protected $inventory;
 
     public function __construct(string $name, BrainInterface $brain, ?Uuid $id = null)
@@ -24,15 +24,15 @@ abstract class AbstractHuman extends AbstractCharacter implements HumanInterface
         parent::__construct($name, $brain, HumanBody::create(), $id);
     }
 
-    public function getInventory(): SpecificationCollectionInterface
+    public function getInventory(): InventoryInterface
     {
         return $this->inventory;
     }
 
     /**
-     * @param SpecificationCollectionInterface $inventory
+     * @param InventoryInterface $inventory
      */
-    public function setInventory(SpecificationCollectionInterface $inventory): void
+    public function setInventory(InventoryInterface $inventory): void
     {
         $this->inventory = $inventory;
     }
