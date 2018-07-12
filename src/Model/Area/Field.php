@@ -8,7 +8,6 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\Area;
 
-use Assert\Assertion;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\PlaceInterface;
 
@@ -29,7 +28,6 @@ class Field
      * @param null|CharacterEffectInterface $character
      *
      * @return Field
-     * @throws \Assert\AssertionFailedException
      */
     public static function create(Location $location, PlaceInterface $place, ?CharacterEffectInterface $character = null)
     {
@@ -42,14 +40,12 @@ class Field
      * @param Location                 $location
      * @param PlaceInterface           $place
      * @param null|CharacterEffectInterface $character
-     *
-     * @throws \Assert\AssertionFailedException
      */
     public function __construct(Location $location, PlaceInterface $place, ?CharacterEffectInterface $character = null)
     {
         $this->location = $location;
         $this->place = $place;
-        $this->setCharacter($character);
+        $this->coupleCharacter($character);
     }
 
     /**
@@ -80,21 +76,17 @@ class Field
     }
 
     /**
-     * @param null|CharacterEffectInterface $character
-     *
-     * @throws \Assert\AssertionFailedException
+     * @param CharacterEffectInterface $character
      */
-    public function setCharacter(?CharacterEffectInterface $character): void
+    public function coupleCharacter(CharacterEffectInterface $character): void
     {
-        Assertion::true($this->place->isWalkable());
-        if ($character !== null) {
-            $character->setField($this);
-        }
+        $character->setField($this);
         $this->character = $character;
     }
 
-    public function unsetCharacter(): void
+    public function decoupleCharacter(): void
     {
+        $this->character->unsetField();
         $this->character = null;
     }
 

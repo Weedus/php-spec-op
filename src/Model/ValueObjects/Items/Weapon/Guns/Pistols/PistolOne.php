@@ -8,14 +8,14 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\Guns\Pistols;
 
-
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\AbstractWeapon;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponType;
 
 class PistolOne extends AbstractWeapon
 {
-    public function __construct(string $name, int $power, Range $minRange, Range $maxRange)
+    public function __construct()
     {
-        parent::__construct('PistolOne', 3, 1, Range::LOW(), Range::MEDIUM());
+        parent::__construct('PistolOne', 3, 1, Range::LOW(), Range::MEDIUM(),WeaponType::PISTOL());
     }
 }

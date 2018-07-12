@@ -8,13 +8,14 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\Swords\OneHand;
 
+use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\AbstractWeapon;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Range;
+use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponType;
 
 class SwordOne extends AbstractWeapon
 {
     public function __construct()
     {
-        parent::__construct('SwordOne', 4, 3, Range::LOW(), Range::LOW());
+        parent::__construct('SwordOne', 4, 3, Range::LOW(), Range::LOW(),WeaponType::ONE_HAND_SWORD());
     }
 }

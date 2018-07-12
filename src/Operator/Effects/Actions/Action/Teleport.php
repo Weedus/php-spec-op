@@ -55,9 +55,9 @@ class Teleport extends AbstractEffect
         if ($castPlace->hasLeaveEffect()) {
             $castPlace->getLeaveEffect()->perform($caster);
         }
-        $caster->unsetCharacter();
+        $caster->decoupleCharacter();
 
-        $target->setCharacter($character);
+        $target->coupleCharacter($character);
         $targetPlace = $target->getPlace();
         /** @var WalksInterface $targetPlace */
         if ($targetPlace->hasArriveEffect()) {

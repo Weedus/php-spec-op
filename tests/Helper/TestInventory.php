@@ -9,8 +9,13 @@
 namespace Weedus\PhpSpecOps\Core\Tests\Helper;
 
 
-use Weedus\PhpSpecOps\Core\Model\Inventory\InventoryInterface;
+use Weedus\Collection\SpecificationCollectionInterface;
+use Weedus\PhpSpecOps\Core\Model\Inventory\Inventory;
 
-class TestInventory implements InventoryInterface
+class TestInventory extends Inventory
 {
+    public function getStorage(): SpecificationCollectionInterface
+    {
+        return $this->storage;
+    }
 }

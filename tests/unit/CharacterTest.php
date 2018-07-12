@@ -9,6 +9,7 @@ use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\BrainAwareInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans\Human;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans\HumanInterface;
+use Weedus\PhpSpecOps\Core\Model\Inventory\InventoryInterface;
 use Weedus\PhpSpecOps\Core\Tests\Helper\TestBrain;
 
 class CharacterTest extends \Codeception\Test\Unit
@@ -45,9 +46,6 @@ class CharacterTest extends \Codeception\Test\Unit
         $this->assertInstanceOf(CharacterEffectInterface::class,$this->character);
         $this->assertInstanceOf(HumanInterface::class,$this->character);
         $this->assertInstanceOf(BrainAwareInterface::class,$this->character);
-        $this->assertInstanceOf(HumanBodyInterface::class, $this->character->getBody());
-        $this->assertInstanceOf(Uuid::class, $this->character->getId());
-
     }
 
     public function testEquality()

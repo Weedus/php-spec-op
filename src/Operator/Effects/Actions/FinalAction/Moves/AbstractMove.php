@@ -41,8 +41,8 @@ abstract class AbstractMove extends AbstractEffect
             return null;
         }
         $this->performLeaveEffect($target);
-        $target->getField()->unsetCharacter();
-        $field->setCharacter($target);
+        $target->getField()->decoupleCharacter();
+        $field->coupleCharacter($target);
         $this->performArriveEffect($target);
     }
 
