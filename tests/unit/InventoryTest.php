@@ -12,9 +12,23 @@ class InventoryTest extends \Codeception\Test\Unit
      * @var \UnitTester
      */
     protected $tester;
-    
+
+    /** @var TestInventory */
+    protected $inventory;
+    /** @var SpecificationCollection */
+    protected $storage;
+    /** @var TestArmorLegs */
+    protected $item1;
+    /** @var TestArmorLegs */
+    protected $item2;
+
     protected function _before()
     {
+        $this->storage = new SpecificationCollection();
+        $this->inventory = new TestInventory($this->storage);
+
+        $this->item1 = new TestArmorLegs('one',1);
+        $this->item2 = new TestArmorLegs('two',1);
     }
 
     protected function _after()
@@ -22,24 +36,26 @@ class InventoryTest extends \Codeception\Test\Unit
     }
 
     // tests
-    public function testSomeFeature()
+
+    /**
+     * @throws \Weedus\Exceptions\NotAllowedException
+     */
+    public function testAddingItems()
     {
-        $inventory = new TestInventory(new SpecificationCollection());
-        $storage = $inventory->getStorage();
-        $this->assertFalse($storage->hasItem());
+        $this->assertFalse($this->storage->hasItem());
 
-        $item1 = new TestArmorLegs('one',1);
-        $item2 = new TestArmorLegs('two',1);
-        $fail = new \stdClass();
+        $this->assertEquals([],$this->inventory->getList());
 
-        try{
-            $inventory->addItem($fail);
-        }catch(\Error $error){
-            $asd='asd';
-        }catch(\Exception $exception){
-            $asd='asd';
+        $this->inventory->addItem($this->item1)
+            ->addItem($this->item2)
+            ->addItem($this->item2);
 
-        }
+        $this->assertEquals([['name'=>'one','amount'=>1],['name'=>'two','amount'=>2]],$this->inventory->getList());
+        $i1 = $this->inventory->getItem($this->item1->getName());
+        $i2 = $this->inventory->getItem($this->item2->getName());
+        $this->assertTrue($i1->equals($this->item1));
+        $this->assertTrue($i2->equals($this->item2));
+        $this->assertEquals([['name'=>'two','amount'=>1]],$this->inventory->getList());
 
     }
 }

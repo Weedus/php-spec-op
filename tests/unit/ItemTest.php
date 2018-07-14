@@ -129,21 +129,15 @@ class ItemTest extends \Codeception\Test\Unit
         $item = new TestSupportItem(
             'test_item',
             'just for testing',
-            TestEffect::create(),
+            new TestEffect(0,0,Range::ZERO()),
             Range::MEDIUM(),
-            2,
-            0,
-            2,
             SupportItemType::FLASK()
         );
         $item2 = new TestSupportItem(
             'test_item2',
             'just for testing',
-            TestEffect::create(),
+            new TestEffect(0,0,Range::ZERO()),
             Range::MEDIUM(),
-            0,
-            0,
-            1,
             SupportItemType::FLASK()
         );
 
@@ -151,20 +145,9 @@ class ItemTest extends \Codeception\Test\Unit
         $this->assertEquals('just for testing', $item->getText());
         $this->assertInstanceOf(EffectInterface::class, $item->getEffect());
         $this->assertTrue(Range::MEDIUM()->equals($item->getRange()));
-        $this->assertEquals(2, $item->getPreparationTime());
-        $this->assertEquals(0, $item2->getPreparationTime());
-        $this->assertEquals(0, $item->getDuration());
-        $this->assertEquals(2, $item->getUtilizations());
         $this->assertTrue($item->equals($item));
         $this->assertTrue($item->equalsType($item));
         $this->assertTrue($item->equalsSupportItemType($item));
         $this->assertFalse($item->equals($item2));
-        $this->assertEquals([
-            FinalAction::PREPARE(),
-            FinalAction::PREPARE(),
-            FinalAction::PERFORM(Direction::WEST())
-        ],$item->getActions(Direction::WEST()));
-        $this->assertNotEquals([FinalAction::PERFORM()],$item->getActions());
-        $this->assertEquals([FinalAction::PERFORM()],$item2->getActions());
     }
 }

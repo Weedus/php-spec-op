@@ -25,8 +25,6 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
     protected $text;
     /** @var Range */
     protected $range;
-    /** @var int|null */
-    protected $utilizations;
     /** @var SupportItemType */
     protected $supportItemType;
 
@@ -35,7 +33,6 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
         string $text,
         EffectInterface $effect,
         Range $range,
-        int $utilizations,
         SupportItemType $supportItemType
     )
     {
@@ -43,7 +40,6 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
         $this->text = $text;
         $this->effect = $effect;
         $this->range = $range;
-        $this->utilizations = $utilizations;
         $this->supportItemType = $supportItemType;
     }
 
@@ -63,36 +59,9 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
             return false;
         }
         return $this->text === $item->getText()
-            && $this->duration === $item->getDuration()
-            && $this->preparationTime === $item->getPreparationTime()
             && $this->range->equals($item->getRange())
             && $this->equalsSupportItemType($item)
             && parent::equals($item);
-    }
-
-    /**
-     * @param null|Direction $direction
-     *
-     * @return ActionInterface[]
-     */
-    public function getActions(?Direction $direction = null): array
-    {
-        $usage = [];
-
-        for ($i = 1; $i <= $this->preparationTime; $i++) {
-            $usage[] = FinalAction::PREPARE();
-        }
-        $usage[] = FinalAction::PERFORM($direction);
-
-        return $usage;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getUtilizations(): ?int
-    {
-        return $this->utilizations;
     }
 
     /**

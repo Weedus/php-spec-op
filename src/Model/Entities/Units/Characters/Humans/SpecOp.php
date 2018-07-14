@@ -17,9 +17,6 @@ class SpecOp extends AbstractHuman
 {
     public function __construct(BrainInterface $brain, ?string $name = null, ?Uuid $id = null)
     {
-        $this->sight = Range::HIGH();
-        $this->maxHealth = 35;
-        $this->power = 3;
-        parent::__construct($name ?? 'SpecOp', $brain, $id);
+        parent::__construct($name ?? 'SpecOp', 35, 3, Range::HIGH(), $brain, $id);
     }
 }

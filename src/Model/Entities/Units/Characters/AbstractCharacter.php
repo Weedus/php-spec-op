@@ -39,11 +39,13 @@ abstract class AbstractCharacter extends AbstractUnit implements BrainAwareInter
      *
      * @throws ConstructionFailureException
      */
-    public function __construct(string $name, BrainInterface $brain, BodyInterface $body, ?Uuid $id = null)
+    public function __construct(string $name, int $maxHealth, int $power, Range $sight, BrainInterface $brain, BodyInterface $body, ?Uuid $id = null)
     {
-        $this->validateConstruct();
         $this->brain = $brain;
         $this->body = $body;
+        $this->maxHealth = $maxHealth;
+        $this->power = $power;
+        $this->sight = $sight;
         parent::__construct($name, $id);
     }
 
@@ -98,23 +100,4 @@ abstract class AbstractCharacter extends AbstractUnit implements BrainAwareInter
         return $this->health <= 0;
     }
 
-    /**
-     * @throws ConstructionFailureException
-     */
-    protected function validateConstruct()
-    {
-        $missing = [];
-        if (empty($this->maxHealth)) {
-            $missing[] = 'maxHealth';
-        }
-        if (empty($this->power)) {
-            $missing[] = 'power';
-        }
-        if (empty($this->sight)) {
-            $missing[] = 'sight';
-        }
-        if (!empty($missing)) {
-            throw new ConstructionFailureException('attributes not set: [' . implode(', ', $missing) . ']');
-        }
-    }
 }

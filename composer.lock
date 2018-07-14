@@ -137,16 +137,16 @@
         },
         {
             "name": "weedus/collection",
-            "version": "1.1.4",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/weedus/collection.git",
-                "reference": "3f6adad95aeb6e41beddce3af72d7ddb2e1a4b98"
+                "reference": "8be04c12c0f9fddc86fd80b176134b6dc0021d4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/weedus/collection/zipball/3f6adad95aeb6e41beddce3af72d7ddb2e1a4b98",
-                "reference": "3f6adad95aeb6e41beddce3af72d7ddb2e1a4b98",
+                "url": "https://api.github.com/repos/weedus/collection/zipball/8be04c12c0f9fddc86fd80b176134b6dc0021d4b",
+                "reference": "8be04c12c0f9fddc86fd80b176134b6dc0021d4b",
                 "shasum": ""
             },
             "require": {
@@ -154,8 +154,7 @@
                 "weedus/exceptions": ">=0.0.1"
             },
             "require-dev": {
-                "codeception/codeception": ">=2.4.1",
-                "php": ">=7.2"
+                "codeception/codeception": "^2.4.1"
             },
             "type": "library",
             "autoload": {
@@ -174,7 +173,8 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2018-07-12T22:07:36+00:00"
+            "description": "simple collection with specification extension",
+            "time": "2018-07-13T05:31:31+00:00"
         },
         {
             "name": "weedus/exceptions",
@@ -214,16 +214,16 @@
         },
         {
             "name": "weedus/specification",
-            "version": "1.0.9",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/weedus/specification.git",
-                "reference": "26ed436617861513be0e08a31dcee39c7ef1eec0"
+                "reference": "0e3bf18396d7f31bce247f4f24853b0a878284e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/weedus/specification/zipball/26ed436617861513be0e08a31dcee39c7ef1eec0",
-                "reference": "26ed436617861513be0e08a31dcee39c7ef1eec0",
+                "url": "https://api.github.com/repos/weedus/specification/zipball/0e3bf18396d7f31bce247f4f24853b0a878284e5",
+                "reference": "0e3bf18396d7f31bce247f4f24853b0a878284e5",
                 "shasum": ""
             },
             "require": {
@@ -231,7 +231,7 @@
                 "weedus/exceptions": ">=0.0.1"
             },
             "require-dev": {
-                "codeception/codeception": ">=2.4.1"
+                "codeception/codeception": "^2.4"
             },
             "type": "library",
             "autoload": {
@@ -250,7 +250,8 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2018-06-19T23:14:31+00:00"
+            "description": "follows the specification pattern",
+            "time": "2018-07-12T22:38:37+00:00"
         }
     ],
     "packages-dev": [
