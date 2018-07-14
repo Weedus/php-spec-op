@@ -24,11 +24,10 @@ class TestEffect extends AbstractEffect
     }
 
     /**
-     * @param Field $caster
+     * @param Field      $caster
      * @param null|Field $target
      */
     public function perform(Field $caster, ?Field $target = null): void
     {
-
     }
 }

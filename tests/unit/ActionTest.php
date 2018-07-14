@@ -59,7 +59,6 @@ class ActionTest extends \Codeception\Test\Unit
         $this->assertFalse($action2->equals($compare2));
         $this->assertFalse($action2->equals($compare3));
         $this->assertFalse($action2->equals($compare4));
-
     }
 
     public function testAction()
@@ -78,7 +77,6 @@ class ActionTest extends \Codeception\Test\Unit
         $this->assertEquals('smell', Action::SMELL(Direction::WEST())->getAction());
         $this->assertEquals('taste', Action::TASTE(Direction::WEST())->getAction());
         $this->assertEquals('hear', Action::HEAR(Direction::WEST())->getAction());
-
     }
 
     public function testFinalAction()

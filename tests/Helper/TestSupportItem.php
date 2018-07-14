@@ -20,5 +20,4 @@ class TestSupportItem extends AbstractSupportItem
     {
         return $this->effect;
     }
-
 }

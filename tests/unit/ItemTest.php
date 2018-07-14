@@ -2,9 +2,7 @@
 
 namespace Weedus\PhpSpecOps\Core\Tests\unit;
 
-use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\FinalAction;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorType;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemInterface;
@@ -129,14 +127,14 @@ class ItemTest extends \Codeception\Test\Unit
         $item = new TestSupportItem(
             'test_item',
             'just for testing',
-            new TestEffect(0,0,Range::ZERO()),
+            new TestEffect(0, 0, Range::ZERO()),
             Range::MEDIUM(),
             SupportItemType::FLASK()
         );
         $item2 = new TestSupportItem(
             'test_item2',
             'just for testing',
-            new TestEffect(0,0,Range::ZERO()),
+            new TestEffect(0, 0, Range::ZERO()),
             Range::MEDIUM(),
             SupportItemType::FLASK()
         );

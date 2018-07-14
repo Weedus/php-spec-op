@@ -14,7 +14,10 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemInterface;
 interface InventoryInterface
 {
     public function addItem(ItemInterface $item): InventoryInterface;
+
     public function getItem(string $name): ItemInterface;
+
     public function getAmount(string $name): int;
+
     public function getList(): array;
 }

@@ -2,14 +2,11 @@
 
 namespace Weedus\PhpSpecOps\Core\Tests\unit;
 
-use Ramsey\Uuid\Uuid;
 use Weedus\PhpSpecOps\Core\Exceptions\ConstructionFailureException;
-use Weedus\PhpSpecOps\Core\Model\Body\Human\HumanBodyInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\BrainAwareInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans\Human;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\Humans\HumanInterface;
-use Weedus\PhpSpecOps\Core\Model\Inventory\InventoryInterface;
 use Weedus\PhpSpecOps\Core\Tests\Helper\TestBrain;
 
 class CharacterTest extends \Codeception\Test\Unit
@@ -32,8 +29,8 @@ class CharacterTest extends \Codeception\Test\Unit
      */
     protected function _before()
     {
-        $this->character = new Human(new TestBrain(),'Test');
-        $this->character2 = new Human(new TestBrain(),'Test');
+        $this->character = new Human(new TestBrain(), 'Test');
+        $this->character2 = new Human(new TestBrain(), 'Test');
     }
 
     protected function _after()
@@ -43,9 +40,9 @@ class CharacterTest extends \Codeception\Test\Unit
     // tests
     public function testInterfaces()
     {
-        $this->assertInstanceOf(CharacterEffectInterface::class,$this->character);
-        $this->assertInstanceOf(HumanInterface::class,$this->character);
-        $this->assertInstanceOf(BrainAwareInterface::class,$this->character);
+        $this->assertInstanceOf(CharacterEffectInterface::class, $this->character);
+        $this->assertInstanceOf(HumanInterface::class, $this->character);
+        $this->assertInstanceOf(BrainAwareInterface::class, $this->character);
     }
 
     public function testEquality()

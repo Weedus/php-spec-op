@@ -22,7 +22,6 @@ class DistanceTest extends \Codeception\Test\Unit
     {
     }
 
-
     // tests
     public function testCreate()
     {

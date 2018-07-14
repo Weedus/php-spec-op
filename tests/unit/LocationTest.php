@@ -45,7 +45,6 @@ class LocationTest extends \Codeception\Test\Unit
 
     /**
      * @depends testCreation
-     * @throws \Assert\AssertionFailedException
      */
     public function testEquals()
     {

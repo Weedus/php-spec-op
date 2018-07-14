@@ -66,7 +66,6 @@ class DirectionTest extends \Codeception\Test\Unit
         $this->assertEquals(Direction::NORTH, Direction::normalizedToHuman($norm2));
         $this->assertEquals(Direction::NORTH_EAST, Direction::normalizedToHuman($norm3));
         $this->assertEquals(Direction::NONE, Direction::normalizedToHuman($norm4));
-
     }
 
     public function testCreationByLocations()
@@ -103,6 +102,5 @@ class DirectionTest extends \Codeception\Test\Unit
         $this->assertEquals(Direction::NORTH, Direction::createByDistance($dis2)->getValue());
         $this->assertEquals(Direction::NORTH_EAST, Direction::createByDistance($dis3)->getValue());
         $this->assertEquals(Direction::NONE, Direction::createByDistance($dis4)->getValue());
-
     }
 }

@@ -18,6 +18,5 @@ class CharacterCest
     public function tryToTest(\FunctionalTester $I)
     {
         throw new NotYetImplementedException(__METHOD__);
-
     }
 }

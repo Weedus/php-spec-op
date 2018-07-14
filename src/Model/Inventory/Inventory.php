@@ -39,7 +39,7 @@ class Inventory implements InventoryInterface
     public function addItem(ItemInterface $item): InventoryInterface
     {
         $name = $item->getName();
-        if(!$this->storage->offsetExists($name)){
+        if (!$this->storage->offsetExists($name)) {
             $this->storage->offsetSet($name, $this->buildStack($item));
         }
         /** @var SpecificationCollection $stack */
@@ -56,7 +56,7 @@ class Inventory implements InventoryInterface
      */
     public function getAmount(string $name): int
     {
-        if(!$this->storage->offsetExists($name)){
+        if (!$this->storage->offsetExists($name)) {
             return 0;
         }
         return $this->storage->offsetGet($name)->count();
@@ -69,7 +69,7 @@ class Inventory implements InventoryInterface
      */
     public function getItem(string $name): ItemInterface
     {
-        if(!$this->storage->offsetExists($name)){
+        if (!$this->storage->offsetExists($name)) {
             return null;
         }
         /** @var SpecificationCollectionInterface $stack */
@@ -77,7 +77,7 @@ class Inventory implements InventoryInterface
         $offset = $stack->count() - 1;
         $item = $stack->offsetGet($offset);
         $stack->offsetUnset($offset);
-        if(!$stack->hasItem()){
+        if (!$stack->hasItem()) {
             $this->storage->offsetUnset($name);
         }
         return $item;
@@ -86,8 +86,8 @@ class Inventory implements InventoryInterface
     public function getList(): array
     {
         $ret = [];
-        foreach($this->storage as $name => $stack){
-            $ret[] = ['name'=>$name, 'amount'=>$stack->count()];
+        foreach ($this->storage as $name => $stack) {
+            $ret[] = ['name' => $name, 'amount' => $stack->count()];
         }
         return $ret;
     }

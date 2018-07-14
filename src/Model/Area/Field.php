@@ -23,8 +23,8 @@ class Field
     private $place;
 
     /**
-     * @param Location                 $location
-     * @param PlaceInterface           $place
+     * @param Location                      $location
+     * @param PlaceInterface                $place
      * @param null|CharacterEffectInterface $character
      *
      * @return Field
@@ -37,8 +37,8 @@ class Field
     /**
      * Field constructor.
      *
-     * @param Location                 $location
-     * @param PlaceInterface           $place
+     * @param Location                      $location
+     * @param PlaceInterface                $place
      * @param null|CharacterEffectInterface $character
      */
     public function __construct(Location $location, PlaceInterface $place, ?CharacterEffectInterface $character = null)

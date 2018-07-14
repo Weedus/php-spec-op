@@ -8,7 +8,6 @@ class FieldCest
 {
     public function _before(\FunctionalTester $I)
     {
-
     }
 
     public function _after(\FunctionalTester $I)
@@ -19,6 +18,5 @@ class FieldCest
     public function tryToTest(\FunctionalTester $I)
     {
         throw new NotYetImplementedException(__METHOD__);
-
     }
 }
