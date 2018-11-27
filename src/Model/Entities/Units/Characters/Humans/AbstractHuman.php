@@ -22,10 +22,16 @@ abstract class AbstractHuman extends AbstractCharacter implements HumanInterface
     /** @var InventoryInterface */
     protected $inventory;
 
-    public function __construct(string $name, int $maxHealth, int $power, Range $sight, BrainInterface $brain, ?Uuid $id = null)
-    {
+    public function __construct(
+        string $name,
+        int $maxHealth,
+        int $power,
+        Range $sight,
+        BrainInterface $brain,
+        ?Uuid $id = null
+    ) {
         $this->inventory = new Inventory(new SpecificationCollection());
-        parent::__construct($name,$maxHealth,$power,$sight, $brain, HumanBody::create(), $id);
+        parent::__construct($name, $maxHealth, $power, $sight, $brain, HumanBody::create(), $id);
     }
 
     public function getInventory(): InventoryInterface

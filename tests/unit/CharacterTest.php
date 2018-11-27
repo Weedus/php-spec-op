@@ -24,20 +24,6 @@ class CharacterTest extends \Codeception\Test\Unit
      */
     protected $character2;
 
-    /**
-     * @throws ConstructionFailureException
-     */
-    protected function _before()
-    {
-        $this->character = new Human(new TestBrain(), 'Test');
-        $this->character2 = new Human(new TestBrain(), 'Test');
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
     public function testInterfaces()
     {
         $this->assertInstanceOf(CharacterEffectInterface::class, $this->character);
@@ -50,5 +36,20 @@ class CharacterTest extends \Codeception\Test\Unit
         $this->assertTrue($this->character->equals($this->character));
         $this->assertTrue($this->character2->equals($this->character2));
         $this->assertFalse($this->character->equals($this->character2));
+    }
+
+    // tests
+
+    /**
+     * @throws ConstructionFailureException
+     */
+    protected function _before()
+    {
+        $this->character = new Human(new TestBrain(), 'Test');
+        $this->character2 = new Human(new TestBrain(), 'Test');
+    }
+
+    protected function _after()
+    {
     }
 }

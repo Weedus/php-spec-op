@@ -14,15 +14,6 @@ class DirectionTest extends \Codeception\Test\Unit
      */
     protected $tester;
 
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
     public function testCreate()
     {
         $failed = false;
@@ -68,6 +59,8 @@ class DirectionTest extends \Codeception\Test\Unit
         $this->assertEquals(Direction::NONE, Direction::normalizedToHuman($norm4));
     }
 
+    // tests
+
     public function testCreationByLocations()
     {
         $start = Location::create(0, 0, 0);
@@ -102,5 +95,13 @@ class DirectionTest extends \Codeception\Test\Unit
         $this->assertEquals(Direction::NORTH, Direction::createByDistance($dis2)->getValue());
         $this->assertEquals(Direction::NORTH_EAST, Direction::createByDistance($dis3)->getValue());
         $this->assertEquals(Direction::NONE, Direction::createByDistance($dis4)->getValue());
+    }
+
+    protected function _before()
+    {
+    }
+
+    protected function _after()
+    {
     }
 }

@@ -28,12 +28,12 @@ class Map
         $this->map = $collection;
     }
 
-    protected function createOffset(Location $location)
+    public function addFields(Field ...$fields)
     {
-        $x = $location->getX();
-        $y = $location->getY();
-        $z = $location->getZ();
-        return "x$x/y$y/z$z";
+        /** @var Field $field */
+        foreach ($fields as $field) {
+            $this->addField($field);
+        }
     }
 
     /**
@@ -47,19 +47,12 @@ class Map
         );
     }
 
-    public function addFields(Field ...$fields)
+    protected function createOffset(Location $location)
     {
-        /** @var Field $field */
-        foreach ($fields as $field) {
-            $this->addField($field);
-        }
-    }
-
-    public function hasField(Location $location)
-    {
-        return $this->map->offsetExists(
-            $this->createOffset($location)
-        );
+        $x = $location->getX();
+        $y = $location->getY();
+        $z = $location->getZ();
+        return "x$x/y$y/z$z";
     }
 
     /**
@@ -77,6 +70,18 @@ class Map
         );
     }
 
+    public function hasField(Location $location)
+    {
+        return $this->map->offsetExists(
+            $this->createOffset($location)
+        );
+    }
+
+    public function getCharacters()
+    {
+        return $this->getFields(new HasCharacter());
+    }
+
     /**
      * @param SpecificationInterface $specification
      *
@@ -88,10 +93,5 @@ class Map
             $specification = new AlwaysTrue();
         }
         return $this->map->findBySpecification($specification);
-    }
-
-    public function getCharacters()
-    {
-        return $this->getFields(new HasCharacter());
     }
 }

@@ -24,15 +24,6 @@ class BodyTest extends \Codeception\Test\Unit
      */
     protected $tester;
 
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
     public function testCreation()
     {
         $body1 = new Body();
@@ -71,5 +62,15 @@ class BodyTest extends \Codeception\Test\Unit
         $this->assertInstanceOf(ArmorLegsInterface::class, $body->getLegs());
         $this->assertInstanceOf(WeaponInterface::class, $body->getLeftHand());
         $this->assertInstanceOf(WeaponInterface::class, $body->getRightHand());
+    }
+
+    // tests
+
+    protected function _before()
+    {
+    }
+
+    protected function _after()
+    {
     }
 }

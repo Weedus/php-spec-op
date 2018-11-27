@@ -13,16 +13,6 @@ class LocationTest extends \Codeception\Test\Unit
     /** @var Location */
     private $location;
 
-    protected function _before()
-    {
-        $this->location = new Location(1, 1, 0);
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
     public function testCreation()
     {
         $this->assertInstanceOf(Location::class, Location::create(1, 1, 1));
@@ -43,6 +33,8 @@ class LocationTest extends \Codeception\Test\Unit
         $this->assertEquals(2, $location->getZ());
     }
 
+    // tests
+
     /**
      * @depends testCreation
      */
@@ -57,5 +49,14 @@ class LocationTest extends \Codeception\Test\Unit
         $this->assertFalse($this->location->equals($fail2));
         $this->assertFalse($this->location->equals($fail3));
         $this->assertTrue($this->location->equals($success));
+    }
+
+    protected function _before()
+    {
+        $this->location = new Location(1, 1, 0);
+    }
+
+    protected function _after()
+    {
     }
 }

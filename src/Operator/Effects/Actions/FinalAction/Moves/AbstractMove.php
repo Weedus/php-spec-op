@@ -12,7 +12,6 @@ use Weedus\PhpSpecOps\Core\Model\Area\Field;
 use Weedus\PhpSpecOps\Core\Model\Area\Location;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
-use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\PlaceInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\Walks\WalksInterface;
 use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
@@ -32,26 +31,6 @@ abstract class AbstractMove extends AbstractEffect
     }
 
     /**
-     * @param CharacterEffectInterface $target
-     * @param Field                    $field
-     */
-    private function move(CharacterEffectInterface $target, Field $field): void
-    {
-        if($field->hasCharacter()){
-            return null;
-        }
-        $this->performLeaveEffect($target);
-        $target->getField()->decoupleCharacter();
-        $field->coupleCharacter($target);
-        $this->performArriveEffect($target);
-    }
-
-    protected function newLocation(Location $location): Location
-    {
-        return Location::create($location->getX(), $location->getY(), $location->getZ());
-    }
-
-    /**
      * @param Field      $caster
      * @param null|Field $target
      */
@@ -59,10 +38,15 @@ abstract class AbstractMove extends AbstractEffect
     {
         $location = $this->newLocation($caster->getLocation());
         $field = $caster->getMap()->getField($location);
-        if(!$this->isFieldWalkable($field)){
+        if (!$this->isFieldWalkable($field)) {
             return null;
         }
         $this->move($caster->getCharacter(), $field);
+    }
+
+    protected function newLocation(Location $location): Location
+    {
+        return Location::create($location->getX(), $location->getY(), $location->getZ());
     }
 
     /**
@@ -72,12 +56,27 @@ abstract class AbstractMove extends AbstractEffect
      */
     private function isFieldWalkable(?Field $field = null): bool
     {
-        if($field === null){
+        if ($field === null) {
             return false;
         }
         $place = $field->getPlace();
         return !$field->hasCharacter()
             && $place->isWalkable();
+    }
+
+    /**
+     * @param CharacterEffectInterface $target
+     * @param Field                    $field
+     */
+    private function move(CharacterEffectInterface $target, Field $field): void
+    {
+        if ($field->hasCharacter()) {
+            return null;
+        }
+        $this->performLeaveEffect($target);
+        $target->getField()->decoupleCharacter();
+        $field->coupleCharacter($target);
+        $this->performArriveEffect($target);
     }
 
     private function performLeaveEffect(CharacterEffectInterface $target)

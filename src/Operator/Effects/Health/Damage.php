@@ -20,8 +20,8 @@ class Damage extends AbstractEffect
 
     public function __construct(int $value)
     {
-        if($value <= 0){
-            throw new InvalidArgumentException('greater than zero',$value);
+        if ($value <= 0) {
+            throw new InvalidArgumentException('greater than zero', $value);
         }
         $this->value = $value;
         parent::__construct(0, 0, Range::ZERO());

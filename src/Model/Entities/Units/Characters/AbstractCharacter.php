@@ -39,8 +39,15 @@ abstract class AbstractCharacter extends AbstractUnit implements BrainAwareInter
      *
      * @throws ConstructionFailureException
      */
-    public function __construct(string $name, int $maxHealth, int $power, Range $sight, BrainInterface $brain, BodyInterface $body, ?Uuid $id = null)
-    {
+    public function __construct(
+        string $name,
+        int $maxHealth,
+        int $power,
+        Range $sight,
+        BrainInterface $brain,
+        BodyInterface $body,
+        ?Uuid $id = null
+    ) {
         $this->brain = $brain;
         $this->body = $body;
         $this->maxHealth = $maxHealth;
@@ -99,5 +106,4 @@ abstract class AbstractCharacter extends AbstractUnit implements BrainAwareInter
     {
         return $this->health <= 0;
     }
-
 }

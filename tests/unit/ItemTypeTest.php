@@ -11,15 +11,6 @@ class ItemTypeTest extends \Codeception\Test\Unit
      */
     protected $tester;
 
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
     public function testCreation()
     {
         $failed = false;
@@ -41,5 +32,15 @@ class ItemTypeTest extends \Codeception\Test\Unit
         $this->assertEquals('support', ItemType::SUPPORT()->getValue());
         $this->assertEquals('weapon', ItemType::WEAPON()->getValue());
         $this->assertEquals('armor', ItemType::ARMOR()->getValue());
+    }
+
+    // tests
+
+    protected function _before()
+    {
+    }
+
+    protected function _after()
+    {
     }
 }

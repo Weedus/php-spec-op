@@ -23,18 +23,6 @@ class Field
     private $place;
 
     /**
-     * @param Location                      $location
-     * @param PlaceInterface                $place
-     * @param null|CharacterEffectInterface $character
-     *
-     * @return Field
-     */
-    public static function create(Location $location, PlaceInterface $place, ?CharacterEffectInterface $character = null)
-    {
-        return new static($location, $place, $character);
-    }
-
-    /**
      * Field constructor.
      *
      * @param Location                      $location
@@ -49,14 +37,27 @@ class Field
     }
 
     /**
-     * @param Map $map
+     * @param CharacterEffectInterface $character
+     */
+    public function coupleCharacter(CharacterEffectInterface $character): void
+    {
+        $character->setField($this);
+        $this->character = $character;
+    }
+
+    /**
+     * @param Location                      $location
+     * @param PlaceInterface                $place
+     * @param null|CharacterEffectInterface $character
      *
      * @return Field
      */
-    public function setMap(Map $map): self
-    {
-        $this->map = $map;
-        return $this;
+    public static function create(
+        Location $location,
+        PlaceInterface $place,
+        ?CharacterEffectInterface $character = null
+    ) {
+        return new static($location, $place, $character);
     }
 
     /**
@@ -68,20 +69,22 @@ class Field
     }
 
     /**
+     * @param Map $map
+     *
+     * @return Field
+     */
+    public function setMap(Map $map): self
+    {
+        $this->map = $map;
+        return $this;
+    }
+
+    /**
      * @return Location
      */
     public function getLocation(): Location
     {
         return $this->location;
-    }
-
-    /**
-     * @param CharacterEffectInterface $character
-     */
-    public function coupleCharacter(CharacterEffectInterface $character): void
-    {
-        $character->setField($this);
-        $this->character = $character;
     }
 
     public function decoupleCharacter(): void
@@ -124,6 +127,11 @@ class Field
         return Direction::createByLocations($this->location, $field->location);
     }
 
+    private function hasSameHeight(Field $field)
+    {
+        return $this->location->getZ() === $field->location->getZ();
+    }
+
     /**
      * @param Field $field
      *
@@ -136,10 +144,5 @@ class Field
             return null;
         }
         return Distance::createByLocations($this->location, $field->location);
-    }
-
-    private function hasSameHeight(Field $field)
-    {
-        return $this->location->getZ() === $field->location->getZ();
     }
 }

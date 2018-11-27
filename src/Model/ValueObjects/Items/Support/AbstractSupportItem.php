@@ -8,11 +8,8 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support;
 
-use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Model\Equalizeable;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\ActionInterface;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\FinalAction;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\AbstractItem;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemType;
 use Weedus\PhpSpecOps\Core\Operator\Effects\EffectInterface;
@@ -34,8 +31,7 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
         EffectInterface $effect,
         Range $range,
         SupportItemType $supportItemType
-    )
-    {
+    ) {
         parent::__construct($name, ItemType::SUPPORT());
         $this->text = $text;
         $this->effect = $effect;
@@ -65,14 +61,6 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
     }
 
     /**
-     * @return SupportItemType
-     */
-    public function getSupportItemType(): SupportItemType
-    {
-        return $this->supportItemType;
-    }
-
-    /**
      * @param SupportItemInterface $item
      *
      * @return bool
@@ -80,5 +68,13 @@ abstract class AbstractSupportItem extends AbstractItem implements SupportItemIn
     public function equalsSupportItemType(SupportItemInterface $item): bool
     {
         return $this->supportItemType->equals($item->getSupportItemType());
+    }
+
+    /**
+     * @return SupportItemType
+     */
+    public function getSupportItemType(): SupportItemType
+    {
+        return $this->supportItemType;
     }
 }

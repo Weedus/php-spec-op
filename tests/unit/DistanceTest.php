@@ -14,15 +14,6 @@ class DistanceTest extends \Codeception\Test\Unit
      */
     protected $tester;
 
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
     public function testCreate()
     {
         $x = 5;
@@ -33,6 +24,16 @@ class DistanceTest extends \Codeception\Test\Unit
 
         $this->makeTest($distance, $x, $y, $amount, $steps);
     }
+
+    private function makeTest(Distance $distance, $x, $y, $amount, $steps)
+    {
+        $this->assertEquals($x, $distance->getX());
+        $this->assertEquals($y, $distance->getY());
+        $this->assertEquals($amount, $distance->get());
+        $this->assertEquals($steps, $distance->getSteps());
+    }
+
+    // tests
 
     /**
      * @throws \Weedus\PhpSpecOps\Core\Exceptions\DistanceCalculationFailedException
@@ -62,11 +63,11 @@ class DistanceTest extends \Codeception\Test\Unit
         $this->makeTest($distance, $x, $y, $amount, $steps);
     }
 
-    private function makeTest(Distance $distance, $x, $y, $amount, $steps)
+    protected function _before()
     {
-        $this->assertEquals($x, $distance->getX());
-        $this->assertEquals($y, $distance->getY());
-        $this->assertEquals($amount, $distance->get());
-        $this->assertEquals($steps, $distance->getSteps());
+    }
+
+    protected function _after()
+    {
     }
 }

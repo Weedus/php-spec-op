@@ -50,6 +50,19 @@ class Inventory implements InventoryInterface
     }
 
     /**
+     * @param ItemInterface $item
+     *
+     * @return SpecificationCollection
+     * @throws NotAllowedException
+     */
+    protected function buildStack(ItemInterface $item): SpecificationCollection
+    {
+        $stack = new SpecificationCollection();
+        $stack->setSupportedClasses([get_class($item)]);
+        return $stack;
+    }
+
+    /**
      * @param string $name
      *
      * @return int
@@ -90,18 +103,5 @@ class Inventory implements InventoryInterface
             $ret[] = ['name' => $name, 'amount' => $stack->count()];
         }
         return $ret;
-    }
-
-    /**
-     * @param ItemInterface $item
-     *
-     * @return SpecificationCollection
-     * @throws NotAllowedException
-     */
-    protected function buildStack(ItemInterface $item): SpecificationCollection
-    {
-        $stack = new SpecificationCollection();
-        $stack->setSupportedClasses([get_class($item)]);
-        return $stack;
     }
 }

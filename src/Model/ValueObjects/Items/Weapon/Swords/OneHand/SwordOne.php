@@ -16,6 +16,6 @@ class SwordOne extends AbstractWeapon
 {
     public function __construct()
     {
-        parent::__construct('SwordOne', 4, 3, Range::LOW(), Range::LOW(),WeaponType::ONE_HAND_SWORD());
+        parent::__construct('SwordOne', 4, 3, Range::LOW(), Range::LOW(), WeaponType::ONE_HAND_SWORD());
     }
 }

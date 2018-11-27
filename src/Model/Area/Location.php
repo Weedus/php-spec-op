@@ -19,11 +19,6 @@ final class Location implements Equalizeable
     /** @var int */
     private $z;
 
-    public static function create(int $x, int $y, ?int $z = null)
-    {
-        return new static($x, $y, $z);
-    }
-
     /**
      * Location constructor.
      *
@@ -38,12 +33,28 @@ final class Location implements Equalizeable
         $this->z = $z ?? 0;
     }
 
+    public static function create(int $x, int $y, ?int $z = null)
+    {
+        return new static($x, $y, $z);
+    }
+
     /**
      * @return int
      */
     public function getX(): int
     {
         return $this->x;
+    }
+
+    /**
+     * @param int $x
+     *
+     * @return Location
+     */
+    public function setX(int $x): self
+    {
+        $this->x = $x;
+        return $this;
     }
 
     /**
@@ -55,11 +66,33 @@ final class Location implements Equalizeable
     }
 
     /**
+     * @param int $y
+     *
+     * @return Location
+     */
+    public function setY(int $y): self
+    {
+        $this->y = $y;
+        return $this;
+    }
+
+    /**
      * @return int
      */
     public function getZ(): int
     {
         return $this->z;
+    }
+
+    /**
+     * @param int $z
+     *
+     * @return Location
+     */
+    public function setZ(int $z): self
+    {
+        $this->z = $z;
+        return $this;
     }
 
     /**
@@ -76,38 +109,5 @@ final class Location implements Equalizeable
         return $this->x === $item->x
             && $this->y === $item->y
             && $this->z === $item->z;
-    }
-
-    /**
-     * @param int $x
-     *
-     * @return Location
-     */
-    public function setX(int $x): self
-    {
-        $this->x = $x;
-        return $this;
-    }
-
-    /**
-     * @param int $y
-     *
-     * @return Location
-     */
-    public function setY(int $y): self
-    {
-        $this->y = $y;
-        return $this;
-    }
-
-    /**
-     * @param int $z
-     *
-     * @return Location
-     */
-    public function setZ(int $z): self
-    {
-        $this->z = $z;
-        return $this;
     }
 }

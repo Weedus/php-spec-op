@@ -15,6 +15,6 @@ class RifleOne extends AbstractWeapon
 {
     public function __construct()
     {
-        parent::__construct('RifleOne', 4, 0, Range::HIGH(), Range::HIGH(),WeaponType::RIFLE());
+        parent::__construct('RifleOne', 4, 0, Range::HIGH(), Range::HIGH(), WeaponType::RIFLE());
     }
 }

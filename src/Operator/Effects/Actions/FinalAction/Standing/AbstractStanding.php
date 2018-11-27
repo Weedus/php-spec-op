@@ -15,8 +15,6 @@ use Weedus\PhpSpecOps\Core\Operator\Effects\AbstractEffect;
 
 abstract class AbstractStanding extends AbstractEffect
 {
-    abstract protected function performEffect(Field $caster, ?Field $target = null);
-
     /**
      * @param Field      $caster
      * @param null|Field $target
@@ -40,4 +38,6 @@ abstract class AbstractStanding extends AbstractEffect
             $place->getStandOnEffect()->perform($field);
         }
     }
+
+    abstract protected function performEffect(Field $caster, ?Field $target = null);
 }

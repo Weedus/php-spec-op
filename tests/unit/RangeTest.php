@@ -11,15 +11,6 @@ class RangeTest extends \Codeception\Test\Unit
      */
     protected $tester;
 
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
     public function testCreationAndInRange()
     {
         $range0 = Range::ZERO();
@@ -98,5 +89,15 @@ class RangeTest extends \Codeception\Test\Unit
         $this->assertTrue($range5->isReachable($distance5));
         $this->assertTrue($range5->isReachable($distance6));
         $this->assertFalse($range5->isReachable($distance7));
+    }
+
+    protected function _before()
+    {
+    }
+
+    // tests
+
+    protected function _after()
+    {
     }
 }

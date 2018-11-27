@@ -8,9 +8,7 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Support;
 
-use Weedus\PhpSpecOps\Core\Model\Area\Direction;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\ActionInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\ItemInterface;
 
 interface SupportItemInterface extends ItemInterface
@@ -24,7 +22,6 @@ interface SupportItemInterface extends ItemInterface
      * @return bool
      */
     public function equalsSupportItemType(SupportItemInterface $item): bool;
-
 
     /**
      * @return string

@@ -25,16 +25,6 @@ class ItemTest extends \Codeception\Test\Unit
      */
     protected $tester;
 
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
-
     public function testItem()
     {
         $armor = new TestItem('armor', ItemType::ARMOR());
@@ -90,6 +80,8 @@ class ItemTest extends \Codeception\Test\Unit
         $this->assertTrue($megaWeapon->getMinRange()->equals(Range::ZERO()));
         $this->assertTrue($megaWeapon->getMaxRange()->equals(Range::HIGH()));
     }
+
+    // tests
 
     public function testArmor()
     {
@@ -147,5 +139,13 @@ class ItemTest extends \Codeception\Test\Unit
         $this->assertTrue($item->equalsType($item));
         $this->assertTrue($item->equalsSupportItemType($item));
         $this->assertFalse($item->equals($item2));
+    }
+
+    protected function _before()
+    {
+    }
+
+    protected function _after()
+    {
     }
 }
