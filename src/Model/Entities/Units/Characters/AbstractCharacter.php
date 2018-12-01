@@ -32,12 +32,15 @@ abstract class AbstractCharacter extends AbstractUnit implements BrainAwareInter
     protected $brain;
 
     /**
-     * AbstractBrainAware constructor.
+     * AbstractCharacter constructor.
      *
-     * @param string    $name
-     * @param null|Uuid $id
-     *
-     * @throws ConstructionFailureException
+     * @param string         $name
+     * @param int            $maxHealth
+     * @param int            $power
+     * @param Range          $sight
+     * @param BrainInterface $brain
+     * @param BodyInterface  $body
+     * @param Uuid|null      $id
      */
     public function __construct(
         string $name,
@@ -51,6 +54,7 @@ abstract class AbstractCharacter extends AbstractUnit implements BrainAwareInter
         $this->brain = $brain;
         $this->body = $body;
         $this->maxHealth = $maxHealth;
+        $this->health = $maxHealth;
         $this->power = $power;
         $this->sight = $sight;
         parent::__construct($name, $id);

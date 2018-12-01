@@ -16,8 +16,21 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\FinalAction;
 
 class TestBrain implements BrainInterface
 {
+    /** @var ActionInterface */
+    protected $action;
+
+    /**
+     * TestBrain constructor.
+     *
+     * @param ActionInterface $action
+     */
+    public function __construct(ActionInterface $action)
+    {
+        $this->action = $action;
+    }
+
     public function solve(SituationInterface $situation): ActionInterface
     {
-        return FinalAction::REST();
+        return $this->action;
     }
 }
