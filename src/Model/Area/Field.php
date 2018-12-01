@@ -8,7 +8,6 @@
 
 namespace Weedus\PhpSpecOps\Core\Model\Area;
 
-use Assert\Assertion;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Places\PlaceInterface;
 
@@ -24,32 +23,49 @@ class Field
     private $place;
 
     /**
-     * @param Location                 $location
-     * @param PlaceInterface           $place
-     * @param null|CharacterEffectInterface $character
-     *
-     * @return Field
-     * @throws \Assert\AssertionFailedException
-     */
-    public static function create(Location $location, PlaceInterface $place, ?CharacterEffectInterface $character = null)
-    {
-        return new static($location, $place, $character);
-    }
-
-    /**
      * Field constructor.
      *
-     * @param Location                 $location
-     * @param PlaceInterface           $place
+     * @param Location                      $location
+     * @param PlaceInterface                $place
      * @param null|CharacterEffectInterface $character
-     *
-     * @throws \Assert\AssertionFailedException
      */
     public function __construct(Location $location, PlaceInterface $place, ?CharacterEffectInterface $character = null)
     {
         $this->location = $location;
         $this->place = $place;
-        $this->setCharacter($character);
+        $this->coupleCharacter($character);
+    }
+
+    /**
+     * @param CharacterEffectInterface $character
+     */
+    public function coupleCharacter(CharacterEffectInterface $character): void
+    {
+        $character->setField($this);
+        $this->character = $character;
+    }
+
+    /**
+     * @param Location                      $location
+     * @param PlaceInterface                $place
+     * @param null|CharacterEffectInterface $character
+     *
+     * @return Field
+     */
+    public static function create(
+        Location $location,
+        PlaceInterface $place,
+        ?CharacterEffectInterface $character = null
+    ) {
+        return new static($location, $place, $character);
+    }
+
+    /**
+     * @return Map
+     */
+    public function getMap(): Map
+    {
+        return $this->map;
     }
 
     /**
@@ -64,14 +80,6 @@ class Field
     }
 
     /**
-     * @return Map
-     */
-    public function getMap(): Map
-    {
-        return $this->map;
-    }
-
-    /**
      * @return Location
      */
     public function getLocation(): Location
@@ -79,22 +87,9 @@ class Field
         return $this->location;
     }
 
-    /**
-     * @param null|CharacterEffectInterface $character
-     *
-     * @throws \Assert\AssertionFailedException
-     */
-    public function setCharacter(?CharacterEffectInterface $character): void
+    public function decoupleCharacter(): void
     {
-        Assertion::true($this->place->isWalkable());
-        if ($character !== null) {
-            $character->setField($this);
-        }
-        $this->character = $character;
-    }
-
-    public function unsetCharacter(): void
-    {
+        $this->character->unsetField();
         $this->character = null;
     }
 
@@ -132,6 +127,11 @@ class Field
         return Direction::createByLocations($this->location, $field->location);
     }
 
+    private function hasSameHeight(Field $field)
+    {
+        return $this->location->getZ() === $field->location->getZ();
+    }
+
     /**
      * @param Field $field
      *
@@ -144,10 +144,5 @@ class Field
             return null;
         }
         return Distance::createByLocations($this->location, $field->location);
-    }
-
-    private function hasSameHeight(Field $field)
-    {
-        return $this->location->getZ() === $field->location->getZ();
     }
 }

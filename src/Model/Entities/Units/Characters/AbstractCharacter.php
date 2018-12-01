@@ -32,18 +32,31 @@ abstract class AbstractCharacter extends AbstractUnit implements BrainAwareInter
     protected $brain;
 
     /**
-     * AbstractBrainAware constructor.
+     * AbstractCharacter constructor.
      *
-     * @param string    $name
-     * @param null|Uuid $id
-     *
-     * @throws ConstructionFailureException
+     * @param string         $name
+     * @param int            $maxHealth
+     * @param int            $power
+     * @param Range          $sight
+     * @param BrainInterface $brain
+     * @param BodyInterface  $body
+     * @param Uuid|null      $id
      */
-    public function __construct(string $name, BrainInterface $brain, BodyInterface $body, ?Uuid $id = null)
-    {
-        $this->validateConstruct();
+    public function __construct(
+        string $name,
+        int $maxHealth,
+        int $power,
+        Range $sight,
+        BrainInterface $brain,
+        BodyInterface $body,
+        ?Uuid $id = null
+    ) {
         $this->brain = $brain;
         $this->body = $body;
+        $this->maxHealth = $maxHealth;
+        $this->health = $maxHealth;
+        $this->power = $power;
+        $this->sight = $sight;
         parent::__construct($name, $id);
     }
 
@@ -96,25 +109,5 @@ abstract class AbstractCharacter extends AbstractUnit implements BrainAwareInter
     public function isDead(): bool
     {
         return $this->health <= 0;
-    }
-
-    /**
-     * @throws ConstructionFailureException
-     */
-    protected function validateConstruct()
-    {
-        $missing = [];
-        if (empty($this->maxHealth)) {
-            $missing[] = 'maxHealth';
-        }
-        if (empty($this->power)) {
-            $missing[] = 'power';
-        }
-        if (empty($this->sight)) {
-            $missing[] = 'sight';
-        }
-        if (!empty($missing)) {
-            throw new ConstructionFailureException('attributes not set: [' . implode(', ', $missing) . ']');
-        }
     }
 }

@@ -13,5 +13,4 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\AbstractArmorHead
 
 class TestArmorHead extends AbstractArmorHead
 {
-
 }

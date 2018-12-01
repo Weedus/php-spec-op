@@ -15,6 +15,11 @@ class Body implements BodyInterface
     /** @var ArmorChestInterface|null */
     protected $chest = null;
 
+    public static function create()
+    {
+        return new static();
+    }
+
     /**
      * @return null|ArmorChestInterface
      */
@@ -29,10 +34,5 @@ class Body implements BodyInterface
     public function setChest(ArmorChestInterface $chest): void
     {
         $this->chest = $chest;
-    }
-
-    public static function create()
-    {
-        return new static();
     }
 }

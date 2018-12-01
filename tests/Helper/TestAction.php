@@ -13,5 +13,4 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Actions\AbstractAction;
 
 class TestAction extends AbstractAction
 {
-
 }

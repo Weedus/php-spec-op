@@ -26,8 +26,14 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
     /** @var WeaponType */
     protected $weaponType;
 
-    public function __construct(string $name, int $power, int $defense, Range $minRange, Range $maxRange, WeaponType $weaponType)
-    {
+    public function __construct(
+        string $name,
+        int $power,
+        int $defense,
+        Range $minRange,
+        Range $maxRange,
+        WeaponType $weaponType
+    ) {
         parent::__construct($name, ItemType::WEAPON());
         $this->power = $power;
         $this->defense = $defense;
@@ -52,6 +58,11 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
             && $this->defense === $item->defense
             && $this->equalsWeaponType($item)
             && parent::equals($item);
+    }
+
+    public function equalsWeaponType(WeaponInterface $weapon): bool
+    {
+        return $this->weaponType->equals($weapon->getWeaponType());
     }
 
     /**
@@ -86,10 +97,5 @@ abstract class AbstractWeapon extends AbstractItem implements WeaponInterface
     public function getWeaponType(): WeaponType
     {
         return $this->weaponType;
-    }
-
-    public function equalsWeaponType(WeaponInterface $weapon): bool
-    {
-        return $this->weaponType->equals($weapon->getWeaponType());
     }
 }

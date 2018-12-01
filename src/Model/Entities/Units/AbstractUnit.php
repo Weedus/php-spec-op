@@ -17,15 +17,15 @@ abstract class AbstractUnit extends AbstractEntity implements UnitInterface
     /** @var Field */
     protected $field;
 
+    public function getField(): Field
+    {
+        return $this->field;
+    }
+
     public function setField(Field $field)
     {
         $this->field = $field;
         return $this;
-    }
-
-    public function getField(): Field
-    {
-        return $this->field;
     }
 
     public function unsetField()

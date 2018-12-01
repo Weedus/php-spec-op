@@ -17,15 +17,6 @@ class ActionTest extends \Codeception\Test\Unit
      */
     protected $tester;
 
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
     public function testMethods()
     {
         $action1 = new TestAction('test');
@@ -59,7 +50,6 @@ class ActionTest extends \Codeception\Test\Unit
         $this->assertFalse($action2->equals($compare2));
         $this->assertFalse($action2->equals($compare3));
         $this->assertFalse($action2->equals($compare4));
-
     }
 
     public function testAction()
@@ -78,8 +68,9 @@ class ActionTest extends \Codeception\Test\Unit
         $this->assertEquals('smell', Action::SMELL(Direction::WEST())->getAction());
         $this->assertEquals('taste', Action::TASTE(Direction::WEST())->getAction());
         $this->assertEquals('hear', Action::HEAR(Direction::WEST())->getAction());
-
     }
+
+    // tests
 
     public function testFinalAction()
     {
@@ -91,5 +82,13 @@ class ActionTest extends \Codeception\Test\Unit
         $this->assertEquals('rest', FinalAction::REST()->getAction());
         $this->assertEquals('prepare', FinalAction::PREPARE()->getAction());
         $this->assertEquals('perform', FinalAction::PERFORM()->getAction());
+    }
+
+    protected function _before()
+    {
+    }
+
+    protected function _after()
+    {
     }
 }

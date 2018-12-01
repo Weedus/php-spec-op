@@ -13,6 +13,14 @@ use Weedus\PhpSpecOps\Core\Model\Entities\Units\AbstractUnit;
 
 abstract class AbstractPlace extends AbstractUnit implements PlaceInterface
 {
+    public static function create($value = null)
+    {
+        if ($value === null) {
+            return new static(null);
+        }
+        return new static($value);
+    }
+
     public function isExit(): bool
     {
         return false;
@@ -66,13 +74,5 @@ abstract class AbstractPlace extends AbstractUnit implements PlaceInterface
     public function goesDown(): bool
     {
         return false;
-    }
-
-    public static function create($value = null)
-    {
-        if ($value === null) {
-            return new static(null);
-        }
-        return new static($value);
     }
 }

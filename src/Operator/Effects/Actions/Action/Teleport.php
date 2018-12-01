@@ -9,7 +9,6 @@
 namespace Weedus\PhpSpecOps\Core\Operator\Effects\Actions\Action;
 
 
-
 use Weedus\Exceptions\InvalidArgumentException;
 use Weedus\PhpSpecOps\Core\Model\Area\Field;
 use Weedus\PhpSpecOps\Core\Model\Area\Location;
@@ -39,14 +38,14 @@ class Teleport extends AbstractEffect
      */
     public function perform(Field $caster, ?Field $target = null): void
     {
-        if($target === null || $target->hasCharacter() || !$target->getPlace()->isWalkable()){
-            $message = 'Target: '.($target===null?'No Field':'Field ');
-            if($target!==null){
+        if ($target === null || $target->hasCharacter() || !$target->getPlace()->isWalkable()) {
+            $message = 'Target: ' . ($target === null ? 'No Field' : 'Field ');
+            if ($target !== null) {
                 /** @var Field $target */
                 $message .= ($target->hasCharacter() ? 'with ' : ' without ') . 'Character ';
                 $message .= 'with ' . ($target->getPlace()->isWalkable() ? 'walkable ' : ' not walkable ') . 'Place';
             }
-            throw new InvalidArgumentException('Target: Field without Character, with walkable Place',$message);
+            throw new InvalidArgumentException('Target: Field without Character, with walkable Place', $message);
         }
         $character = $caster->getCharacter();
 
@@ -55,9 +54,9 @@ class Teleport extends AbstractEffect
         if ($castPlace->hasLeaveEffect()) {
             $castPlace->getLeaveEffect()->perform($caster);
         }
-        $caster->unsetCharacter();
+        $caster->decoupleCharacter();
 
-        $target->setCharacter($character);
+        $target->coupleCharacter($character);
         $targetPlace = $target->getPlace();
         /** @var WalksInterface $targetPlace */
         if ($targetPlace->hasArriveEffect()) {

@@ -13,5 +13,4 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\AbstractWeapon;
 
 class TestWeapon extends AbstractWeapon
 {
-
 }

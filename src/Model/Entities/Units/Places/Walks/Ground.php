@@ -37,6 +37,11 @@ class Ground extends AbstractPlace implements WalksInterface
         return null;
     }
 
+    public function hasArriveEffect(): bool
+    {
+        return !empty($this->getArriveEffect());
+    }
+
     /**
      * @return null|EffectInterface
      */
@@ -45,12 +50,9 @@ class Ground extends AbstractPlace implements WalksInterface
         return null;
     }
 
-    /**
-     * @return null|EffectInterface
-     */
-    public function getLeaveEffect(): ?EffectInterface
+    public function hasStandOnEffect(): bool
     {
-        return null;
+        return !empty($this->getStandOnEffect());
     }
 
     /**
@@ -61,18 +63,16 @@ class Ground extends AbstractPlace implements WalksInterface
         return null;
     }
 
-    public function hasArriveEffect(): bool
-    {
-        return !empty($this->getArriveEffect());
-    }
-
-    public function hasStandOnEffect(): bool
-    {
-        return !empty($this->getStandOnEffect());
-    }
-
     public function hasLeaveEffect(): bool
     {
         return !empty($this->getLeaveEffect());
+    }
+
+    /**
+     * @return null|EffectInterface
+     */
+    public function getLeaveEffect(): ?EffectInterface
+    {
+        return null;
     }
 }

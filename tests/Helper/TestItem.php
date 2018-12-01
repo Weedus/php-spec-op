@@ -13,5 +13,4 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\AbstractItem;
 
 class TestItem extends AbstractItem
 {
-
 }

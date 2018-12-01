@@ -10,6 +10,7 @@ namespace Weedus\PhpSpecOps\Core\Operator\Level;
 
 
 use Weedus\PhpSpecOps\Core\Model\Area\Map;
+use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\BrainAwareInterface;
 use Weedus\PhpSpecOps\Core\Model\Entities\Units\Characters\CharacterEffectInterface;
 
 final class Level
@@ -55,10 +56,12 @@ final class Level
             }
             $others[] = $char;
         }
-        $this->performPlayerStep($specOp);
-        /** @var CharacterEffectInterface $char */
-        foreach ($others as $char) {
-            $char->getBrain()->perform();
+        $characters = [$specOp] + $others;
+        /** @var BrainAwareInterface $char */
+        foreach ($characters as $char) {
+            $situation = $this->getActualSituation($char);
+            $action = $char->getBrain()->solve($situation);
+            $this->performAction($action);
         }
     }
 }

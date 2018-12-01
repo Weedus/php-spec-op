@@ -13,5 +13,4 @@ use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Legs\AbstractArmorLegs
 
 class TestArmorLegs extends AbstractArmorLegs
 {
-
 }

@@ -2,20 +2,16 @@
 
 namespace Weedus\PhpSpecOps\Core\Tests\unit;
 
-use Weedus\Exceptions\NotYetImplementedException;
 use Weedus\PhpSpecOps\Core\Model\Area\Range;
 use Weedus\PhpSpecOps\Core\Model\Body\Body;
 use Weedus\PhpSpecOps\Core\Model\Body\BodyInterface;
 use Weedus\PhpSpecOps\Core\Model\Body\Human\HumanBody;
 use Weedus\PhpSpecOps\Core\Model\Body\Human\HumanBodyInterface;
-use Weedus\PhpSpecOps\Core\Model\Equalizeable;
-use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\ArmorType;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Chest\ArmorChestInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Head\ArmorHeadInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Armor\Legs\ArmorLegsInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponInterface;
 use Weedus\PhpSpecOps\Core\Model\ValueObjects\Items\Weapon\WeaponType;
-use Weedus\PhpSpecOps\Core\Tests\Helper\TestArmor;
 use Weedus\PhpSpecOps\Core\Tests\Helper\TestArmorChest;
 use Weedus\PhpSpecOps\Core\Tests\Helper\TestArmorHead;
 use Weedus\PhpSpecOps\Core\Tests\Helper\TestArmorLegs;
@@ -28,15 +24,6 @@ class BodyTest extends \Codeception\Test\Unit
      */
     protected $tester;
 
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
-
-    // tests
     public function testCreation()
     {
         $body1 = new Body();
@@ -52,11 +39,11 @@ class BodyTest extends \Codeception\Test\Unit
     {
         $body = new HumanBody();
 
-        $chest = new TestArmorChest('chest',1);
-        $head = new TestArmorHead('head',1);
-        $legs = new TestArmorLegs('legs',1);
-        $weapon = new TestWeapon('weapon',1,1,Range::ZERO(),Range::MEDIUM(),WeaponType::DAGGER());
-        $shield = new TestWeapon('weapon',1,1,Range::ZERO(),Range::MEDIUM(),WeaponType::SHIELD());
+        $chest = new TestArmorChest('chest', 1);
+        $head = new TestArmorHead('head', 1);
+        $legs = new TestArmorLegs('legs', 1);
+        $weapon = new TestWeapon('weapon', 1, 1, Range::ZERO(), Range::MEDIUM(), WeaponType::DAGGER());
+        $shield = new TestWeapon('weapon', 1, 1, Range::ZERO(), Range::MEDIUM(), WeaponType::SHIELD());
 
         $this->assertNull($body->getChest());
         $this->assertNull($body->getHead());
@@ -75,5 +62,15 @@ class BodyTest extends \Codeception\Test\Unit
         $this->assertInstanceOf(ArmorLegsInterface::class, $body->getLegs());
         $this->assertInstanceOf(WeaponInterface::class, $body->getLeftHand());
         $this->assertInstanceOf(WeaponInterface::class, $body->getRightHand());
+    }
+
+    // tests
+
+    protected function _before()
+    {
+    }
+
+    protected function _after()
+    {
     }
 }
